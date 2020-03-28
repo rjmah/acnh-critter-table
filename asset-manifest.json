@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/acnh-critter-table/static/css/main.5f361e03.chunk.css",
+    "main.js": "/acnh-critter-table/static/js/main.46a0756f.chunk.js",
+    "main.js.map": "/acnh-critter-table/static/js/main.46a0756f.chunk.js.map",
+    "runtime-main.js": "/acnh-critter-table/static/js/runtime-main.5d1855a3.js",
+    "runtime-main.js.map": "/acnh-critter-table/static/js/runtime-main.5d1855a3.js.map",
+    "static/js/2.b486268d.chunk.js": "/acnh-critter-table/static/js/2.b486268d.chunk.js",
+    "static/js/2.b486268d.chunk.js.map": "/acnh-critter-table/static/js/2.b486268d.chunk.js.map",
+    "index.html": "/acnh-critter-table/index.html",
+    "precache-manifest.86337e45ea47a6c7be18850307b0c429.js": "/acnh-critter-table/precache-manifest.86337e45ea47a6c7be18850307b0c429.js",
+    "service-worker.js": "/acnh-critter-table/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/acnh-critter-table/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.b486268d.chunk.js.LICENSE.txt": "/acnh-critter-table/static/js/2.b486268d.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/acnh-critter-table/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5d1855a3.js",
+    "static/js/2.b486268d.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.46a0756f.chunk.js"
+  ]
+}
