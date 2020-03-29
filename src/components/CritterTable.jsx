@@ -57,7 +57,7 @@ function CritterTable() {
           }
         }
         if (displayed && state.hideCaught) {
-          displayed = !state.caughtFish[number];
+          displayed = !state.caughtCritter[`${type}${number}`];
         }
         return displayed;
       }
@@ -67,7 +67,7 @@ function CritterTable() {
     state.typeFilter,
     state.monthFilter,
     state.hideCaught,
-    state.caughtFish,
+    state.caughtCritter,
     isCurrentMonthActive,
     isCurrentMonthExpiring,
   ]);
@@ -95,7 +95,7 @@ function CritterTable() {
   );
 
   const caughtRenderer = useCallback(
-    ({ number }) => <CaughtCell number={number} />,
+    ({ number, type }) => <CaughtCell number={number} type={type} />,
     []
   );
   const pictureRenderer = useCallback(

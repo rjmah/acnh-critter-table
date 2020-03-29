@@ -1,26 +1,28 @@
 import React, { useMemo, useContext, useCallback } from 'react';
 import { DispatchContext, StateContext } from '../../reducer';
-import { TOGGLE_FISH_CAUGHT } from '../../reducer/actionTypes';
+import { TOGGLE_CRITTER_CAUGHT } from '../../reducer/actionTypes';
 import { Label, Checkbox } from '@rebass/forms';
 
-function CaughtCell({ number }) {
+function CaughtCell({ number, type }) {
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);
 
+  const caughtKey = useMemo(() => `${type}${number}`, [type, number]);
+
   const handleChange = useCallback(
     (e) => {
-      dispatch({ type: TOGGLE_FISH_CAUGHT, payload: number });
+      dispatch({ type: TOGGLE_CRITTER_CAUGHT, payload: caughtKey });
     },
-    [dispatch, number]
+    [dispatch, caughtKey]
   );
   const isCaught = useMemo(() => {
-    return state.caughtFish[number];
-  }, [state.caughtFish, number]);
+    return state.caughtCritter[caughtKey];
+  }, [state.caughtCritter, caughtKey]);
   return (
     <div>
       <Label>
         <Checkbox
-          id={`fish_caught_${number}`}
+          id={`${type}_caught_${number}`}
           className="caught_checkbox"
           checked={isCaught || false}
           onChange={handleChange}

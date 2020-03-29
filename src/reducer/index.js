@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   CHANGE_PREVIEW_MONTH,
-  TOGGLE_FISH_CAUGHT,
+  TOGGLE_CRITTER_CAUGHT,
   TOGGLE_HIDE_CAUGHT,
   CHANGE_MONTH_FILTER,
   CHANGE_TYPE_FILTER,
@@ -15,7 +15,7 @@ const savedState = JSON.parse(localStorage.getItem('acnh_store')) || {};
 
 export const initialState = {
   // previewMonthIndex: CURRENT_MONTH_INDEX,
-  caughtFish: {},
+  caughtCritter: {},
   hideCaught: false,
   monthFilter: '',
   typeFilter: '',
@@ -31,16 +31,16 @@ export function reducer(previousState, { type, payload }) {
     case CHANGE_PREVIEW_MONTH:
       state = { ...previousState, previewMonthIndex: payload };
       break;
-    case TOGGLE_FISH_CAUGHT: {
+    case TOGGLE_CRITTER_CAUGHT: {
       //TODO maybe use thunks. So logic isn't in the reducer
-      const caughtFish = { ...previousState.caughtFish };
-      if (previousState.caughtFish[payload]) {
-        delete caughtFish[payload];
+      const caughtCritter = { ...previousState.caughtCritter };
+      if (previousState.caughtCritter[payload]) {
+        delete caughtCritter[payload];
       } else {
-        caughtFish[payload] = true;
+        caughtCritter[payload] = true;
       }
       //TODO maybe throttle this with thunks
-      state = { ...previousState, caughtFish };
+      state = { ...previousState, caughtCritter };
       break;
     }
     case TOGGLE_HIDE_CAUGHT: {
