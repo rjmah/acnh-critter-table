@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/acnh-critter-table/static/css/main.22708f4d.chunk.css",
-    "main.js": "/acnh-critter-table/static/js/main.7a37568a.chunk.js",
-    "main.js.map": "/acnh-critter-table/static/js/main.7a37568a.chunk.js.map",
+    "main.css": "/acnh-critter-table/static/css/main.a3d00250.chunk.css",
+    "main.js": "/acnh-critter-table/static/js/main.5798baac.chunk.js",
+    "main.js.map": "/acnh-critter-table/static/js/main.5798baac.chunk.js.map",
     "runtime-main.js": "/acnh-critter-table/static/js/runtime-main.5d1855a3.js",
     "runtime-main.js.map": "/acnh-critter-table/static/js/runtime-main.5d1855a3.js.map",
     "static/js/2.195a12e0.chunk.js": "/acnh-critter-table/static/js/2.195a12e0.chunk.js",
     "static/js/2.195a12e0.chunk.js.map": "/acnh-critter-table/static/js/2.195a12e0.chunk.js.map",
     "index.html": "/acnh-critter-table/index.html",
-    "precache-manifest.8d1df68766ec9a5a2a30502e197a107f.js": "/acnh-critter-table/precache-manifest.8d1df68766ec9a5a2a30502e197a107f.js",
+    "precache-manifest.1dcc4911a5e290ceac354443f5102360.js": "/acnh-critter-table/precache-manifest.1dcc4911a5e290ceac354443f5102360.js",
     "service-worker.js": "/acnh-critter-table/service-worker.js",
-    "static/css/main.22708f4d.chunk.css.map": "/acnh-critter-table/static/css/main.22708f4d.chunk.css.map",
+    "static/css/main.a3d00250.chunk.css.map": "/acnh-critter-table/static/css/main.a3d00250.chunk.css.map",
     "static/js/2.195a12e0.chunk.js.LICENSE.txt": "/acnh-critter-table/static/js/2.195a12e0.chunk.js.LICENSE.txt",
     "static/media/bug12.png": "/acnh-critter-table/static/media/bug12.101929b4.png",
     "static/media/bug39.png": "/acnh-critter-table/static/media/bug39.a8f198eb.png",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.5d1855a3.js",
     "static/js/2.195a12e0.chunk.js",
-    "static/css/main.22708f4d.chunk.css",
-    "static/js/main.7a37568a.chunk.js"
+    "static/css/main.a3d00250.chunk.css",
+    "static/js/main.5798baac.chunk.js"
   ]
 }
