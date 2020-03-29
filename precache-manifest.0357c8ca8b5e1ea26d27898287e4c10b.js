@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "44b6bd80fce93f973e7ef2caba4382c8",
+    "revision": "60738c3df91267900fa92a2cdfaf724f",
     "url": "/acnh-critter-table/index.html"
   },
   {
