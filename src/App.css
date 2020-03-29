@@ -13,6 +13,10 @@ html * {
   flex-direction: column;
 }
 
+.controls_container {
+  display: flex;
+}
+
 .table_container {
   flex-grow: 1;
 }

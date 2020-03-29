@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 import CritterTable from './components/CritterTable';
 import PreviewMonthSelect from './components/PreviewMonthSelect';
+import ToggleCaughtCheckbox from './components/ToggleCaughtCheckbox';
 import './App.css';
 import 'react-virtualized/styles.css';
 import {
@@ -12,8 +13,6 @@ import {
 
 /**
  * TODO
- * Track caught
- * Show/Hide caught
  * All/Available/Expiring
  * Search
  * Sort
@@ -40,6 +39,7 @@ function App() {
         <div className="root_container">
           <div className="controls_container">
             <PreviewMonthSelect />
+            <ToggleCaughtCheckbox />
           </div>
           <div className="table_container">
             <CritterTable />

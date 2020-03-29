@@ -6,6 +6,7 @@ import { MONTHS } from './utility';
 
 import images from '../img';
 import { StateContext } from '../reducer';
+import CaughtCell from './CaughtCell';
 const COLUMN_WIDTH = 100;
 
 const getNLengthArray = (n) => [...Array(n).keys()];
@@ -27,14 +28,17 @@ function CritterTable() {
   const state = useContext(StateContext);
 
   const tableData = useMemo(() => {
-    return formattedData.filter((row) => {
+    return formattedData.filter(({ activeMonths, number }) => {
       let displayed = true;
       if (displayed && typeof state.previewMonthIndex === 'number') {
-        displayed = row?.activeMonths.has(state.previewMonthIndex);
+        displayed = activeMonths.has(state.previewMonthIndex);
+      }
+      if (displayed && state.hideCaught) {
+        displayed = !state.caughtFish[number];
       }
       return displayed;
     });
-  }, [state.previewMonthIndex]);
+  }, [state.previewMonthIndex, state.hideCaught, state.caughtFish]);
 
   const activeMonthIndex = useMemo(
     () =>
@@ -73,6 +77,12 @@ function CritterTable() {
     },
     [tableData]
   );
+
+  const caughtRenderer = useCallback(
+    ({ cellData }) => <CaughtCell number={cellData} />,
+    []
+  );
+  //TODO move these renderers to own files / components
   const pictureRenderer = useCallback(({ cellData }) => {
     return (
       <div>
@@ -146,6 +156,12 @@ function CritterTable() {
           // sortDirection={sortDirection}
           width={width}
         >
+          <Column
+            label="Caught?"
+            dataKey="number"
+            width={COLUMN_WIDTH}
+            cellRenderer={caughtRenderer}
+          />
           <Column label="Entry #" dataKey="number" width={COLUMN_WIDTH} />
           <Column
             label="Picture"
