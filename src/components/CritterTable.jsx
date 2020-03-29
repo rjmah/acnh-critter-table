@@ -5,7 +5,12 @@ import formattedData from './formatted-data';
 
 import { StateContext } from '../reducer';
 import CaughtCell from './cells/CaughtCell';
-import { MONTH_FILTER_ACTIVE, MONTH_FILTER_EXPIRING } from './constants';
+import {
+  MONTH_FILTER_ACTIVE,
+  MONTH_FILTER_EXPIRING,
+  TYPE_FILTER_FISH,
+  TYPE_FILTER_BUGS,
+} from './constants';
 import PictureCell from './cells/PictureCell';
 import MonthsCell from './cells/MonthsCell';
 import TimeCell from './cells/TimeCell';
@@ -32,9 +37,18 @@ function CritterTable() {
   );
 
   const tableData = useMemo(() => {
-    return formattedData.filter(({ activeMonths, number }) => {
+    return formattedData.filter(({ activeMonths, number, type }) => {
       let displayed = true;
-      if (displayed) {
+
+      if (displayed && state.typeFilter) {
+        if (state.typeFilter === TYPE_FILTER_FISH) {
+          displayed = type === 'fish';
+        } else if (state.typeFilter === TYPE_FILTER_BUGS) {
+          displayed = type === 'bug';
+        }
+      }
+
+      if (displayed && state.monthFilter) {
         if (state.monthFilter === MONTH_FILTER_ACTIVE) {
           displayed = isCurrentMonthActive(activeMonths);
         } else if (state.monthFilter === MONTH_FILTER_EXPIRING) {
@@ -47,8 +61,9 @@ function CritterTable() {
       return displayed;
     });
   }, [
-    state.hideCaught,
+    state.typeFilter,
     state.monthFilter,
+    state.hideCaught,
     state.caughtFish,
     isCurrentMonthActive,
     isCurrentMonthExpiring,
@@ -128,9 +143,7 @@ function CritterTable() {
   const cellRenderer = useCallback(
     ({ columnIndex, key, rowIndex, style }) => {
       const { label, renderer } = columns[columnIndex];
-      console.log('rowIndex', rowIndex);
       const rowData = tableData[rowIndex - 1];
-      console.log('rowData', rowData);
       let contents = `${columnIndex}, ${rowIndex}`;
       if (rowIndex === 0) {
         contents = label;

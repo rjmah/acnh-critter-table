@@ -1,7 +1,6 @@
 import React, { useReducer } from 'react';
+import Controls from './components/Controls';
 import CritterTable from './components/CritterTable';
-import PreviewMonthSelect from './components/PreviewMonthSelect';
-import ToggleCaughtCheckbox from './components/ToggleCaughtCheckbox';
 import './App.css';
 
 import {
@@ -10,7 +9,6 @@ import {
   DispatchContext,
   StateContext,
 } from './reducer';
-import ToggleActiveExpiringSelect from './components/ToggleActiveExpiringSelect';
 
 /**
  * TODO
@@ -37,9 +35,7 @@ function App() {
       <StateContext.Provider value={state}>
         <div className="root_container">
           <div className="controls_container">
-            <PreviewMonthSelect />
-            <ToggleCaughtCheckbox />
-            <ToggleActiveExpiringSelect />
+            <Controls />
           </div>
           <div className="table_container">
             <CritterTable />

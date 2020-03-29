@@ -1,8 +1,8 @@
 import React, { useMemo, useContext, useCallback } from 'react';
-import { DispatchContext, StateContext } from '../reducer';
+import { DispatchContext, StateContext } from '../../reducer';
 import { Box } from 'rebass';
 import { Label, Switch } from '@rebass/forms';
-import { TOGGLE_HIDE_CAUGHT } from '../reducer/actionTypes';
+import { TOGGLE_HIDE_CAUGHT } from '../../reducer/actionTypes';
 
 function ToggleCaughtCheckbox() {
   const dispatch = useContext(DispatchContext);

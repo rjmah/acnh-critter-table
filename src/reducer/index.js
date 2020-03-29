@@ -4,6 +4,7 @@ import {
   TOGGLE_FISH_CAUGHT,
   TOGGLE_HIDE_CAUGHT,
   CHANGE_MONTH_FILTER,
+  CHANGE_TYPE_FILTER,
 } from './actionTypes';
 import { CURRENT_MONTH_INDEX } from '../components/constants';
 
@@ -13,11 +14,14 @@ export const DispatchContext = React.createContext();
 const savedState = JSON.parse(localStorage.getItem('acnh_store')) || {};
 
 export const initialState = {
-  previewMonthIndex: CURRENT_MONTH_INDEX,
+  // previewMonthIndex: CURRENT_MONTH_INDEX,
   caughtFish: {},
   hideCaught: false,
   monthFilter: '',
   ...savedState,
+  // TODO: Don't reset the preview month from persisted store, since it's pretty confusing when you land on the wrong month after coming back
+  // Maybe can be solved be adding styles to denote you're previewing a month in the future
+  previewMonthIndex: CURRENT_MONTH_INDEX,
 };
 
 export function reducer(previousState, { type, payload }) {
@@ -44,6 +48,10 @@ export function reducer(previousState, { type, payload }) {
     }
     case CHANGE_MONTH_FILTER: {
       state = { ...previousState, monthFilter: payload };
+      break;
+    }
+    case CHANGE_TYPE_FILTER: {
+      state = { ...previousState, typeFilter: payload };
       break;
     }
     default:

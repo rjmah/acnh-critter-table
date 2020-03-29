@@ -1,7 +1,7 @@
 import React, { useMemo, useContext, useCallback } from 'react';
-import { MONTHS } from './utility';
-import { DispatchContext, StateContext } from '../reducer';
-import { CHANGE_PREVIEW_MONTH } from '../reducer/actionTypes';
+import { MONTHS } from '../utility';
+import { DispatchContext, StateContext } from '../../reducer';
+import { CHANGE_PREVIEW_MONTH } from '../../reducer/actionTypes';
 import { Box } from 'rebass';
 import { Label, Select } from '@rebass/forms';
 
