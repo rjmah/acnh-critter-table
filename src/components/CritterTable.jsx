@@ -81,7 +81,7 @@ function CritterTable() {
     []
   );
   const pictureRenderer = useCallback(
-    ({ number }) => <PictureCell number={number} />,
+    ({ number, type }) => <PictureCell number={number} type={type} />,
     []
   );
 
@@ -109,8 +109,8 @@ function CritterTable() {
       { label: '🎣', width: 30, renderer: caughtRenderer },
       { label: '#', width: 30, renderer: 'number' },
       { label: '', renderer: pictureRenderer },
-      { label: 'Name', width: 90, renderer: 'name' },
-      { label: 'Where', width: 70, renderer: 'location' },
+      { label: 'Name', width: 100, renderer: 'name' },
+      { label: 'Where', width: 80, renderer: 'location' },
       { label: 'Size', width: 50, renderer: 'shadow_size' },
       { label: 'Time', renderer: timeRenderer },
       { label: 'Month', width: 180, renderer: monthRenderer },
@@ -128,7 +128,9 @@ function CritterTable() {
   const cellRenderer = useCallback(
     ({ columnIndex, key, rowIndex, style }) => {
       const { label, renderer } = columns[columnIndex];
+      console.log('rowIndex', rowIndex);
       const rowData = tableData[rowIndex - 1];
+      console.log('rowData', rowData);
       let contents = `${columnIndex}, ${rowIndex}`;
       if (rowIndex === 0) {
         contents = label;

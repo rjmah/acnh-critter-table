@@ -79,6 +79,87 @@ import fish78 from './fish78.png';
 import fish79 from './fish79.png';
 import fish80 from './fish80.png';
 
+import bug01 from './bug01.png';
+import bug02 from './bug02.png';
+import bug03 from './bug03.png';
+import bug04 from './bug04.png';
+import bug05 from './bug05.png';
+import bug06 from './bug06.png';
+import bug07 from './bug07.png';
+import bug08 from './bug08.png';
+import bug09 from './bug09.png';
+import bug10 from './bug10.png';
+import bug11 from './bug11.png';
+import bug12 from './bug12.png';
+import bug13 from './bug13.png';
+import bug14 from './bug14.png';
+import bug15 from './bug15.png';
+import bug16 from './bug16.png';
+import bug17 from './bug17.png';
+import bug18 from './bug18.png';
+import bug19 from './bug19.png';
+import bug20 from './bug20.png';
+import bug21 from './bug21.png';
+import bug22 from './bug22.png';
+import bug23 from './bug23.png';
+import bug24 from './bug24.png';
+import bug25 from './bug25.png';
+import bug26 from './bug26.png';
+import bug27 from './bug27.png';
+import bug28 from './bug28.png';
+import bug29 from './bug29.png';
+import bug30 from './bug30.png';
+import bug31 from './bug31.png';
+import bug32 from './bug32.png';
+import bug33 from './bug33.png';
+import bug34 from './bug34.png';
+import bug35 from './bug35.png';
+import bug36 from './bug36.png';
+import bug37 from './bug37.png';
+import bug38 from './bug38.png';
+import bug39 from './bug39.png';
+import bug40 from './bug40.png';
+import bug41 from './bug41.png';
+import bug42 from './bug42.png';
+import bug43 from './bug43.png';
+import bug44 from './bug44.png';
+import bug45 from './bug45.png';
+import bug46 from './bug46.png';
+import bug47 from './bug47.png';
+import bug48 from './bug48.png';
+import bug49 from './bug49.png';
+import bug50 from './bug50.png';
+import bug51 from './bug51.png';
+import bug52 from './bug52.png';
+import bug53 from './bug53.png';
+import bug54 from './bug54.png';
+import bug55 from './bug55.png';
+import bug56 from './bug56.png';
+import bug57 from './bug57.png';
+import bug58 from './bug58.png';
+import bug59 from './bug59.png';
+import bug60 from './bug60.png';
+import bug61 from './bug61.png';
+import bug62 from './bug62.png';
+import bug63 from './bug63.png';
+import bug64 from './bug64.png';
+import bug65 from './bug65.png';
+import bug66 from './bug66.png';
+import bug67 from './bug67.png';
+import bug68 from './bug68.png';
+import bug69 from './bug69.png';
+import bug70 from './bug70.png';
+import bug71 from './bug71.png';
+import bug72 from './bug72.png';
+import bug73 from './bug73.png';
+import bug74 from './bug74.png';
+import bug75 from './bug75.png';
+import bug76 from './bug76.png';
+import bug77 from './bug77.png';
+import bug78 from './bug78.png';
+import bug79 from './bug79.png';
+import bug80 from './bug80.png';
+
 export default {
   fish01,
   fish02,
@@ -160,4 +241,84 @@ export default {
   fish78,
   fish79,
   fish80,
+  bug01,
+  bug02,
+  bug03,
+  bug04,
+  bug05,
+  bug06,
+  bug07,
+  bug08,
+  bug09,
+  bug10,
+  bug11,
+  bug12,
+  bug13,
+  bug14,
+  bug15,
+  bug16,
+  bug17,
+  bug18,
+  bug19,
+  bug20,
+  bug21,
+  bug22,
+  bug23,
+  bug24,
+  bug25,
+  bug26,
+  bug27,
+  bug28,
+  bug29,
+  bug30,
+  bug31,
+  bug32,
+  bug33,
+  bug34,
+  bug35,
+  bug36,
+  bug37,
+  bug38,
+  bug39,
+  bug40,
+  bug41,
+  bug42,
+  bug43,
+  bug44,
+  bug45,
+  bug46,
+  bug47,
+  bug48,
+  bug49,
+  bug50,
+  bug51,
+  bug52,
+  bug53,
+  bug54,
+  bug55,
+  bug56,
+  bug57,
+  bug58,
+  bug59,
+  bug60,
+  bug61,
+  bug62,
+  bug63,
+  bug64,
+  bug65,
+  bug66,
+  bug67,
+  bug68,
+  bug69,
+  bug70,
+  bug71,
+  bug72,
+  bug73,
+  bug74,
+  bug75,
+  bug76,
+  bug77,
+  bug78,
+  bug79,
+  bug80,
 };

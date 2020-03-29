@@ -1,10 +1,13 @@
 import React from 'react';
 import images from '../../img';
 
-function PictureCell({ number }) {
+function PictureCell({ number, type }) {
   return (
     <div>
-      <img src={images[`fish${number.toString().padStart(2, '0')}`]} alt="" />
+      <img
+        src={images[`${type}${number.toString().padStart(2, '0')}`]}
+        alt=""
+      />
     </div>
   );
 }

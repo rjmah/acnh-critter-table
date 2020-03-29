@@ -1,0 +1,663 @@
+[
+  {
+    "number": 1,
+    "name": "Common Butterfly",
+    "location": "Flying",
+    "value": 160,
+    "time": [[4, 19]],
+    "month": [[9, 6]]
+  },
+  {
+    "number": 2,
+    "name": "Yellow Butterfly",
+    "location": "Flying",
+    "value": 160,
+    "time": [[4, 19]],
+    "month": [
+      [3, 6],
+      [9, 10]
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Tiger Butterfly",
+    "location": "Flying",
+    "value": 240,
+    "time": [[4, 19]],
+    "month": [[3, 9]]
+  },
+  {
+    "number": 4,
+    "name": "Peacock Butterfly",
+    "location": "Flying",
+    "value": 2500,
+    "time": [[4, 19]],
+    "month": [[3, 6]]
+  },
+  {
+    "number": 5,
+    "name": "Common Bluebottle",
+    "location": "Flying",
+    "value": 300,
+    "time": [[4, 19]],
+    "month": [[4, 8]]
+  },
+  {
+    "number": 6,
+    "name": "Paper Kite Butterfly",
+    "location": "Flying",
+    "value": 1000,
+    "time": [[8, 19]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 7,
+    "name": "Great Purple Emperor",
+    "location": "Flying",
+    "value": 3000,
+    "time": [[4, 19]],
+    "month": [[5, 8]]
+  },
+  {
+    "number": 8,
+    "name": "Monach Butterfly",
+    "location": "Flying",
+    "value": 140,
+    "time": [[4, 17]],
+    "month": [[9, 11]]
+  },
+  {
+    "number": 9,
+    "name": "Emperor Butterfly",
+    "location": "Flying",
+    "value": 4000,
+    "time": [[17, 8]],
+    "month": [
+      [6, 9],
+      [12, 3]
+    ]
+  },
+  {
+    "number": 10,
+    "name": "Agrias Butterfly",
+    "location": "Flying",
+    "value": 3000,
+    "time": [[8, 17]],
+    "month": [[4, 9]]
+  },
+  {
+    "number": 11,
+    "name": "Raja Brooke's Birdwing",
+    "location": "Flying",
+    "value": 2500,
+    "time": [[8, 17]],
+    "month": [
+      [4, 9],
+      [12, 2]
+    ]
+  },
+  {
+    "number": 12,
+    "name": "Queen Alexandra's Birdwing",
+    "location": "Flying",
+    "value": 4000,
+    "time": [[8, 16]],
+    "month": [[5, 9]]
+  },
+  {
+    "number": 13,
+    "name": "Moth",
+    "location": "Flying by light",
+    "value": 130,
+    "time": [[19, 4]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 14,
+    "name": "Atlas Moth",
+    "location": "On trees",
+    "value": 3000,
+    "time": [[19, 4]],
+    "month": [[4, 9]]
+  },
+  {
+    "number": 15,
+    "name": "Madagascan Sunset Moth",
+    "location": "Flying",
+    "value": 2500,
+    "time": [[8, 16]],
+    "month": [[4, 9]]
+  },
+  {
+    "number": 16,
+    "name": "Long Locust",
+    "location": "On ground",
+    "value": 200,
+    "time": [[8, 19]],
+    "month": [[4, 11]]
+  },
+  {
+    "number": 17,
+    "name": "Migratory Locust",
+    "location": "On ground",
+    "value": 600,
+    "time": [[8, 19]],
+    "month": [[8, 11]]
+  },
+  {
+    "number": 18,
+    "name": "Rice Grasshopper",
+    "location": "On ground",
+    "value": 160,
+    "time": [[8, 19]],
+    "month": [[8, 11]]
+  },
+  {
+    "number": 19,
+    "name": "Grasshopper",
+    "location": "On ground",
+    "value": 160,
+    "time": [[8, 17]],
+    "month": [[7, 9]]
+  },
+  {
+    "number": 20,
+    "name": "Cricket",
+    "location": "Dig at cricket noise",
+    "value": 130,
+    "time": [[17, 8]],
+    "month": [[9, 11]]
+  },
+  {
+    "number": 21,
+    "name": "Bell Cricket",
+    "location": "On ground",
+    "value": 430,
+    "time": [[17, 8]],
+    "month": [[9, 10]]
+  },
+  {
+    "number": 22,
+    "name": "Mantis",
+    "location": "On flowers",
+    "value": 430,
+    "time": [[8, 17]],
+    "month": [[3, 11]]
+  },
+  {
+    "number": 23,
+    "name": "Orchid Mantis",
+    "location": "On white flowers",
+    "value": 2400,
+    "time": [[8, 17]],
+    "month": [[3, 11]]
+  },
+  {
+    "number": 24,
+    "name": "Honeybee",
+    "location": "Flying",
+    "value": 200,
+    "time": [[8, 17]],
+    "month": [[3, 7]]
+  },
+  {
+    "number": 25,
+    "name": "Wasp",
+    "location": "Falls from shaking trees",
+    "value": 2500,
+    "time": [[0, 0]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 26,
+    "name": "Brown Cicada",
+    "location": "On trees",
+    "value": "",
+    "time": [[8, 17]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 27,
+    "name": "Robust Cicada",
+    "location": "On trees",
+    "value": "",
+    "time": [[8, 17]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 28,
+    "name": "Giant Cicada",
+    "location": "On trees",
+    "value": "",
+    "time": [[8, 17]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 29,
+    "name": "Walker Cicada",
+    "location": "On trees",
+    "value": 400,
+    "time": [[8, 17]],
+    "month": [[8, 9]]
+  },
+  {
+    "number": 30,
+    "name": "Evening Cicada",
+    "location": "On trees",
+    "value": "",
+    "time": [
+      [4, 8],
+      [16, 19]
+    ],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 31,
+    "name": "Cicada Shell",
+    "location": "On trees",
+    "value": "",
+    "time": [[0, 0]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 32,
+    "name": "Red Dragonfly",
+    "location": "Flying",
+    "value": 180,
+    "time": [[8, 19]],
+    "month": [[9, 10]]
+  },
+  {
+    "number": 33,
+    "name": "Darner Dragonfly",
+    "location": "Flying",
+    "value": 230,
+    "time": [[8, 17]],
+    "month": [[4, 10]]
+  },
+  {
+    "number": 34,
+    "name": "Banded Dragonfly",
+    "location": "Flying",
+    "value": 4500,
+    "time": [[8, 17]],
+    "month": [[5, 10]]
+  },
+  {
+    "number": 35,
+    "name": "Damselfly",
+    "location": "Flying",
+    "value": "",
+    "time": [[0, 0]],
+    "month": [[11, 2]]
+  },
+  {
+    "number": 36,
+    "name": "Firefly",
+    "location": "Flying",
+    "value": "",
+    "time": [[19, 4]],
+    "month": [[6, 6]]
+  },
+  {
+    "number": 37,
+    "name": "Mole Cricket",
+    "location": "Underground",
+    "value": 500,
+    "time": [[0, 0]],
+    "month": [[11, 5]]
+  },
+  {
+    "number": 38,
+    "name": "Pondskater",
+    "location": "Ponds",
+    "value": 130,
+    "time": [[8, 19]],
+    "month": [[5, 9]]
+  },
+  {
+    "number": 39,
+    "name": "Diving Beetle",
+    "location": "Ponds and rivers",
+    "value": 800,
+    "time": [[8, 19]],
+    "month": [[5, 9]]
+  },
+  {
+    "number": 40,
+    "name": "Giant Water Bug",
+    "location": "Ponds and rivers",
+    "value": 2000,
+    "time": [[19, 8]],
+    "month": [[4, 9]]
+  },
+  {
+    "number": 41,
+    "name": "Stinkbug",
+    "location": "On flowers",
+    "value": 120,
+    "time": [[0, 0]],
+    "month": [[3, 11]]
+  },
+  {
+    "number": 42,
+    "name": "Man-faced Stink Bug",
+    "location": "On flowers",
+    "value": 1000,
+    "time": [[19, 8]],
+    "month": [[3, 11]]
+  },
+  {
+    "number": 43,
+    "name": "Ladybug",
+    "location": "On flowers",
+    "value": 200,
+    "time": [[8, 17]],
+    "month": [
+      [3, 6],
+      [10, 10]
+    ]
+  },
+  {
+    "number": 44,
+    "name": "Tiger Beetle",
+    "location": "On ground",
+    "value": 1500,
+    "time": [[0, 0]],
+    "month": [[2, 11]]
+  },
+  {
+    "number": 45,
+    "name": "Jewel Beetle",
+    "location": "On trees",
+    "value": 2400,
+    "time": [[0, 0]],
+    "month": [[4, 8]]
+  },
+  {
+    "number": 46,
+    "name": "Violin Beetle",
+    "location": "On tree stumps",
+    "value": 450,
+    "time": [[0, 0]],
+    "month": [
+      [5, 6],
+      [9, 11]
+    ]
+  },
+  {
+    "number": 47,
+    "name": "Citrus Long-horned Beetle",
+    "location": "On tree stumps",
+    "value": 350,
+    "time": [[0, 0]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 48,
+    "name": "Rosalia Batesi Beetle",
+    "location": "On tree stumps",
+    "value": 3000,
+    "time": [[0, 0]],
+    "month": [[5, 9]]
+  },
+  {
+    "number": 49,
+    "name": "Blue Weevil Beetle",
+    "location": "",
+    "value": "",
+    "time": [[0, 0]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 50,
+    "name": "Dung Beetle",
+    "location": "Pushing snowballs",
+    "value": "",
+    "time": [[0, 0]],
+    "month": [[12, 2]]
+  },
+  {
+    "number": 51,
+    "name": "Earth-boring Dung Beetle",
+    "location": "On ground",
+    "value": 300,
+    "time": [[0, 0]],
+    "month": [[7, 9]]
+  },
+  {
+    "number": 52,
+    "name": "Scarab Beetle",
+    "location": "On trees",
+    "value": "",
+    "time": [[23, 8]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 53,
+    "name": "Drone Beetle",
+    "location": "On trees",
+    "value": "",
+    "time": [[0, 0]],
+    "month": [[6, 8]]
+  },
+  {
+    "number": 54,
+    "name": "Goliath Beetle",
+    "location": "On trees",
+    "value": 8000,
+    "time": [[17, 8]],
+    "month": [[6, 9]]
+  },
+  {
+    "number": 55,
+    "name": "Saw Stag",
+    "location": "On trees",
+    "value": "",
+    "time": [[0, 0]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 56,
+    "name": "Miyama Stag",
+    "location": "On trees",
+    "value": "",
+    "time": [[0, 0]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 57,
+    "name": "Giant Stag",
+    "location": "On trees",
+    "value": "",
+    "time": [[23, 8]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 58,
+    "name": "Rainbow Stag",
+    "location": "On trees",
+    "value": 6000,
+    "time": [[19, 8]],
+    "month": [[6, 9]]
+  },
+  {
+    "number": 59,
+    "name": "Cyclommatus Stag",
+    "location": "On trees",
+    "value": "",
+    "time": [[17, 8]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 60,
+    "name": "Golden Stag",
+    "location": "On trees",
+    "value": "",
+    "time": [[17, 8]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 61,
+    "name": "Giraffe Stag",
+    "location": "On trees",
+    "value": "",
+    "time": [[17, 8]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 62,
+    "name": "Horned Dynastid",
+    "location": "On trees",
+    "value": "",
+    "time": [[17, 8]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 63,
+    "name": "Horned Atlas",
+    "location": "On trees",
+    "value": "",
+    "time": [[17, 8]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 64,
+    "name": "Horned Elephant",
+    "location": "On trees",
+    "value": "",
+    "time": [[17, 8]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 65,
+    "name": "Horned Herucles",
+    "location": "On trees",
+    "value": "",
+    "time": [[17, 8]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 66,
+    "name": "Walking Stick",
+    "location": "Falls from shaking trees",
+    "value": "",
+    "time": [
+      [4, 8],
+      [17, 19]
+    ],
+    "month": [[7, 11]]
+  },
+  {
+    "number": 67,
+    "name": "Walking Leaf",
+    "location": "Near trees, disguised as furniture leaf",
+    "value": 600,
+    "time": [[0, 0]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 68,
+    "name": "Bagworm",
+    "location": "Falls from shaking trees",
+    "value": 600,
+    "time": [[0, 0]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 69,
+    "name": "Ant",
+    "location": "On rotten food",
+    "value": "",
+    "time": [[0, 0]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 70,
+    "name": "Hermit Crab",
+    "location": "Beach",
+    "value": 1000,
+    "time": [[19, 8]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 71,
+    "name": "Wharf Roach",
+    "location": "On rocks at beach",
+    "value": 200,
+    "time": [[0, 0]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 72,
+    "name": "Fly",
+    "location": "On trash items",
+    "value": "",
+    "time": [[0, 0]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 73,
+    "name": "Mosquito",
+    "location": "Flying",
+    "value": 130,
+    "time": [[17, 4]],
+    "month": [[6, 9]]
+  },
+  {
+    "number": 74,
+    "name": "Flea",
+    "location": "On villagers",
+    "value": "",
+    "time": [[0, 0]],
+    "month": [[4, 11]]
+  },
+  {
+    "number": 75,
+    "name": "Snail",
+    "location": "On rocks (raining)",
+    "value": 250,
+    "time": [[0, 0]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 76,
+    "name": "Pill Bug",
+    "location": "Hit rocks",
+    "value": 250,
+    "time": [[23, 16]],
+    "month": [[9, 6]]
+  },
+  {
+    "number": 77,
+    "name": "Centipede",
+    "location": "Hit rocks",
+    "value": 300,
+    "time": [[16, 23]],
+    "month": [[9, 6]]
+  },
+  {
+    "number": 78,
+    "name": "Spider",
+    "location": "Falls from shaking trees",
+    "value": 480,
+    "time": [[19, 8]],
+    "month": [[1, 12]]
+  },
+  {
+    "number": 79,
+    "name": "Tarantula",
+    "location": "On ground",
+    "value": 8000,
+    "time": [[19, 4]],
+    "month": [[11, 4]]
+  },
+  {
+    "number": 80,
+    "name": "Scorpion",
+    "location": "On ground",
+    "value": 8000,
+    "time": [[19, 4]],
+    "month": [[5, 10]]
+  }
+]

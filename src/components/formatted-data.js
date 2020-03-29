@@ -1,6 +1,7 @@
 const getNLengthArray = (n) => [...Array(n).keys()];
 
-const data = require('../data.json');
+const fishData = require('../fish_data.json');
+const bugData = require('../bug_data.json');
 const FULL_YEAR_SET = new Set(getNLengthArray(12));
 const FULL_DAY_ARRAY = getNLengthArray(24);
 const FULL_DAY_SET = new Set(FULL_DAY_ARRAY);
@@ -13,8 +14,10 @@ function formatTime(hourIndex) {
   return `${number}${suffix}`;
 }
 // TODO do this once on load
-const formattedData = data.map(
-  ({ month: monthTuples, time: timeTuples, ...rest }) => {
+const formattedData = fishData
+  .map((rowData) => ({ ...rowData, type: 'fish' }))
+  .concat(bugData.map((rowData) => ({ ...rowData, type: 'bug' })))
+  .map(({ month: monthTuples, time: timeTuples, ...rest }) => {
     let activeMonths = new Set();
     monthTuples.forEach(([start, end]) => {
       if (start === 1 && end === 12) {
@@ -59,7 +62,6 @@ const formattedData = data.map(
       activeHoursText,
       ...rest,
     };
-  }
-);
+  });
 
 export default formattedData;
