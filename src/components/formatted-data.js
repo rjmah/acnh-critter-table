@@ -13,28 +13,42 @@ function formatTime(hourIndex) {
   const suffix = hourIndex / 12 < 1 ? 'AM' : 'PM';
   return `${number}${suffix}`;
 }
+
+function calculateActiveMonths(monthTuples, isSouth) {
+  let activeMonths = new Set();
+  monthTuples.forEach(([start, end]) => {
+    //TODO convert monthTuple to start at 0 so we don't have to do this dumb stuff
+    if (isSouth) {
+      start = (start + 6) % 12;
+      if (start === 0) start = 12;
+      end = (end + 6) % 12;
+      if (end === 0) end = 12;
+    }
+    if (start === 1 && end === 12) {
+      activeMonths = FULL_YEAR_SET;
+      return;
+    }
+
+    while (start !== end) {
+      activeMonths.add(start - 1);
+      start++;
+      if (start > 12) {
+        start = 1;
+      }
+    }
+
+    activeMonths.add(end - 1);
+  });
+
+  return activeMonths;
+}
 // TODO do this once on load
 const formattedData = fishData
   .map((rowData) => ({ ...rowData, type: 'fish' }))
   .concat(bugData.map((rowData) => ({ ...rowData, type: 'bug' })))
   .map(({ month: monthTuples, time: timeTuples, ...rest }) => {
-    let activeMonths = new Set();
-    monthTuples.forEach(([start, end]) => {
-      if (start === 1 && end === 12) {
-        activeMonths = FULL_YEAR_SET;
-        return;
-      }
-
-      while (start !== end) {
-        activeMonths.add(start - 1);
-        start++;
-        if (start > 12) {
-          start = 1;
-        }
-      }
-
-      activeMonths.add(end - 1);
-    });
+    const activeMonthsNorth = calculateActiveMonths(monthTuples, false);
+    const activeMonthsSouth = calculateActiveMonths(monthTuples, true);
 
     let activeHours = new Set();
     let activeHoursText = [];
@@ -57,7 +71,8 @@ const formattedData = fishData
     });
 
     return {
-      activeMonths,
+      activeMonthsNorth,
+      activeMonthsSouth,
       activeHours,
       activeHoursText,
       ...rest,

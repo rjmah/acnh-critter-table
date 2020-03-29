@@ -5,8 +5,12 @@ import {
   TOGGLE_HIDE_CAUGHT,
   CHANGE_MONTH_FILTER,
   CHANGE_TYPE_FILTER,
+  CHANGE_HEMISPHERE,
 } from './actionTypes';
-import { CURRENT_MONTH_INDEX } from '../components/constants';
+import {
+  CURRENT_MONTH_INDEX,
+  HEMISPHERE_FILTER_NORTHERN,
+} from '../components/constants';
 
 export const StateContext = React.createContext();
 export const DispatchContext = React.createContext();
@@ -19,6 +23,7 @@ export const initialState = {
   hideCaught: false,
   monthFilter: '',
   typeFilter: '',
+  hemisphereFilter: HEMISPHERE_FILTER_NORTHERN,
   ...savedState,
   // TODO: Don't reset the preview month from persisted store, since it's pretty confusing when you land on the wrong month after coming back
   // Maybe can be solved be adding styles to denote you're previewing a month in the future
@@ -53,6 +58,10 @@ export function reducer(previousState, { type, payload }) {
     }
     case CHANGE_TYPE_FILTER: {
       state = { ...previousState, typeFilter: payload };
+      break;
+    }
+    case CHANGE_HEMISPHERE: {
+      state = { ...previousState, hemisphereFilter: payload };
       break;
     }
     default:

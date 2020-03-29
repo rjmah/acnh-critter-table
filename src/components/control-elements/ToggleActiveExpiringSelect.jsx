@@ -19,7 +19,7 @@ function ToggleActiveExpiringSelect() {
   return (
     <Box
       p={1}
-      width={[1, 1, 1 / 4]}
+      width={[1, 1, 1 / 5]}
       style={{
         display: 'flex',
         flexDirection: 'column',

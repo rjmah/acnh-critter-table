@@ -14,7 +14,7 @@ function ToggleCaughtCheckbox() {
 
   const isChecked = useMemo(() => state.hideCaught, [state.hideCaught]);
   return (
-    <Box p={1} width={[1, 1, 1 / 4]} className="toggle_caught_container">
+    <Box p={1} width={[1, 1, 1 / 5]} className="toggle_caught_container">
       <Label
         htmlFor="hide_caught"
         style={{ paddingTop: 4, display: 'block', textAlign: 'center' }}

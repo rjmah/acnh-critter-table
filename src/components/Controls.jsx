@@ -4,6 +4,7 @@ import PreviewMonthSelect from './control-elements/PreviewMonthSelect';
 import ToggleCaughtCheckbox from './control-elements/ToggleCaughtCheckbox';
 import ToggleActiveExpiringSelect from './control-elements/ToggleActiveExpiringSelect';
 import ToggleTypeSelect from './control-elements/ToggleTypeSelect';
+import ToggleHemisphere from './control-elements/ToggleHemisphere';
 
 function Controls() {
   return (
@@ -12,6 +13,7 @@ function Controls() {
       <ToggleCaughtCheckbox />
       <ToggleActiveExpiringSelect />
       <ToggleTypeSelect />
+      <ToggleHemisphere />
     </React.Fragment>
   );
 }

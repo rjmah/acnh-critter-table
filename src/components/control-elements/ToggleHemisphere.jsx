@@ -1,17 +1,20 @@
 import React, { useContext, useCallback } from 'react';
 import { DispatchContext, StateContext } from '../../reducer';
-import { CHANGE_TYPE_FILTER } from '../../reducer/actionTypes';
+import { CHANGE_HEMISPHERE } from '../../reducer/actionTypes';
 import { Box } from 'rebass';
 import { Label, Select } from '@rebass/forms';
-import { TYPE_FILTER_FISH, TYPE_FILTER_BUGS } from '../constants';
+import {
+  HEMISPHERE_FILTER_NORTHERN,
+  HEMISPHERE_FILTER_SOUTHERN,
+} from '../constants';
 
-function ToggleTypeSelect() {
+function ToggleHemisphere() {
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);
 
   const handleChange = useCallback(
     (e) => {
-      dispatch({ type: CHANGE_TYPE_FILTER, payload: e.target.value });
+      dispatch({ type: CHANGE_HEMISPHERE, payload: e.target.value });
     },
     [dispatch]
   );
@@ -25,27 +28,31 @@ function ToggleTypeSelect() {
         flexDirection: 'column',
       }}
     >
-      <Label p={1} htmlFor="type_filter" style={{ flexGrow: 1 }}>
-        Type
+      <Label
+        p={1}
+        htmlFor="hemisphere_filter"
+        style={{ flexGrow: 1, hyphens: 'auto' }}
+      >
+        Hemisphere
       </Label>
       <Select
-        id="type_filter"
-        name="Type Filter"
-        value={state.typeFilter}
+        id="hemisphere_filter"
+        name="Hemisphere Filter"
+        value={state.hemisphereFilter}
         onChange={handleChange}
       >
         <option key="all" value="">
           All
         </option>
-        <option key="active" value={TYPE_FILTER_FISH}>
-          Fish
+        <option key="active" value={HEMISPHERE_FILTER_NORTHERN}>
+          Northern
         </option>
-        <option key="expiring" value={TYPE_FILTER_BUGS}>
-          Bugs
+        <option key="expiring" value={HEMISPHERE_FILTER_SOUTHERN}>
+          Southern
         </option>
       </Select>
     </Box>
   );
 }
 
-export default React.memo(ToggleTypeSelect);
+export default React.memo(ToggleHemisphere);

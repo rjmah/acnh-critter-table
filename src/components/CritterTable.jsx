@@ -10,6 +10,7 @@ import {
   MONTH_FILTER_EXPIRING,
   TYPE_FILTER_FISH,
   TYPE_FILTER_BUGS,
+  HEMISPHERE_FILTER_NORTHERN,
 } from './constants';
 import PictureCell from './cells/PictureCell';
 import MonthsCell from './cells/MonthsCell';
@@ -35,9 +36,22 @@ function CritterTable() {
       !activeMonths.has(getNextMonthIndex(state.previewMonthIndex)),
     [state.previewMonthIndex]
   );
+  const localeAwareData = useMemo(
+    () =>
+      formattedData.map(
+        ({ activeMonthsNorth, activeMonthsSouth, ...rest }) => ({
+          ...rest,
+          activeMonths:
+            state.hemisphereFilter === HEMISPHERE_FILTER_NORTHERN
+              ? activeMonthsNorth
+              : activeMonthsSouth,
+        })
+      ),
+    [state.hemisphereFilter]
+  );
 
   const tableData = useMemo(() => {
-    const filteredData = formattedData.filter(
+    const filteredData = localeAwareData.filter(
       ({ activeMonths, number, type }) => {
         let displayed = true;
 
@@ -64,6 +78,7 @@ function CritterTable() {
     );
     return filteredData;
   }, [
+    localeAwareData,
     state.typeFilter,
     state.monthFilter,
     state.hideCaught,

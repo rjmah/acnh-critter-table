@@ -23,7 +23,7 @@ function PreviewMonthSelect() {
   ]);
 
   return (
-    <Box p={1} width={[1, 1, 1 / 4]}>
+    <Box p={1} width={[1, 1, 1 / 5]}>
       <Label p={1} htmlFor="active_month">
         Active Month
       </Label>
