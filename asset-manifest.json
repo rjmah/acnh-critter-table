@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/acnh-critter-table/static/css/main.5f361e03.chunk.css",
-    "main.js": "/acnh-critter-table/static/js/main.46a0756f.chunk.js",
-    "main.js.map": "/acnh-critter-table/static/js/main.46a0756f.chunk.js.map",
+    "main.css": "/acnh-critter-table/static/css/main.22708f4d.chunk.css",
+    "main.js": "/acnh-critter-table/static/js/main.7a37568a.chunk.js",
+    "main.js.map": "/acnh-critter-table/static/js/main.7a37568a.chunk.js.map",
     "runtime-main.js": "/acnh-critter-table/static/js/runtime-main.5d1855a3.js",
     "runtime-main.js.map": "/acnh-critter-table/static/js/runtime-main.5d1855a3.js.map",
-    "static/js/2.b486268d.chunk.js": "/acnh-critter-table/static/js/2.b486268d.chunk.js",
-    "static/js/2.b486268d.chunk.js.map": "/acnh-critter-table/static/js/2.b486268d.chunk.js.map",
+    "static/js/2.195a12e0.chunk.js": "/acnh-critter-table/static/js/2.195a12e0.chunk.js",
+    "static/js/2.195a12e0.chunk.js.map": "/acnh-critter-table/static/js/2.195a12e0.chunk.js.map",
     "index.html": "/acnh-critter-table/index.html",
-    "precache-manifest.86337e45ea47a6c7be18850307b0c429.js": "/acnh-critter-table/precache-manifest.86337e45ea47a6c7be18850307b0c429.js",
+    "precache-manifest.8d1df68766ec9a5a2a30502e197a107f.js": "/acnh-critter-table/precache-manifest.8d1df68766ec9a5a2a30502e197a107f.js",
     "service-worker.js": "/acnh-critter-table/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/acnh-critter-table/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.b486268d.chunk.js.LICENSE.txt": "/acnh-critter-table/static/js/2.b486268d.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/acnh-critter-table/static/media/logo.5d5d9eef.svg"
+    "static/css/main.22708f4d.chunk.css.map": "/acnh-critter-table/static/css/main.22708f4d.chunk.css.map",
+    "static/js/2.195a12e0.chunk.js.LICENSE.txt": "/acnh-critter-table/static/js/2.195a12e0.chunk.js.LICENSE.txt",
+    "static/media/bug12.png": "/acnh-critter-table/static/media/bug12.101929b4.png",
+    "static/media/bug39.png": "/acnh-critter-table/static/media/bug39.a8f198eb.png",
+    "static/media/bug46.png": "/acnh-critter-table/static/media/bug46.95c5856e.png",
+    "static/media/bug80.png": "/acnh-critter-table/static/media/bug80.11bfdcbe.png"
   },
   "entrypoints": [
     "static/js/runtime-main.5d1855a3.js",
-    "static/js/2.b486268d.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.46a0756f.chunk.js"
+    "static/js/2.195a12e0.chunk.js",
+    "static/css/main.22708f4d.chunk.css",
+    "static/js/main.7a37568a.chunk.js"
   ]
 }
