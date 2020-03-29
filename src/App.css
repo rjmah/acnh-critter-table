@@ -58,15 +58,15 @@ html * {
 }
 
 .cell {
-  background-color: rgb(244, 238, 198);
+  background-color: #d9ead3;
 }
 
 .cell_month_expiring {
-  background-color: #f4cccc;
+  background-color: #fff2cc;
 }
 
 .cell_month_inactive {
-  background-color: lightgray;
+  background-color: #f4cccc;
 }
 .month_container {
   display: flex;
