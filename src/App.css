@@ -2,6 +2,21 @@ html * {
   box-sizing: border-box;
 }
 
+#root {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.root_container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.table_container {
+  flex-grow: 1;
+}
+
 .row {
   background-color: rgb(244, 238, 198);
 }

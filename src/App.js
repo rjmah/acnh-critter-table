@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import CritterTable from './components/CritterTable';
+import PreviewMonthSelect from './components/PreviewMonthSelect';
 import './App.css';
 import 'react-virtualized/styles.css';
+import {
+  reducer,
+  initialState,
+  DispatchContext,
+  StateContext,
+} from './reducer';
 
 /**
  * TODO
  * Track caught
  * Show/Hide caught
- * Preview Month
  * All/Available/Expiring
  * Search
  * Sort
@@ -15,6 +21,7 @@ import 'react-virtualized/styles.css';
  * 12/24hr Toggle
  * Styling
  * BEM
+ * Bug: width doesn't recalc on resize
  * variable conventions
  * Add insects
  * Toggle between bugs and insects
@@ -24,11 +31,22 @@ import 'react-virtualized/styles.css';
  * Mobile (preview modal)
  * Mobile (preview modal, swipe/ left right buttons to move through list)
  */
+
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <div>
-      <CritterTable />
-    </div>
+    <DispatchContext.Provider value={dispatch}>
+      <StateContext.Provider value={state}>
+        <div className="root_container">
+          <div className="controls_container">
+            <PreviewMonthSelect />
+          </div>
+          <div className="table_container">
+            <CritterTable />
+          </div>
+        </div>
+      </StateContext.Provider>
+    </DispatchContext.Provider>
   );
 }
 

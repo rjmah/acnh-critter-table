@@ -1,24 +1,13 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useContext, useMemo, useCallback, useRef } from 'react';
 import { AutoSizer, Table, Column } from 'react-virtualized';
 import classNames from 'classnames';
 import formattedData from './formatted-data';
+import { MONTHS } from './utility';
+
 import images from '../img';
+import { StateContext } from '../reducer';
 const COLUMN_WIDTH = 100;
 
-const MONTHS = [
-  'Jan.',
-  'Feb.',
-  'Mar.',
-  'Apr.',
-  'May',
-  'June',
-  'July',
-  'Aug.',
-  'Sept.',
-  'Oct.',
-  'Nov.',
-  'Dec.',
-];
 const getNLengthArray = (n) => [...Array(n).keys()];
 
 const FULL_DAY_ARRAY = getNLengthArray(24);
@@ -28,39 +17,67 @@ const CURRENT_MONTH_INDEX = d.getMonth();
 const CURRENT_HOUR_INDEX = d.getHours();
 const CURRENT_MINUTE_INDEX = d.getMinutes();
 
-let NEXT_MONTH_INDEX = CURRENT_MONTH_INDEX + 1;
-if (NEXT_MONTH_INDEX > 11) NEXT_MONTH_INDEX = 0;
-// const isNotActiveNextMonth = () => {
-
-// }
+function getNextMonthIndex(monthIndex) {
+  let nextMonthIndex = monthIndex + 1;
+  if (nextMonthIndex > 11) nextMonthIndex = 0;
+  return nextMonthIndex;
+}
 function CritterTable() {
   const tableRef = useRef();
-  const getRowClassName = useCallback(({ index }) => {
-    if (index < 0) {
-      //header;
-      return '';
-    }
-    const currentMonthActive = formattedData[index]?.activeMonths.has(
-      CURRENT_MONTH_INDEX
-    );
+  const state = useContext(StateContext);
 
-    const nextMonthActive = formattedData[index]?.activeMonths.has(
-      NEXT_MONTH_INDEX
-    );
-    return classNames('row', {
-      row_month_active: currentMonthActive,
-      row_month_expiring: currentMonthActive && !nextMonthActive,
-      row_month_inactive: !currentMonthActive,
+  const tableData = useMemo(() => {
+    return formattedData.filter((row) => {
+      let displayed = true;
+      if (displayed && typeof state.previewMonthIndex === 'number') {
+        displayed = row?.activeMonths.has(state.previewMonthIndex);
+      }
+      return displayed;
     });
-  }, []);
-  const rowGetter = useCallback(({ index }) => {
-    return formattedData[index];
-  }, []);
-  const pictureRenderer = useCallback(({ rowIndex }) => {
+  }, [state.previewMonthIndex]);
+
+  const activeMonthIndex = useMemo(
+    () =>
+      typeof state.previewMonthIndex === 'number'
+        ? state.previewMonthIndex
+        : CURRENT_MONTH_INDEX,
+    [state.previewMonthIndex]
+  );
+  const nextMonthIndex = useMemo(() => getNextMonthIndex(activeMonthIndex), [
+    activeMonthIndex,
+  ]);
+  const getRowClassName = useCallback(
+    ({ index }) => {
+      if (index < 0) {
+        //header;
+        return '';
+      }
+      const currentMonthActive = tableData[index]?.activeMonths.has(
+        activeMonthIndex
+      );
+
+      const nextMonthActive = tableData[index]?.activeMonths.has(
+        nextMonthIndex
+      );
+      return classNames('row', {
+        row_month_active: currentMonthActive,
+        row_month_expiring: currentMonthActive && !nextMonthActive,
+        row_month_inactive: !currentMonthActive,
+      });
+    },
+    [activeMonthIndex, nextMonthIndex, tableData]
+  );
+  const rowGetter = useCallback(
+    ({ index }) => {
+      return tableData[index];
+    },
+    [tableData]
+  );
+  const pictureRenderer = useCallback(({ cellData }) => {
     return (
       <div>
         <img
-          src={images[`fish${(rowIndex + 1).toString().padStart(2, '0')}`]}
+          src={images[`fish${cellData.toString().padStart(2, '0')}`]}
           alt=""
         />
       </div>
@@ -117,12 +134,12 @@ function CritterTable() {
           ref={tableRef}
           // headerClassName={styles.headerColumn}
           headerHeight={30}
-          height={500}
+          height={height}
           // noRowsRenderer={this._noRowsRenderer}
           rowClassName={getRowClassName}
           rowHeight={120}
           rowGetter={rowGetter}
-          rowCount={80}
+          rowCount={tableData.length}
           // scrollToIndex={scrollToIndex}
           // sort={this._sort}
           // sortBy={sortBy}
@@ -132,6 +149,7 @@ function CritterTable() {
           <Column label="Entry #" dataKey="number" width={COLUMN_WIDTH} />
           <Column
             label="Picture"
+            dataKey="number"
             width={COLUMN_WIDTH}
             cellRenderer={pictureRenderer}
           />
@@ -155,6 +173,7 @@ function CritterTable() {
             dataKey="value"
             width={COLUMN_WIDTH}
             cellRenderer={priceRenderer}
+            flexGrow={1}
           />
         </Table>
       )}
@@ -162,4 +181,4 @@ function CritterTable() {
   );
 }
 
-export default CritterTable;
+export default React.memo(CritterTable);
