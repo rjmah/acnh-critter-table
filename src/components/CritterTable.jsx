@@ -141,7 +141,9 @@ function CritterTable() {
         <div
           key={key}
           style={style}
-          className={getRowClassName({ index: rowIndex - 1 })}
+          className={classNames(getRowClassName({ index: rowIndex - 1 }), {
+            cell_first: columnIndex === 0,
+          })}
         >
           {contents}
         </div>

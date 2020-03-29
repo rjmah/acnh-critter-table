@@ -1,13 +1,13 @@
-import React, { useContext, useCallback } from 'react';
+import React, { useMemo, useContext, useCallback } from 'react';
 import { MONTHS } from './utility';
-import { DispatchContext } from '../reducer';
+import { DispatchContext, StateContext } from '../reducer';
 import { CHANGE_PREVIEW_MONTH } from '../reducer/actionTypes';
 import { Box } from 'rebass';
 import { Label, Select } from '@rebass/forms';
-import { CURRENT_MONTH_INDEX } from './constants';
 
 function PreviewMonthSelect() {
   const dispatch = useContext(DispatchContext);
+  const state = useContext(StateContext);
 
   const handleChange = useCallback(
     (e) => {
@@ -17,13 +17,20 @@ function PreviewMonthSelect() {
     },
     [dispatch]
   );
+
+  const value = useMemo(() => state.previewMonthIndex, [
+    state.previewMonthIndex,
+  ]);
+
   return (
-    <Box p={2}>
-      <Label htmlFor="active_month">Active Month</Label>
+    <Box p={1}>
+      <Label p={1} htmlFor="active_month">
+        Active Month
+      </Label>
       <Select
         id="active_month"
         name="Active Month"
-        defaultValue={CURRENT_MONTH_INDEX}
+        value={value}
         onChange={handleChange}
       >
         {MONTHS.map((month, i) => (

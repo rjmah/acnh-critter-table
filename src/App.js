@@ -3,7 +3,7 @@ import CritterTable from './components/CritterTable';
 import PreviewMonthSelect from './components/PreviewMonthSelect';
 import ToggleCaughtCheckbox from './components/ToggleCaughtCheckbox';
 import './App.css';
-import 'react-virtualized/styles.css';
+
 import {
   reducer,
   initialState,
@@ -14,9 +14,7 @@ import ToggleActiveExpiringSelect from './components/ToggleActiveExpiringSelect'
 
 /**
  * TODO
- * Styling
  * BEM
- * Bug: width doesn't recalc on resize
  * variable conventions
  * Add insects
  * Toggle between bugs and insects

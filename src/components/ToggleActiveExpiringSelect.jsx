@@ -1,5 +1,5 @@
 import React, { useContext, useCallback } from 'react';
-import { DispatchContext } from '../reducer';
+import { DispatchContext, StateContext } from '../reducer';
 import { CHANGE_MONTH_FILTER } from '../reducer/actionTypes';
 import { Box } from 'rebass';
 import { Label, Select } from '@rebass/forms';
@@ -7,6 +7,7 @@ import { MONTH_FILTER_ACTIVE, MONTH_FILTER_EXPIRING } from './constants';
 
 function ToggleActiveExpiringSelect() {
   const dispatch = useContext(DispatchContext);
+  const state = useContext(StateContext);
 
   const handleChange = useCallback(
     (e) => {
@@ -14,13 +15,16 @@ function ToggleActiveExpiringSelect() {
     },
     [dispatch]
   );
+
   return (
-    <Box p={2}>
-      <Label htmlFor="month_filter">Show</Label>
+    <Box p={1}>
+      <Label p={1} htmlFor="month_filter">
+        Show
+      </Label>
       <Select
         id="month_filter"
         name="Month Filter"
-        defaultValue=""
+        value={state.monthFilter}
         onChange={handleChange}
       >
         <option key="all" value="">

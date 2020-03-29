@@ -10,39 +10,48 @@ import { CURRENT_MONTH_INDEX } from '../components/constants';
 export const StateContext = React.createContext();
 export const DispatchContext = React.createContext();
 
-const initialCaughtFishState =
-  JSON.parse(localStorage.getItem('acnh_caught_fish')) || {};
+const savedState = JSON.parse(localStorage.getItem('acnh_store')) || {};
 
 export const initialState = {
   previewMonthIndex: CURRENT_MONTH_INDEX,
-  caughtFish: initialCaughtFishState,
+  caughtFish: {},
   hideCaught: false,
   monthFilter: '',
+  ...savedState,
 };
 
-export function reducer(state, { type, payload }) {
+export function reducer(previousState, { type, payload }) {
+  let state;
   switch (type) {
     case CHANGE_PREVIEW_MONTH:
-      return { ...state, previewMonthIndex: payload };
+      state = { ...previousState, previewMonthIndex: payload };
+      break;
     case TOGGLE_FISH_CAUGHT: {
       //TODO maybe use thunks. So logic isn't in the reducer
-      const caughtFish = { ...state.caughtFish };
-      if (state.caughtFish[payload]) {
+      const caughtFish = { ...previousState.caughtFish };
+      if (previousState.caughtFish[payload]) {
         delete caughtFish[payload];
       } else {
         caughtFish[payload] = true;
       }
       //TODO maybe throttle this with thunks
-      localStorage.setItem('acnh_caught_fish', JSON.stringify(caughtFish));
-      return { ...state, caughtFish };
+      state = { ...previousState, caughtFish };
+      break;
     }
     case TOGGLE_HIDE_CAUGHT: {
-      return { ...state, hideCaught: !state.hideCaught };
+      state = { ...previousState, hideCaught: !previousState.hideCaught };
+      break;
     }
     case CHANGE_MONTH_FILTER: {
-      return { ...state, monthFilter: payload };
+      state = { ...previousState, monthFilter: payload };
+      break;
     }
     default:
-      return state;
+      state = previousState;
   }
+
+  if (state !== previousState) {
+    localStorage.setItem('acnh_store', JSON.stringify(state));
+  }
+  return state;
 }
