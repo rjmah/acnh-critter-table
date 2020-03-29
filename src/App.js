@@ -10,10 +10,10 @@ import {
   DispatchContext,
   StateContext,
 } from './reducer';
+import ToggleActiveExpiringSelect from './components/ToggleActiveExpiringSelect';
 
 /**
  * TODO
- * All/Available/Expiring
  * Search
  * Sort
  * Text/Graph Time & Months Toggle
@@ -40,6 +40,7 @@ function App() {
           <div className="controls_container">
             <PreviewMonthSelect />
             <ToggleCaughtCheckbox />
+            <ToggleActiveExpiringSelect />
           </div>
           <div className="table_container">
             <CritterTable />

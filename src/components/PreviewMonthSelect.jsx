@@ -4,6 +4,7 @@ import { DispatchContext } from '../reducer';
 import { CHANGE_PREVIEW_MONTH } from '../reducer/actionTypes';
 import { Box } from 'rebass';
 import { Label, Select } from '@rebass/forms';
+import { CURRENT_MONTH_INDEX } from './constants';
 
 function PreviewMonthSelect() {
   const dispatch = useContext(DispatchContext);
@@ -22,12 +23,9 @@ function PreviewMonthSelect() {
       <Select
         id="active_month"
         name="Active Month"
-        defaultValue=""
+        defaultValue={CURRENT_MONTH_INDEX}
         onChange={handleChange}
       >
-        <option key="ALL" value="">
-          No Preview
-        </option>
         {MONTHS.map((month, i) => (
           <option key={i} value={i}>
             {month}

@@ -3,7 +3,9 @@ import {
   CHANGE_PREVIEW_MONTH,
   TOGGLE_FISH_CAUGHT,
   TOGGLE_HIDE_CAUGHT,
+  CHANGE_MONTH_FILTER,
 } from './actionTypes';
+import { CURRENT_MONTH_INDEX } from '../components/constants';
 
 export const StateContext = React.createContext();
 export const DispatchContext = React.createContext();
@@ -12,9 +14,10 @@ const initialCaughtFishState =
   JSON.parse(localStorage.getItem('acnh_caught_fish')) || {};
 
 export const initialState = {
-  previewMonthIndex: null,
+  previewMonthIndex: CURRENT_MONTH_INDEX,
   caughtFish: initialCaughtFishState,
   hideCaught: false,
+  monthFilter: '',
 };
 
 export function reducer(state, { type, payload }) {
@@ -35,6 +38,9 @@ export function reducer(state, { type, payload }) {
     }
     case TOGGLE_HIDE_CAUGHT: {
       return { ...state, hideCaught: !state.hideCaught };
+    }
+    case CHANGE_MONTH_FILTER: {
+      return { ...state, monthFilter: payload };
     }
     default:
       return state;

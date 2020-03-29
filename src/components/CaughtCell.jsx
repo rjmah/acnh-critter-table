@@ -7,7 +7,7 @@ function CaughtCell({ number }) {
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);
 
-  const handleClick = useCallback(
+  const handleChange = useCallback(
     (e) => {
       dispatch({ type: TOGGLE_FISH_CAUGHT, payload: number });
     },
@@ -22,7 +22,7 @@ function CaughtCell({ number }) {
         <Checkbox
           id={`fish_caught_${number}`}
           checked={isCaught || false}
-          onClick={handleClick}
+          onChange={handleChange}
         />
       </Label>
     </div>

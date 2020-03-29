@@ -7,48 +7,59 @@ import { MONTHS } from './utility';
 import images from '../img';
 import { StateContext } from '../reducer';
 import CaughtCell from './CaughtCell';
+import {
+  CURRENT_MONTH_INDEX,
+  CURRENT_HOUR_INDEX,
+  CURRENT_MINUTE_INDEX,
+  FULL_DAY_ARRAY,
+  MONTH_FILTER_ACTIVE,
+  MONTH_FILTER_EXPIRING,
+} from './constants';
 const COLUMN_WIDTH = 100;
-
-const getNLengthArray = (n) => [...Array(n).keys()];
-
-const FULL_DAY_ARRAY = getNLengthArray(24);
-
-var d = new Date();
-const CURRENT_MONTH_INDEX = d.getMonth();
-const CURRENT_HOUR_INDEX = d.getHours();
-const CURRENT_MINUTE_INDEX = d.getMinutes();
 
 function getNextMonthIndex(monthIndex) {
   let nextMonthIndex = monthIndex + 1;
   if (nextMonthIndex > 11) nextMonthIndex = 0;
   return nextMonthIndex;
 }
+
 function CritterTable() {
   const tableRef = useRef();
   const state = useContext(StateContext);
 
+  const isCurrentMonthActive = useCallback(
+    (activeMonths) => activeMonths.has(state.previewMonthIndex),
+    [state.previewMonthIndex]
+  );
+
+  const isCurrentMonthExpiring = useCallback(
+    (activeMonths) =>
+      activeMonths.has(state.previewMonthIndex) &&
+      !activeMonths.has(getNextMonthIndex(state.previewMonthIndex)),
+    [state.previewMonthIndex]
+  );
+
   const tableData = useMemo(() => {
     return formattedData.filter(({ activeMonths, number }) => {
       let displayed = true;
-      if (displayed && typeof state.previewMonthIndex === 'number') {
-        displayed = activeMonths.has(state.previewMonthIndex);
+      if (displayed) {
+        if (state.monthFilter === MONTH_FILTER_ACTIVE) {
+          displayed = isCurrentMonthActive(activeMonths);
+        } else if (state.monthFilter === MONTH_FILTER_EXPIRING) {
+          displayed = isCurrentMonthExpiring(activeMonths);
+        }
       }
       if (displayed && state.hideCaught) {
         displayed = !state.caughtFish[number];
       }
       return displayed;
     });
-  }, [state.previewMonthIndex, state.hideCaught, state.caughtFish]);
-
-  const activeMonthIndex = useMemo(
-    () =>
-      typeof state.previewMonthIndex === 'number'
-        ? state.previewMonthIndex
-        : CURRENT_MONTH_INDEX,
-    [state.previewMonthIndex]
-  );
-  const nextMonthIndex = useMemo(() => getNextMonthIndex(activeMonthIndex), [
-    activeMonthIndex,
+  }, [
+    state.hideCaught,
+    state.monthFilter,
+    state.caughtFish,
+    isCurrentMonthActive,
+    isCurrentMonthExpiring,
   ]);
   const getRowClassName = useCallback(
     ({ index }) => {
@@ -56,20 +67,21 @@ function CritterTable() {
         //header;
         return '';
       }
-      const currentMonthActive = tableData[index]?.activeMonths.has(
-        activeMonthIndex
+      const currentMonthActive = isCurrentMonthActive(
+        tableData[index]?.activeMonths
       );
 
-      const nextMonthActive = tableData[index]?.activeMonths.has(
-        nextMonthIndex
+      const currentMonthExpiring = isCurrentMonthExpiring(
+        tableData[index]?.activeMonths
       );
+
       return classNames('row', {
         row_month_active: currentMonthActive,
-        row_month_expiring: currentMonthActive && !nextMonthActive,
+        row_month_expiring: currentMonthExpiring,
         row_month_inactive: !currentMonthActive,
       });
     },
-    [activeMonthIndex, nextMonthIndex, tableData]
+    [isCurrentMonthActive, isCurrentMonthExpiring, tableData]
   );
   const rowGetter = useCallback(
     ({ index }) => {
@@ -101,7 +113,7 @@ function CritterTable() {
             key={i}
             className={classNames('month_square', {
               'month_square--active': activeMonths.has(i),
-              'month_square--current': i === CURRENT_MONTH_INDEX,
+              'month_square--current': i === state.previewMonthIndex,
             })}
           >
             {month}
@@ -109,7 +121,7 @@ function CritterTable() {
         ))}
       </div>
     ),
-    []
+    [state.previewMonthIndex]
   );
   const timeCellRenderer = useCallback(
     ({ cellData: activeHours }) => (
