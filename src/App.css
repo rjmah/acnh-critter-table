@@ -136,6 +136,18 @@ html * {
   height: 100%;
 }
 
+#hide_caught[aria-checked='true'] {
+  background-color: rgb(51, 152, 247);
+}
+
+#hide_caught > * {
+  background-color: rgb(51, 152, 247);
+}
+
+.cell_first svg {
+  color: rgb(51, 152, 247);
+}
+
 .toggle_caught_switch {
   height: 100%;
   display: flex;
