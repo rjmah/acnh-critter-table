@@ -2,18 +2,13 @@ import React, { useContext, useMemo, useCallback, useRef } from 'react';
 import { AutoSizer, Table, Column } from 'react-virtualized';
 import classNames from 'classnames';
 import formattedData from './formatted-data';
-import { MONTHS } from './utility';
 
-import images from '../img';
 import { StateContext } from '../reducer';
-import CaughtCell from './CaughtCell';
-import {
-  CURRENT_HOUR_INDEX,
-  CURRENT_MINUTE_INDEX,
-  FULL_DAY_ARRAY,
-  MONTH_FILTER_ACTIVE,
-  MONTH_FILTER_EXPIRING,
-} from './constants';
+import CaughtCell from './cells/CaughtCell';
+import { MONTH_FILTER_ACTIVE, MONTH_FILTER_EXPIRING } from './constants';
+import PictureCell from './cells/PictureCell';
+import MonthsCell from './cells/MonthsCell';
+import TimeCell from './cells/TimeCell';
 const COLUMN_WIDTH = 100;
 
 function getNextMonthIndex(monthIndex) {
@@ -93,63 +88,24 @@ function CritterTable() {
     ({ cellData }) => <CaughtCell number={cellData} />,
     []
   );
-  //TODO move these renderers to own files / components
-  const pictureRenderer = useCallback(({ cellData }) => {
-    return (
-      <div>
-        <img
-          src={images[`fish${cellData.toString().padStart(2, '0')}`]}
-          alt=""
-        />
-      </div>
-    );
-  }, []);
+  const pictureRenderer = useCallback(
+    ({ cellData }) => <PictureCell number={cellData} />,
+    []
+  );
+
   const monthCellRenderer = useCallback(
     ({ cellData: activeMonths }) => (
-      <div className="month_container">
-        {MONTHS.map((month, i) => (
-          <div
-            key={i}
-            className={classNames('month_square', {
-              'month_square--active': activeMonths.has(i),
-              'month_square--current': i === state.previewMonthIndex,
-            })}
-          >
-            {month}
-          </div>
-        ))}
-      </div>
+      <MonthsCell
+        activeMonths={activeMonths}
+        previewMonthIndex={state.previewMonthIndex}
+      />
     ),
     [state.previewMonthIndex]
   );
+
   const timeCellRenderer = useCallback(
     ({ cellData: activeHours, rowData: { activeHoursText } }) => (
-      <div>
-        <div className="hour_container">
-          {FULL_DAY_ARRAY.map((hour, i) => (
-            <div
-              key={i}
-              className={classNames('hour_square', {
-                'hour_square--active': activeHours.has(i),
-              })}
-            />
-          ))}
-          <div
-            className="hour_container__current_time_marker"
-            style={{
-              left:
-                4 * CURRENT_HOUR_INDEX + Math.floor(CURRENT_MINUTE_INDEX / 15),
-            }}
-          />
-        </div>
-        <div className="hour_text">
-          {activeHoursText.map((text, i) => (
-            <div key={i} className="hour_text__entry">
-              {text}
-            </div>
-          ))}
-        </div>
-      </div>
+      <TimeCell activeHours={activeHours} activeHoursText={activeHoursText} />
     ),
     []
   );

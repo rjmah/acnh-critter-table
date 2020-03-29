@@ -1,6 +1,6 @@
 import React, { useMemo, useContext, useCallback } from 'react';
-import { DispatchContext, StateContext } from '../reducer';
-import { TOGGLE_FISH_CAUGHT } from '../reducer/actionTypes';
+import { DispatchContext, StateContext } from '../../reducer';
+import { TOGGLE_FISH_CAUGHT } from '../../reducer/actionTypes';
 import { Label, Checkbox } from '@rebass/forms';
 
 function CaughtCell({ number }) {
