@@ -18,6 +18,7 @@ export const initialState = {
   caughtFish: {},
   hideCaught: false,
   monthFilter: '',
+  typeFilter: '',
   ...savedState,
   // TODO: Don't reset the preview month from persisted store, since it's pretty confusing when you land on the wrong month after coming back
   // Maybe can be solved be adding styles to denote you're previewing a month in the future

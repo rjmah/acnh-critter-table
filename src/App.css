@@ -18,6 +18,8 @@ html * {
 .controls_container {
   display: flex;
   margin-bottom: 4px;
+  max-width: 770px;
+  padding: 0 8px;
 }
 
 .table_container {
@@ -43,6 +45,10 @@ html * {
   border-right: 1px solid rgb(114, 114, 114);
 }
 
+.cell_padded {
+  padding: 6px;
+  word-break: break-word;
+}
 .header_cell {
   border-top: 1px solid rgb(114, 114, 114);
 }

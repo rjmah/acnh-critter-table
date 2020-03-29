@@ -14,9 +14,9 @@ function ToggleCaughtCheckbox() {
 
   const isChecked = useMemo(() => state.hideCaught, [state.hideCaught]);
   return (
-    <Box p={1}>
+    <Box p={1} width={[1, 1, 1 / 4]}>
       <Label htmlFor="hide_caught" className="toggle_caught_container">
-        <div style={{ paddingTop: 4 }}>Hide Caught?</div>
+        <div style={{ paddingTop: 4, textAlign: 'center' }}>Hide Caught</div>
         <div className="toggle_caught_switch">
           <Switch id="hide_caught" checked={isChecked} onClick={handleClick} />
         </div>

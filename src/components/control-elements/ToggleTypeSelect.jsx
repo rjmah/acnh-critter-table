@@ -17,8 +17,15 @@ function ToggleTypeSelect() {
   );
 
   return (
-    <Box p={1}>
-      <Label p={1} htmlFor="type_filter">
+    <Box
+      p={1}
+      width={[1, 1, 1 / 4]}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <Label p={1} htmlFor="type_filter" style={{ flexGrow: 1 }}>
         Type
       </Label>
       <Select
@@ -31,10 +38,10 @@ function ToggleTypeSelect() {
           All
         </option>
         <option key="active" value={TYPE_FILTER_FISH}>
-          Fish Only
+          Fish
         </option>
         <option key="expiring" value={TYPE_FILTER_BUGS}>
-          Bugs Only
+          Bugs
         </option>
       </Select>
     </Box>

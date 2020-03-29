@@ -17,8 +17,15 @@ function ToggleActiveExpiringSelect() {
   );
 
   return (
-    <Box p={1}>
-      <Label p={1} htmlFor="month_filter">
+    <Box
+      p={1}
+      width={[1, 1, 1 / 4]}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <Label p={1} htmlFor="month_filter" style={{ flexGrow: 1 }}>
         Month
       </Label>
       <Select
@@ -31,10 +38,10 @@ function ToggleActiveExpiringSelect() {
           All
         </option>
         <option key="active" value={MONTH_FILTER_ACTIVE}>
-          Active Only
+          Active
         </option>
         <option key="expiring" value={MONTH_FILTER_EXPIRING}>
-          Expiring Only
+          Expiring
         </option>
       </Select>
     </Box>

@@ -37,29 +37,32 @@ function CritterTable() {
   );
 
   const tableData = useMemo(() => {
-    return formattedData.filter(({ activeMonths, number, type }) => {
-      let displayed = true;
+    const filteredData = formattedData.filter(
+      ({ activeMonths, number, type }) => {
+        let displayed = true;
 
-      if (displayed && state.typeFilter) {
-        if (state.typeFilter === TYPE_FILTER_FISH) {
-          displayed = type === 'fish';
-        } else if (state.typeFilter === TYPE_FILTER_BUGS) {
-          displayed = type === 'bug';
+        if (displayed && state.typeFilter) {
+          if (state.typeFilter === TYPE_FILTER_FISH) {
+            displayed = type === 'fish';
+          } else if (state.typeFilter === TYPE_FILTER_BUGS) {
+            displayed = type === 'bug';
+          }
         }
-      }
 
-      if (displayed && state.monthFilter) {
-        if (state.monthFilter === MONTH_FILTER_ACTIVE) {
-          displayed = isCurrentMonthActive(activeMonths);
-        } else if (state.monthFilter === MONTH_FILTER_EXPIRING) {
-          displayed = isCurrentMonthExpiring(activeMonths);
+        if (displayed && state.monthFilter) {
+          if (state.monthFilter === MONTH_FILTER_ACTIVE) {
+            displayed = isCurrentMonthActive(activeMonths);
+          } else if (state.monthFilter === MONTH_FILTER_EXPIRING) {
+            displayed = isCurrentMonthExpiring(activeMonths);
+          }
         }
+        if (displayed && state.hideCaught) {
+          displayed = !state.caughtFish[number];
+        }
+        return displayed;
       }
-      if (displayed && state.hideCaught) {
-        displayed = !state.caughtFish[number];
-      }
-      return displayed;
-    });
+    );
+    return filteredData;
   }, [
     state.typeFilter,
     state.monthFilter,
@@ -123,9 +126,9 @@ function CritterTable() {
     () => [
       { label: '🎣', width: 30, renderer: caughtRenderer },
       { label: '#', width: 30, renderer: 'number' },
-      { label: '', renderer: pictureRenderer },
-      { label: 'Name', width: 100, renderer: 'name' },
-      { label: 'Where', width: 80, renderer: 'location' },
+      { label: 'Picture', renderer: pictureRenderer },
+      { label: 'Name', width: 110, renderer: 'name' },
+      { label: 'Where', width: 110, renderer: 'location' },
       { label: 'Size', width: 50, renderer: 'shadow_size' },
       { label: 'Time', renderer: timeRenderer },
       { label: 'Month', width: 180, renderer: monthRenderer },
@@ -158,6 +161,7 @@ function CritterTable() {
           style={style}
           className={classNames(getRowClassName({ index: rowIndex - 1 }), {
             cell_first: columnIndex === 0,
+            cell_padded: columnIndex === 3 || columnIndex === 4,
           })}
         >
           {contents}
@@ -187,8 +191,6 @@ function CritterTable() {
           <MultiGrid
             enableFixedRowScroll
             fixedRowCount={1}
-            // enableFixedColumnScroll
-            // fixedColumnCount={1}
             cellRenderer={cellRenderer}
             columnWidth={getColumnWidth}
             columnCount={columns.length}
@@ -198,6 +200,10 @@ function CritterTable() {
             width={width}
             hideTopRightGridScrollbar
             hideBottomLeftGridScrollbar
+            // Rerender, for some reason, only happens if row count changes. This is needed
+            // to force a rerender when switching from fish to bugs with the same count
+            // https://github.com/bvaughn/react-virtualized/issues/1262#issuecomment-561966273
+            onRowsRendered={() => {}}
           />
         );
       }}
