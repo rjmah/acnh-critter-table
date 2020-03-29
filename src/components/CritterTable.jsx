@@ -1,5 +1,5 @@
-import React, { useContext, useMemo, useCallback, useRef } from 'react';
-import { AutoSizer, Table, Column } from 'react-virtualized';
+import React, { useContext, useMemo, useCallback } from 'react';
+import { AutoSizer, MultiGrid } from 'react-virtualized';
 import classNames from 'classnames';
 import formattedData from './formatted-data';
 
@@ -9,7 +9,6 @@ import { MONTH_FILTER_ACTIVE, MONTH_FILTER_EXPIRING } from './constants';
 import PictureCell from './cells/PictureCell';
 import MonthsCell from './cells/MonthsCell';
 import TimeCell from './cells/TimeCell';
-const COLUMN_WIDTH = 100;
 
 function getNextMonthIndex(monthIndex) {
   let nextMonthIndex = monthIndex + 1;
@@ -18,7 +17,6 @@ function getNextMonthIndex(monthIndex) {
 }
 
 function CritterTable() {
-  const tableRef = useRef();
   const state = useContext(StateContext);
 
   const isCurrentMonthActive = useCallback(
@@ -59,7 +57,7 @@ function CritterTable() {
     ({ index }) => {
       if (index < 0) {
         //header;
-        return '';
+        return 'header_cell';
       }
       const currentMonthActive = isCurrentMonthActive(
         tableData[index]?.activeMonths
@@ -69,32 +67,33 @@ function CritterTable() {
         tableData[index]?.activeMonths
       );
 
-      return classNames('row', {
-        row_month_active: currentMonthActive,
-        row_month_expiring: currentMonthExpiring,
-        row_month_inactive: !currentMonthActive,
+      return classNames('cell', {
+        cell_month_active: currentMonthActive,
+        cell_month_expiring: currentMonthExpiring,
+        cell_month_inactive: !currentMonthActive,
       });
     },
     [isCurrentMonthActive, isCurrentMonthExpiring, tableData]
   );
-  const rowGetter = useCallback(
-    ({ index }) => {
-      return tableData[index];
-    },
-    [tableData]
-  );
 
   const caughtRenderer = useCallback(
-    ({ cellData }) => <CaughtCell number={cellData} />,
+    ({ number }) => <CaughtCell number={number} />,
     []
   );
   const pictureRenderer = useCallback(
-    ({ cellData }) => <PictureCell number={cellData} />,
+    ({ number }) => <PictureCell number={number} />,
     []
   );
 
-  const monthCellRenderer = useCallback(
-    ({ cellData: activeMonths }) => (
+  const timeRenderer = useCallback(
+    ({ activeHours, activeHoursText }) => (
+      <TimeCell activeHours={activeHours} activeHoursText={activeHoursText} />
+    ),
+    []
+  );
+
+  const monthRenderer = useCallback(
+    ({ activeMonths }) => (
       <MonthsCell
         activeMonths={activeMonths}
         previewMonthIndex={state.previewMonthIndex}
@@ -103,73 +102,88 @@ function CritterTable() {
     [state.previewMonthIndex]
   );
 
-  const timeCellRenderer = useCallback(
-    ({ cellData: activeHours, rowData: { activeHoursText } }) => (
-      <TimeCell activeHours={activeHours} activeHoursText={activeHoursText} />
-    ),
-    []
+  const priceRenderer = useCallback(({ value }) => value.toLocaleString(), []);
+
+  const columns = useMemo(
+    () => [
+      { label: '🎣', width: 30, renderer: caughtRenderer },
+      { label: '#', width: 30, renderer: 'number' },
+      { label: '', renderer: pictureRenderer },
+      { label: 'Name', width: 90, renderer: 'name' },
+      { label: 'Where', width: 70, renderer: 'location' },
+      { label: 'Size', width: 50, renderer: 'shadow_size' },
+      { label: 'Time', renderer: timeRenderer },
+      { label: 'Month', width: 180, renderer: monthRenderer },
+      { label: 'Price', width: 60, renderer: priceRenderer },
+    ],
+    [
+      caughtRenderer,
+      monthRenderer,
+      pictureRenderer,
+      priceRenderer,
+      timeRenderer,
+    ]
   );
-  const priceRenderer = useCallback(
-    ({ cellData }) => cellData.toLocaleString(),
-    []
+
+  const cellRenderer = useCallback(
+    ({ columnIndex, key, rowIndex, style }) => {
+      const { label, renderer } = columns[columnIndex];
+      const rowData = tableData[rowIndex - 1];
+      let contents = `${columnIndex}, ${rowIndex}`;
+      if (rowIndex === 0) {
+        contents = label;
+      } else if (typeof renderer === 'string') {
+        contents = rowData[renderer];
+      } else if (typeof renderer === 'function') {
+        contents = renderer(rowData);
+      }
+      return (
+        <div
+          key={key}
+          style={style}
+          className={getRowClassName({ index: rowIndex - 1 })}
+        >
+          {contents}
+        </div>
+      );
+    },
+    [columns, getRowClassName, tableData]
   );
+
+  const getColumnWidth = useCallback(
+    ({ index }) => {
+      return columns[index].width || 120;
+    },
+    [columns]
+  );
+
+  const getRowHeight = useCallback(({ columnIndex, key, index, style }) => {
+    // Header
+    if (index === 0) return 30;
+    return 95;
+  }, []);
+
   return (
     <AutoSizer>
-      {({ width, height }) => (
-        <Table
-          ref={tableRef}
-          // headerClassName={styles.headerColumn}
-          headerHeight={30}
-          height={height}
-          // noRowsRenderer={this._noRowsRenderer}
-          rowClassName={getRowClassName}
-          rowHeight={120}
-          rowGetter={rowGetter}
-          rowCount={tableData.length}
-          // scrollToIndex={scrollToIndex}
-          // sort={this._sort}
-          // sortBy={sortBy}
-          // sortDirection={sortDirection}
-          width={width}
-        >
-          <Column
-            label="Caught?"
-            dataKey="number"
-            width={COLUMN_WIDTH}
-            cellRenderer={caughtRenderer}
+      {({ width, height }) => {
+        return (
+          <MultiGrid
+            enableFixedRowScroll
+            fixedRowCount={1}
+            // enableFixedColumnScroll
+            // fixedColumnCount={1}
+            cellRenderer={cellRenderer}
+            columnWidth={getColumnWidth}
+            columnCount={columns.length}
+            height={height}
+            rowHeight={getRowHeight}
+            rowCount={tableData.length + 1}
+            width={width}
+            hideTopRightGridScrollbar
+            hideBottomLeftGridScrollbar
           />
-          <Column label="Entry #" dataKey="number" width={COLUMN_WIDTH} />
-          <Column
-            label="Picture"
-            dataKey="number"
-            width={COLUMN_WIDTH}
-            cellRenderer={pictureRenderer}
-          />
-          <Column label="Name" dataKey="name" width={COLUMN_WIDTH} />
-          <Column label="Location" dataKey="location" width={COLUMN_WIDTH} />
-          <Column label="Shadow" dataKey="shadow_size" width={COLUMN_WIDTH} />
-          <Column
-            label="Time Available"
-            dataKey="activeHours"
-            width={COLUMN_WIDTH}
-            cellRenderer={timeCellRenderer}
-            minWidth={100}
-          />
-          <Column
-            label="Months Available"
-            dataKey="activeMonths"
-            width={320}
-            cellRenderer={monthCellRenderer}
-          />
-          <Column
-            label="Selling Price"
-            dataKey="value"
-            width={COLUMN_WIDTH}
-            cellRenderer={priceRenderer}
-            flexGrow={1}
-          />
-        </Table>
-      )}
+        );
+      }}
     </AutoSizer>
   );
 }

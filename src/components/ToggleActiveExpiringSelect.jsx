@@ -16,7 +16,7 @@ function ToggleActiveExpiringSelect() {
   );
   return (
     <Box p={2}>
-      <Label htmlFor="month_filter">Show Months</Label>
+      <Label htmlFor="month_filter">Show</Label>
       <Select
         id="month_filter"
         name="Month Filter"
@@ -27,10 +27,10 @@ function ToggleActiveExpiringSelect() {
           All
         </option>
         <option key="active" value={MONTH_FILTER_ACTIVE}>
-          Only Active
+          Active Only
         </option>
         <option key="expiring" value={MONTH_FILTER_EXPIRING}>
-          Only Expiring
+          Expiring Only
         </option>
       </Select>
     </Box>

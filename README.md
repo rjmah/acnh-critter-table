@@ -1,3 +1,7 @@
+## remove background with imagemagick
+
+`convert *.png -alpha set -channel RGBA -fuzz 30% -fill none -floodfill +0+0 white -set filename:fname '%t' +adjoin '%[filename:fname].png'`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

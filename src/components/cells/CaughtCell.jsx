@@ -21,6 +21,7 @@ function CaughtCell({ number }) {
       <Label>
         <Checkbox
           id={`fish_caught_${number}`}
+          className="caught_checkbox"
           checked={isCaught || false}
           onChange={handleChange}
         />
