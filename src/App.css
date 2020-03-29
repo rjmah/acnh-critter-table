@@ -80,3 +80,8 @@ html * {
 .hour_square--active {
   background-color: rgb(194, 186, 49);
 }
+
+.hour_text {
+  display: flex;
+  flex-direction: column;
+}

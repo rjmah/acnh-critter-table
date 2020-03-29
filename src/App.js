@@ -14,10 +14,6 @@ import ToggleActiveExpiringSelect from './components/ToggleActiveExpiringSelect'
 
 /**
  * TODO
- * Search
- * Sort
- * Text/Graph Time & Months Toggle
- * 12/24hr Toggle
  * Styling
  * BEM
  * Bug: width doesn't recalc on resize
@@ -25,6 +21,11 @@ import ToggleActiveExpiringSelect from './components/ToggleActiveExpiringSelect'
  * Add insects
  * Toggle between bugs and insects
  * Show both bugs and insects
+ * 12/24hr Toggle
+ * Hemisphere Toggle
+ * Search
+ * Sort
+ * undo/redo caught checks
  * Mobile Responsive (Collapse columns, flex columns)
  * Mobile (control panel modal)
  * Mobile (preview modal)

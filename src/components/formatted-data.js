@@ -4,6 +4,14 @@ const data = require('../data.json');
 const FULL_YEAR_SET = new Set(getNLengthArray(12));
 const FULL_DAY_ARRAY = getNLengthArray(24);
 const FULL_DAY_SET = new Set(FULL_DAY_ARRAY);
+
+function formatTime(hourIndex) {
+  let number = hourIndex % 12;
+  number = number || 12;
+
+  const suffix = hourIndex / 12 < 1 ? 'AM' : 'PM';
+  return `${number}${suffix}`;
+}
 // TODO do this once on load
 const formattedData = data.map(
   ({ month: monthTuples, time: timeTuples, ...rest }) => {
@@ -26,11 +34,14 @@ const formattedData = data.map(
     });
 
     let activeHours = new Set();
+    let activeHoursText = [];
     timeTuples.forEach(([start, end]) => {
       if (start === end) {
         activeHours = FULL_DAY_SET;
+        activeHoursText.push('All Day');
         return;
       }
+      activeHoursText.push(`${formatTime(start)} - ${formatTime(end)}`);
 
       while (start !== end) {
         activeHours.add(start);
@@ -45,6 +56,7 @@ const formattedData = data.map(
     return {
       activeMonths,
       activeHours,
+      activeHoursText,
       ...rest,
     };
   }

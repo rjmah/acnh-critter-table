@@ -8,7 +8,6 @@ import images from '../img';
 import { StateContext } from '../reducer';
 import CaughtCell from './CaughtCell';
 import {
-  CURRENT_MONTH_INDEX,
   CURRENT_HOUR_INDEX,
   CURRENT_MINUTE_INDEX,
   FULL_DAY_ARRAY,
@@ -124,23 +123,32 @@ function CritterTable() {
     [state.previewMonthIndex]
   );
   const timeCellRenderer = useCallback(
-    ({ cellData: activeHours }) => (
-      <div className="hour_container">
-        {FULL_DAY_ARRAY.map((hour, i) => (
+    ({ cellData: activeHours, rowData: { activeHoursText } }) => (
+      <div>
+        <div className="hour_container">
+          {FULL_DAY_ARRAY.map((hour, i) => (
+            <div
+              key={i}
+              className={classNames('hour_square', {
+                'hour_square--active': activeHours.has(i),
+              })}
+            />
+          ))}
           <div
-            key={i}
-            className={classNames('hour_square', {
-              'hour_square--active': activeHours.has(i),
-            })}
+            className="hour_container__current_time_marker"
+            style={{
+              left:
+                4 * CURRENT_HOUR_INDEX + Math.floor(CURRENT_MINUTE_INDEX / 15),
+            }}
           />
-        ))}
-        <div
-          className="hour_container__current_time_marker"
-          style={{
-            left:
-              4 * CURRENT_HOUR_INDEX + Math.floor(CURRENT_MINUTE_INDEX / 15),
-          }}
-        />
+        </div>
+        <div className="hour_text">
+          {activeHoursText.map((text, i) => (
+            <div key={i} className="hour_text__entry">
+              {text}
+            </div>
+          ))}
+        </div>
       </div>
     ),
     []
@@ -189,6 +197,7 @@ function CritterTable() {
             dataKey="activeHours"
             width={COLUMN_WIDTH}
             cellRenderer={timeCellRenderer}
+            minWidth={100}
           />
           <Column
             label="Months Available"
