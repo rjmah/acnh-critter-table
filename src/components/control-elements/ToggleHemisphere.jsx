@@ -41,9 +41,6 @@ function ToggleHemisphere() {
         value={state.hemisphereFilter}
         onChange={handleChange}
       >
-        <option key="all" value="">
-          All
-        </option>
         <option key="active" value={HEMISPHERE_FILTER_NORTHERN}>
           Northern
         </option>
