@@ -15,6 +15,10 @@ html * {
   padding-left: 16px;
 }
 
+.ReactVirtualized__Grid {
+  outline: none;
+}
+
 .controls_container {
   display: flex;
   margin-bottom: 4px;
