@@ -42,7 +42,7 @@ function calculateActiveMonths(monthTuples, isSouth) {
 
   return activeMonths;
 }
-// TODO do this once on load
+
 const formattedData = fishData
   .map((rowData) => ({ ...rowData, type: 'fish' }))
   .concat(bugData.map((rowData) => ({ ...rowData, type: 'bug' })))
