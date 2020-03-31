@@ -6,12 +6,16 @@ const FULL_YEAR_SET = new Set(getNLengthArray(12));
 const FULL_DAY_ARRAY = getNLengthArray(24);
 const FULL_DAY_SET = new Set(FULL_DAY_ARRAY);
 
-function formatTime(hourIndex) {
+function formatTime12(hourIndex) {
   let number = hourIndex % 12;
   number = number || 12;
 
   const suffix = hourIndex / 12 < 1 ? 'AM' : 'PM';
   return `${number}${suffix}`;
+}
+
+function formatTime24(hourIndex) {
+  return `${hourIndex.toString().padStart(2, '0')}:00`;
 }
 
 function calculateActiveMonths(monthTuples, isSouth) {
@@ -51,14 +55,17 @@ const formattedData = fishData
     const activeMonthsSouth = calculateActiveMonths(monthTuples, true);
 
     let activeHours = new Set();
-    let activeHoursText = [];
+    let activeHoursText12 = [];
+    let activeHoursText24 = [];
     timeTuples.forEach(([start, end]) => {
       if (start === end) {
         activeHours = FULL_DAY_SET;
-        activeHoursText.push('All Day');
+        activeHoursText12.push('All Day');
+        activeHoursText24.push('All Day');
         return;
       }
-      activeHoursText.push(`${formatTime(start)} - ${formatTime(end)}`);
+      activeHoursText12.push(`${formatTime12(start)} - ${formatTime12(end)}`);
+      activeHoursText24.push(`${formatTime24(start)} - ${formatTime24(end)}`);
 
       while (start !== end) {
         activeHours.add(start);
@@ -74,7 +81,8 @@ const formattedData = fishData
       activeMonthsNorth,
       activeMonthsSouth,
       activeHours,
-      activeHoursText,
+      activeHoursText12,
+      activeHoursText24,
       ...rest,
     };
   });

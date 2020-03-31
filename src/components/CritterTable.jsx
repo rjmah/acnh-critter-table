@@ -11,6 +11,7 @@ import {
   TYPE_FILTER_FISH,
   TYPE_FILTER_BUGS,
   HEMISPHERE_FILTER_NORTHERN,
+  TIME_FORMAT_12,
 } from './constants';
 import PictureCell from './cells/PictureCell';
 import MonthsCell from './cells/MonthsCell';
@@ -39,22 +40,36 @@ function CritterTable() {
   const localeAwareData = useMemo(
     () =>
       formattedData.map(
-        ({ activeMonthsNorth, activeMonthsSouth, ...rest }) => ({
+        ({
+          activeMonthsNorth,
+          activeMonthsSouth,
+          activeHoursText12,
+          activeHoursText24,
+          ...rest
+        }) => ({
           ...rest,
           activeMonths:
             state.hemisphereFilter === HEMISPHERE_FILTER_NORTHERN
               ? activeMonthsNorth
               : activeMonthsSouth,
+          activeHoursText:
+            state.timeFormat === TIME_FORMAT_12
+              ? activeHoursText12
+              : activeHoursText24,
         })
       ),
-    [state.hemisphereFilter]
+    [state.hemisphereFilter, state.timeFormat]
   );
 
   const tableData = useMemo(() => {
     const filteredData = localeAwareData.filter(
-      ({ activeMonths, number, type }) => {
+      ({ activeMonths, number, type, name, location }) => {
         let displayed = true;
-
+        if (displayed && state.searchValue) {
+          displayed =
+            name.toLowerCase().includes(state.searchValue.toLowerCase()) ||
+            location.toLowerCase().includes(state.searchValue.toLowerCase());
+        }
         if (displayed && state.typeFilter) {
           if (state.typeFilter === TYPE_FILTER_FISH) {
             displayed = type === 'fish';
@@ -79,6 +94,7 @@ function CritterTable() {
     return filteredData;
   }, [
     localeAwareData,
+    state.searchValue,
     state.typeFilter,
     state.monthFilter,
     state.hideCaught,

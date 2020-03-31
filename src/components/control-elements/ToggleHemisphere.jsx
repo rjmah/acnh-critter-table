@@ -1,7 +1,6 @@
 import React, { useContext, useCallback } from 'react';
 import { DispatchContext, StateContext } from '../../reducer';
 import { CHANGE_HEMISPHERE } from '../../reducer/actionTypes';
-import { Box } from 'rebass';
 import { Label, Select } from '@rebass/forms';
 import {
   HEMISPHERE_FILTER_NORTHERN,
@@ -20,19 +19,13 @@ function ToggleHemisphere() {
   );
 
   return (
-    <Box
-      p={1}
-      width={[1, 1, 1 / 5]}
+    <div
       style={{
         display: 'flex',
         flexDirection: 'column',
       }}
     >
-      <Label
-        p={1}
-        htmlFor="hemisphere_filter"
-        style={{ flexGrow: 1, hyphens: 'auto' }}
-      >
+      <Label p={1} htmlFor="hemisphere_filter" style={{ hyphens: 'auto' }}>
         Hemisphere
       </Label>
       <Select
@@ -48,7 +41,7 @@ function ToggleHemisphere() {
           Southern
         </option>
       </Select>
-    </Box>
+    </div>
   );
 }
 

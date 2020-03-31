@@ -1,7 +1,6 @@
 import React, { useContext, useCallback } from 'react';
 import { DispatchContext, StateContext } from '../../reducer';
 import { CHANGE_TYPE_FILTER } from '../../reducer/actionTypes';
-import { Box } from 'rebass';
 import { Label, Select } from '@rebass/forms';
 import { TYPE_FILTER_FISH, TYPE_FILTER_BUGS } from '../constants';
 
@@ -17,15 +16,13 @@ function ToggleTypeSelect() {
   );
 
   return (
-    <Box
-      p={1}
-      width={[1, 1, 1 / 5]}
+    <div
       style={{
         display: 'flex',
         flexDirection: 'column',
       }}
     >
-      <Label p={1} htmlFor="type_filter" style={{ flexGrow: 1 }}>
+      <Label p={1} htmlFor="type_filter">
         Type
       </Label>
       <Select
@@ -44,7 +41,7 @@ function ToggleTypeSelect() {
           Bugs
         </option>
       </Select>
-    </Box>
+    </div>
   );
 }
 

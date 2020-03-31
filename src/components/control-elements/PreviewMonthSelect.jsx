@@ -2,7 +2,6 @@ import React, { useMemo, useContext, useCallback } from 'react';
 import { MONTHS } from '../utility';
 import { DispatchContext, StateContext } from '../../reducer';
 import { CHANGE_PREVIEW_MONTH } from '../../reducer/actionTypes';
-import { Box } from 'rebass';
 import { Label, Select } from '@rebass/forms';
 
 function PreviewMonthSelect() {
@@ -23,9 +22,9 @@ function PreviewMonthSelect() {
   ]);
 
   return (
-    <Box p={1} width={[1, 1, 1 / 5]}>
+    <div>
       <Label p={1} htmlFor="active_month">
-        Active Month
+        Month
       </Label>
       <Select
         id="active_month"
@@ -40,7 +39,7 @@ function PreviewMonthSelect() {
         ))}
         ))}
       </Select>
-    </Box>
+    </div>
   );
 }
 

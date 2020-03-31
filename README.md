@@ -13,10 +13,10 @@ npm start
 
 ## TODOs
 
-- 12/24hr toggle
-- Text search
 - Column sort
 - Row count display
+- Update graphs by time
+- Show active rows by time
 - Convert monthTuples values to be 0-11 instead of 1-12
 - Mobile control panel menu: The top control element is getting pretty crowded. Can turn into a fullscreen modal at lower widths.
 - Undo toast: If you accidently check "caught" too many times. Maybe undo the last batch that occured in the last 2 seconds.
