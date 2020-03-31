@@ -41,9 +41,12 @@ function ImportState() {
           />
         </Box>
         <Box marginLeft={1}>
-          <Button bg="rgb(51, 152, 247)" onClick={handleClick}>
-            {' '}
-            Import{' '}
+          <Button
+            bg="rgb(51, 152, 247)"
+            style={{ fontWeight: 600 }}
+            onClick={handleClick}
+          >
+            Import
           </Button>
         </Box>
       </Flex>

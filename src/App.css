@@ -68,7 +68,13 @@ html * {
   word-break: break-word;
 }
 .header_cell {
+  background-color: white;
   border-top: 1px solid rgb(114, 114, 114);
+}
+
+.header_cell--sortable {
+  cursor: pointer;
+  font-weight: 700;
 }
 
 .cell_first {

@@ -36,9 +36,9 @@ function StatusBar({ count = 0, hemisphere = 'Northern' }) {
           paddingLeft={1}
           paddingRight={1}
           onClick={handleClickReset}
-          style={{ cursor: 'pointer' }}
+          style={{ cursor: 'pointer', fontWeight: 600 }}
         >
-          <b>Reset Filters</b>
+          Reset Filters
         </Button>
       </Box>
     </Flex>

@@ -13,7 +13,7 @@ npm start
 
 ## TODOs
 
-- Color legend
+- Feature List
 - Time zone select
 - Convert monthTuples values to be 0-11 instead of 1-12
 - Undo toast: If you accidently check "caught" too many times. Maybe undo the last batch that occured in the last 2 seconds.

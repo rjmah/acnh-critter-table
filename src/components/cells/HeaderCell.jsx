@@ -1,4 +1,5 @@
 import React, { useCallback, useContext, useMemo } from 'react';
+import classNames from 'classnames';
 import { DispatchContext, StateContext } from '../../reducer';
 import { SORT_COLUMN } from '../../reducer/actionTypes';
 
@@ -21,7 +22,9 @@ function HeaderCell({ className, style, label, sortKey }) {
   }, [sortKey, state.sortColumn, state.sortDirection]);
   return (
     <div
-      className={className}
+      className={classNames(className, {
+        'header_cell--sortable': sortKey,
+      })}
       style={headerStyle}
       onClick={sortKey ? handleClick : undefined}
     >
