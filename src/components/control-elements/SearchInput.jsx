@@ -20,7 +20,7 @@ function SearchInput() {
         m={1 / 2}
         id="search"
         name="search"
-        style={{ borderRadius: 5 }}
+        style={{ borderRadius: 5, marginRight: 1 }}
         value={state.searchValue}
         onChange={handleChange}
         placeholder="Search name or location"

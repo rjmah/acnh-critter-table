@@ -25,6 +25,7 @@ function MoreControlsModalButton() {
         marginRight={1}
         lineHeight={1}
         onClick={openModal}
+        style={{ cursor: 'pointer' }}
       >
         ☰
       </Button>

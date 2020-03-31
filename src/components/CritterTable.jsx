@@ -1,11 +1,21 @@
-import React, { useContext, useMemo, useCallback } from 'react';
+import React, {
+  useState,
+  useContext,
+  useMemo,
+  useCallback,
+  useEffect,
+} from 'react';
 import { AutoSizer, MultiGrid } from 'react-virtualized';
 import classNames from 'classnames';
 import formattedData from './formatted-data';
 
 import { StateContext } from '../reducer';
+import { DispatchContext } from '../reducer';
 import CaughtCell from './cells/CaughtCell';
 import {
+  BOOT_CURRENT_MONTH_INDEX,
+  BOOT_CURRENT_HOUR_INDEX,
+  BOOT_CURRENT_MINUTE_INDEX,
   MONTH_FILTER_ACTIVE,
   MONTH_FILTER_EXPIRING,
   TYPE_FILTER_FISH,
@@ -13,9 +23,13 @@ import {
   HEMISPHERE_FILTER_NORTHERN,
   TIME_FORMAT_12,
 } from './constants';
+import HeaderCell from './cells/HeaderCell';
 import PictureCell from './cells/PictureCell';
 import MonthsCell from './cells/MonthsCell';
 import TimeCell from './cells/TimeCell';
+import useInterval from '../useInterval';
+import { CHANGE_PREVIEW_MONTH } from '../reducer/actionTypes';
+import StatusBar from './StatusBar';
 
 function getNextMonthIndex(monthIndex) {
   let nextMonthIndex = monthIndex + 1;
@@ -25,6 +39,36 @@ function getNextMonthIndex(monthIndex) {
 
 function CritterTable() {
   const state = useContext(StateContext);
+  const dispatch = useContext(DispatchContext);
+  const [currentMonth, setCurrentMonth] = useState(BOOT_CURRENT_MONTH_INDEX);
+  const [currentHour, setCurrentHour] = useState(BOOT_CURRENT_HOUR_INDEX);
+  const [currentMinute, setCurrentMinute] = useState(BOOT_CURRENT_MINUTE_INDEX);
+
+  const updateCurrentTime = useCallback(() => {
+    var d = new Date();
+    setCurrentMonth(d.getMonth());
+    setCurrentHour(d.getHours());
+    setCurrentMinute(d.getMinutes());
+  }, []);
+
+  // Update active month if month changes when app is open
+  useEffect(() => {
+    if (
+      state.previewMonthIndex === BOOT_CURRENT_MONTH_INDEX &&
+      currentMonth !== BOOT_CURRENT_MONTH_INDEX
+    ) {
+      dispatch({ type: CHANGE_PREVIEW_MONTH, payload: currentMonth });
+    }
+  }, [currentMonth, dispatch, state.previewMonthIndex]);
+
+  // Every minute, check current time to update the time graph
+  useInterval(updateCurrentTime, 60000);
+
+  // Check current time when window gains focus, since interval doesn't run in the background
+  useEffect(() => {
+    window.addEventListener('focus', updateCurrentTime);
+    return () => window.removeEventListener('focus', updateCurrentTime);
+  }, [updateCurrentTime]);
 
   const isCurrentMonthActive = useCallback(
     (activeMonths) => activeMonths.has(state.previewMonthIndex),
@@ -36,6 +80,11 @@ function CritterTable() {
       activeMonths.has(state.previewMonthIndex) &&
       !activeMonths.has(getNextMonthIndex(state.previewMonthIndex)),
     [state.previewMonthIndex]
+  );
+
+  const isCurrentTimeActive = useCallback(
+    (activeHours) => activeHours.has(currentHour),
+    [currentHour]
   );
   const localeAwareData = useMemo(
     () =>
@@ -102,6 +151,36 @@ function CritterTable() {
     isCurrentMonthActive,
     isCurrentMonthExpiring,
   ]);
+
+  const sortFn = useCallback(
+    (a, b) => {
+      const isAsc = state.sortDirection === 1;
+      let aVal = a[state.sortColumn];
+      if (typeof aVal === 'string') aVal = aVal.toLowerCase();
+      let bVal = b[state.sortColumn];
+      if (typeof bVal === 'string') bVal = bVal.toLowerCase();
+
+      if (aVal === bVal) return 0;
+
+      if (!aVal) return 1;
+      if (!bVal) return -1;
+
+      if (aVal < bVal) {
+        return isAsc ? -1 : 1;
+      }
+
+      if (aVal > bVal) {
+        return isAsc ? 1 : -1;
+      }
+      return 0;
+    },
+    [state.sortColumn, state.sortDirection]
+  );
+
+  const sortedTableData = useMemo(() => {
+    return state.sortDirection === 0 ? tableData : [...tableData].sort(sortFn);
+  }, [sortFn, state.sortDirection, tableData]);
+
   const getRowClassName = useCallback(
     ({ index }) => {
       if (index < 0) {
@@ -109,20 +188,33 @@ function CritterTable() {
         return 'header_cell';
       }
       const currentMonthActive = isCurrentMonthActive(
-        tableData[index]?.activeMonths
+        sortedTableData[index]?.activeMonths
       );
 
       const currentMonthExpiring = isCurrentMonthExpiring(
-        tableData[index]?.activeMonths
+        sortedTableData[index]?.activeMonths
       );
+      const currentTimeActive =
+        currentMonthActive || currentMonthExpiring
+          ? isCurrentTimeActive(sortedTableData[index]?.activeHours)
+          : false;
 
       return classNames('cell', {
         cell_month_active: currentMonthActive,
+        'cell_month_active--time_active':
+          currentMonthActive && currentTimeActive,
         cell_month_expiring: currentMonthExpiring,
+        'cell_month_expiring--time_active':
+          currentMonthExpiring && currentTimeActive,
         cell_month_inactive: !currentMonthActive,
       });
     },
-    [isCurrentMonthActive, isCurrentMonthExpiring, tableData]
+    [
+      isCurrentTimeActive,
+      isCurrentMonthActive,
+      isCurrentMonthExpiring,
+      sortedTableData,
+    ]
   );
 
   const caughtRenderer = useCallback(
@@ -136,9 +228,14 @@ function CritterTable() {
 
   const timeRenderer = useCallback(
     ({ activeHours, activeHoursText }) => (
-      <TimeCell activeHours={activeHours} activeHoursText={activeHoursText} />
+      <TimeCell
+        activeHours={activeHours}
+        activeHoursText={activeHoursText}
+        currentHour={currentHour}
+        currentMinute={currentMinute}
+      />
     ),
-    []
+    [currentHour, currentMinute]
   );
 
   const monthRenderer = useCallback(
@@ -158,12 +255,17 @@ function CritterTable() {
       { label: '🎣', width: 30, renderer: caughtRenderer },
       { label: '#', width: 30, renderer: 'number' },
       { label: 'Picture', renderer: pictureRenderer },
-      { label: 'Name', width: 110, renderer: 'name' },
-      { label: 'Where', width: 110, renderer: 'location' },
-      { label: 'Size', width: 50, renderer: 'shadow_size' },
+      { label: 'Name', sortKey: 'name', width: 110, renderer: 'name' },
+      { label: 'Where', sortKey: 'location', width: 110, renderer: 'location' },
+      {
+        label: 'Size',
+        sortKey: 'shadow_size',
+        width: 50,
+        renderer: 'shadow_size',
+      },
       { label: 'Time', renderer: timeRenderer },
       { label: 'Month', width: 180, renderer: monthRenderer },
-      { label: 'Price', width: 60, renderer: priceRenderer },
+      { label: 'Price', sortKey: 'value', width: 60, renderer: priceRenderer },
     ],
     [
       caughtRenderer,
@@ -176,30 +278,35 @@ function CritterTable() {
 
   const cellRenderer = useCallback(
     ({ columnIndex, key, rowIndex, style }) => {
-      const { label, renderer } = columns[columnIndex];
-      const rowData = tableData[rowIndex - 1];
+      const { label, renderer, sortKey } = columns[columnIndex];
+      const rowData = sortedTableData[rowIndex - 1];
       let contents = `${columnIndex}, ${rowIndex}`;
+      const className = classNames(getRowClassName({ index: rowIndex - 1 }), {
+        cell_first: columnIndex === 0,
+        cell_padded: columnIndex === 3 || columnIndex === 4,
+      });
       if (rowIndex === 0) {
-        contents = label;
+        return (
+          <HeaderCell
+            key={key}
+            sortKey={sortKey}
+            label={label}
+            className={className}
+            style={style}
+          />
+        );
       } else if (typeof renderer === 'string') {
         contents = rowData[renderer];
       } else if (typeof renderer === 'function') {
         contents = renderer(rowData);
       }
       return (
-        <div
-          key={key}
-          style={style}
-          className={classNames(getRowClassName({ index: rowIndex - 1 }), {
-            cell_first: columnIndex === 0,
-            cell_padded: columnIndex === 3 || columnIndex === 4,
-          })}
-        >
+        <div key={key} style={style} className={className}>
           {contents}
         </div>
       );
     },
-    [columns, getRowClassName, tableData]
+    [columns, getRowClassName, sortedTableData]
   );
 
   const getColumnWidth = useCallback(
@@ -216,29 +323,41 @@ function CritterTable() {
   }, []);
 
   return (
-    <AutoSizer>
-      {({ width, height }) => {
-        return (
-          <MultiGrid
-            enableFixedRowScroll
-            fixedRowCount={1}
-            cellRenderer={cellRenderer}
-            columnWidth={getColumnWidth}
-            columnCount={columns.length}
-            height={height}
-            rowHeight={getRowHeight}
-            rowCount={tableData.length + 1}
-            width={width}
-            hideTopRightGridScrollbar
-            hideBottomLeftGridScrollbar
-            // Rerender, for some reason, only happens if row count changes. This is needed
-            // to force a rerender when switching from fish to bugs with the same count
-            // https://github.com/bvaughn/react-virtualized/issues/1262#issuecomment-561966273
-            onRowsRendered={() => {}}
-          />
-        );
-      }}
-    </AutoSizer>
+    <React.Fragment>
+      <StatusBar
+        count={sortedTableData.length}
+        hemisphere={
+          state.hemisphereFilter === HEMISPHERE_FILTER_NORTHERN
+            ? 'Northern'
+            : 'Southern'
+        }
+      />
+      <div className="table_container">
+        <AutoSizer>
+          {({ width, height }) => {
+            return (
+              <MultiGrid
+                enableFixedRowScroll
+                fixedRowCount={1}
+                cellRenderer={cellRenderer}
+                columnWidth={getColumnWidth}
+                columnCount={columns.length}
+                height={height}
+                rowHeight={getRowHeight}
+                rowCount={sortedTableData.length + 1}
+                width={width}
+                hideTopRightGridScrollbar
+                hideBottomLeftGridScrollbar
+                // Rerender, for some reason, only happens if row count changes. This is needed
+                // to force a rerender when switching from fish to bugs with the same count
+                // https://github.com/bvaughn/react-virtualized/issues/1262#issuecomment-561966273
+                onRowsRendered={() => {}}
+              />
+            );
+          }}
+        </AutoSizer>
+      </div>
+    </React.Fragment>
   );
 }
 

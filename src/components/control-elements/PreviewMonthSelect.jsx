@@ -3,6 +3,7 @@ import { MONTHS } from '../utility';
 import { DispatchContext, StateContext } from '../../reducer';
 import { CHANGE_PREVIEW_MONTH } from '../../reducer/actionTypes';
 import { Label, Select } from '@rebass/forms';
+import { BOOT_CURRENT_MONTH_INDEX } from '../constants';
 
 function PreviewMonthSelect() {
   const dispatch = useContext(DispatchContext);
@@ -27,6 +28,9 @@ function PreviewMonthSelect() {
         Month
       </Label>
       <Select
+        fontWeight={
+          state.previewMonthIndex === BOOT_CURRENT_MONTH_INDEX ? 800 : undefined
+        }
         id="active_month"
         name="Active Month"
         value={value}

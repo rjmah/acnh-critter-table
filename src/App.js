@@ -19,9 +19,7 @@ function App() {
           <div className="controls_container">
             <Controls />
           </div>
-          <div className="table_container">
-            <CritterTable />
-          </div>
+          <CritterTable />
         </div>
       </StateContext.Provider>
     </DispatchContext.Provider>

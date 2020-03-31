@@ -2,6 +2,7 @@ import React, { useMemo, useContext, useCallback } from 'react';
 import { DispatchContext, StateContext } from '../../reducer';
 import { Label, Switch } from '@rebass/forms';
 import { TOGGLE_HIDE_CAUGHT } from '../../reducer/actionTypes';
+import { Box, Flex } from 'rebass';
 
 function ToggleCaughtCheckbox() {
   const dispatch = useContext(DispatchContext);
@@ -13,15 +14,19 @@ function ToggleCaughtCheckbox() {
 
   const isChecked = useMemo(() => state.hideCaught, [state.hideCaught]);
   return (
-    <div className="toggle_caught_container">
+    <Flex className="toggle_caught_container">
       <Label padding={1} htmlFor="hide_caught">
         Hide{' '}
         <span role="img" aria-label="checked">
           ☑️
         </span>
       </Label>
-      <Switch id="hide_caught" checked={isChecked} onClick={handleClick} />
-    </div>
+      <Box flexGrow={1}>
+        <Flex justifyContent="center" flexDirection="column" height="100%">
+          <Switch id="hide_caught" checked={isChecked} onClick={handleClick} />
+        </Flex>
+      </Box>
+    </Flex>
   );
 }
 

@@ -21,9 +21,13 @@ html * {
 
 .controls_container {
   display: flex;
-  max-width: 810px;
+  margin-top: 4px;
 }
 
+.controls_container,
+.status_bar {
+  max-width: 810px;
+}
 .table_container {
   flex-grow: 1;
 }
@@ -31,9 +35,21 @@ html * {
 @media (max-width: 830px) {
   .controls_container {
     justify-content: center;
+    margin-left: 8px;
+    margin-right: 8px;
   }
   .root_container {
     padding-left: 0;
+  }
+}
+
+/* On smartphones, move status bar to bottom so users don't accidently fat finger the reset button */
+@media (hover: none) and (pointer: coarse) {
+  .controls_container {
+    margin-bottom: 8px;
+  }
+  .status_bar {
+    order: 3;
   }
 }
 
@@ -59,12 +75,20 @@ html * {
   border-left: 1px solid rgb(114, 114, 114);
 }
 
-.cell {
-  background-color: #d9ead3;
+.cell_month_active,
+.select_is_active {
+  background-color: #d9ead3 !important;
+}
+.cell_month_active--time_active {
+  background-color: #9ce482 !important;
 }
 
-.cell_month_expiring {
-  background-color: #fff2cc;
+.cell_month_expiring,
+.select_is_expiring {
+  background-color: #fff2cc !important;
+}
+.cell_month_expiring--time_active {
+  background-color: #f8e19d !important;
 }
 
 .cell_month_inactive {
@@ -135,6 +159,7 @@ html * {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 #hide_caught[aria-checked='true'] {
@@ -147,6 +172,7 @@ html * {
 
 .cell_first svg {
   color: rgb(51, 152, 247);
+  cursor: pointer;
 }
 
 .controls_container label {
@@ -155,8 +181,9 @@ html * {
 }
 
 .more_controls_modal {
+  overflow: auto;
   position: absolute;
-  width: 300px;
+  width: 340px;
   left: 0;
   top: 0;
   height: 100%;

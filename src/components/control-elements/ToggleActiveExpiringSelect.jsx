@@ -1,4 +1,5 @@
 import React, { useContext, useCallback } from 'react';
+import classNames from 'classnames';
 import { DispatchContext, StateContext } from '../../reducer';
 import { CHANGE_MONTH_FILTER } from '../../reducer/actionTypes';
 import { Label, Select } from '@rebass/forms';
@@ -26,6 +27,10 @@ function ToggleActiveExpiringSelect() {
         Availability
       </Label>
       <Select
+        className={classNames({
+          select_is_active: state.monthFilter === MONTH_FILTER_ACTIVE,
+          select_is_expiring: state.monthFilter === MONTH_FILTER_EXPIRING,
+        })}
         id="month_filter"
         name="Month Filter"
         value={state.monthFilter}

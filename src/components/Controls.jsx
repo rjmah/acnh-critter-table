@@ -9,7 +9,7 @@ import MoreControlsModalButton from './control-elements/MoreControlsModalButton'
 
 function Controls() {
   return (
-    <Flex margin={2} flexWrap="wrap" width="100%">
+    <Flex flexWrap="wrap" width="100%">
       <Box paddingBottom={0} width={[1]}>
         <Flex>
           <Box>

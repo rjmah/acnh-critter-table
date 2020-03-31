@@ -1,13 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import {
-  FULL_DAY_ARRAY,
-  CURRENT_HOUR_INDEX,
-  CURRENT_MINUTE_INDEX,
-} from '../constants';
+import { FULL_DAY_ARRAY } from '../constants';
 
-function TimeCell({ activeHours, activeHoursText }) {
+function TimeCell({
+  activeHours,
+  activeHoursText,
+  currentHour,
+  currentMinute,
+}) {
   return (
     <div>
       <div className="hour_container">
@@ -22,8 +23,7 @@ function TimeCell({ activeHours, activeHoursText }) {
         <div
           className="hour_container__current_time_marker"
           style={{
-            left:
-              4 * CURRENT_HOUR_INDEX + Math.floor(CURRENT_MINUTE_INDEX / 15),
+            left: 4 * currentHour + Math.floor(currentMinute / 15),
           }}
         />
       </div>

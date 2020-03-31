@@ -7,3 +7,5 @@ export const CHANGE_HEMISPHERE = 'CHANGE_HEMISPHERE';
 export const SEARCH = 'SEARCH';
 export const CHANGE_TIME_FORMAT = 'CHANGE_TIME_FORMAT';
 export const IMPORT_STATE = 'IMPORT_STATE';
+export const FILTER_RESET = 'FILTER_RESET';
+export const SORT_COLUMN = 'SORT_COLUMN';

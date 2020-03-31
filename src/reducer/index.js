@@ -11,9 +11,11 @@ import {
   SEARCH,
   CHANGE_TIME_FORMAT,
   IMPORT_STATE,
+  FILTER_RESET,
+  SORT_COLUMN,
 } from './actionTypes';
 import {
-  CURRENT_MONTH_INDEX,
+  BOOT_CURRENT_MONTH_INDEX,
   HEMISPHERE_FILTER_NORTHERN,
   TIME_FORMAT_12,
 } from '../components/constants';
@@ -28,31 +30,45 @@ const savedStateString = lzSavedState
   : localStorage.getItem('acnh_store');
 const savedState = JSON.parse(savedStateString) || {};
 
-export const initialState = {
-  // previewMonthIndex: CURRENT_MONTH_INDEX,
-  caughtCritter: {},
+const initialFilterState = {
   hideCaught: false,
   monthFilter: '',
   typeFilter: '',
-  hemisphereFilter: HEMISPHERE_FILTER_NORTHERN,
   searchValue: '',
+  sortColumn: '',
+  sortDirection: 0,
+};
+export const initialState = {
+  // previewMonthIndex: BOOT_CURRENT_MONTH_INDEX,
+  caughtCritter: {},
+  ...initialFilterState,
   timeFormat: TIME_FORMAT_12,
+  hemisphereFilter: HEMISPHERE_FILTER_NORTHERN,
   storageValue: localStorage.getItem('acnh_store_lz'),
   ...savedState,
   // TODO: Don't reset the preview month from persisted store, since it's pretty confusing when you land on the wrong month after coming back
   // Maybe can be solved be adding styles to denote you're previewing a month in the future
-  previewMonthIndex: CURRENT_MONTH_INDEX,
+  previewMonthIndex: BOOT_CURRENT_MONTH_INDEX,
 };
 
 export function reducer(previousState, { type, payload }) {
   let state;
   switch (type) {
+    case FILTER_RESET: {
+      state = {
+        ...previousState,
+        previewMonthIndex: BOOT_CURRENT_MONTH_INDEX,
+        ...initialFilterState,
+      };
+      break;
+    }
     case IMPORT_STATE:
       state = JSON.parse(LZString.decompressFromBase64(payload));
       break;
-    case CHANGE_PREVIEW_MONTH:
+    case CHANGE_PREVIEW_MONTH: {
       state = { ...previousState, previewMonthIndex: payload };
       break;
+    }
     case TOGGLE_CRITTER_CAUGHT: {
       //TODO maybe use thunks. So logic isn't in the reducer
       const caughtCritter = { ...previousState.caughtCritter };
@@ -87,6 +103,23 @@ export function reducer(previousState, { type, payload }) {
     }
     case CHANGE_TIME_FORMAT: {
       state = { ...previousState, timeFormat: payload };
+      break;
+    }
+    case SORT_COLUMN: {
+      const {
+        sortColumn: previousSortColumn,
+        sortDirection: previousSortDirection,
+      } = previousState;
+
+      /**
+       * 0 === unfiltered
+       * 1 === asc
+       * 2 === desc
+       */
+      const sortDirection =
+        previousSortColumn === payload ? (previousSortDirection + 1) % 3 : 1;
+
+      state = { ...previousState, sortColumn: payload, sortDirection };
       break;
     }
     default:
