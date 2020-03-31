@@ -33,13 +33,13 @@ html * {
 }
 
 @media (max-width: 830px) {
-  .controls_container {
-    justify-content: center;
-    margin-left: 8px;
-    margin-right: 8px;
-  }
   .root_container {
     padding-left: 0;
+  }
+  .controls_container,
+  .status_bar {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
   }
 }
 
