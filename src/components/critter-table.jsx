@@ -347,6 +347,8 @@ function CritterTable() {
                 width={width}
                 hideTopRightGridScrollbar
                 hideBottomLeftGridScrollbar
+                // Prevents flickering on horizontal scan on mobile
+                overscanColumnCount={5}
                 // Rerender, for some reason, only happens if row count changes. This is needed
                 // to force a rerender when switching from fish to bugs with the same count
                 // https://github.com/bvaughn/react-virtualized/issues/1262#issuecomment-561966273
