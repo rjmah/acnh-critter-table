@@ -7,11 +7,9 @@ import React, {
 } from 'react';
 import { AutoSizer, MultiGrid } from 'react-virtualized';
 import classNames from 'classnames';
-import formattedData from './formatted-data';
+import formattedData from 'Data/formatted-data';
 
-import { StateContext } from '../reducer';
-import { DispatchContext } from '../reducer';
-import CaughtCell from './cells/CaughtCell';
+import { StateContext, DispatchContext } from 'Reducer';
 import {
   BOOT_CURRENT_MONTH_INDEX,
   BOOT_CURRENT_HOUR_INDEX,
@@ -22,14 +20,15 @@ import {
   TYPE_FILTER_BUGS,
   HEMISPHERE_FILTER_NORTHERN,
   TIME_FORMAT_12,
-} from './constants';
-import HeaderCell from './cells/HeaderCell';
-import PictureCell from './cells/PictureCell';
-import MonthsCell from './cells/MonthsCell';
-import TimeCell from './cells/TimeCell';
-import useInterval from '../useInterval';
-import { CHANGE_PREVIEW_MONTH } from '../reducer/actionTypes';
-import StatusBar from './StatusBar';
+} from 'Utility/constants';
+import CaughtCell from './cells/caught-cell';
+import HeaderCell from './cells/header-cell';
+import PictureCell from './cells/picture-cell';
+import MonthCell from './cells/month-cell';
+import TimeCell from './cells/time-cell';
+import useInterval from 'useInterval';
+import { CHANGE_PREVIEW_MONTH } from 'Reducer/actionTypes';
+import StatusBar from './status-bar';
 
 function getNextMonthIndex(monthIndex) {
   let nextMonthIndex = monthIndex + 1;
@@ -240,7 +239,7 @@ function CritterTable() {
 
   const monthRenderer = useCallback(
     ({ activeMonths }) => (
-      <MonthsCell
+      <MonthCell
         activeMonths={activeMonths}
         previewMonthIndex={state.previewMonthIndex}
       />

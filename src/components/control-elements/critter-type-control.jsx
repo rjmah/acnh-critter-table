@@ -1,10 +1,10 @@
 import React, { useContext, useCallback } from 'react';
-import { DispatchContext, StateContext } from '../../reducer';
-import { CHANGE_TYPE_FILTER } from '../../reducer/actionTypes';
+import { DispatchContext, StateContext } from 'Reducer';
+import { CHANGE_TYPE_FILTER } from 'Reducer/actionTypes';
 import { Label, Select } from '@rebass/forms';
-import { TYPE_FILTER_FISH, TYPE_FILTER_BUGS } from '../constants';
+import { TYPE_FILTER_FISH, TYPE_FILTER_BUGS } from 'Utility/constants';
 
-function ToggleTypeSelect() {
+function CritterTypeControl() {
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);
 
@@ -45,4 +45,4 @@ function ToggleTypeSelect() {
   );
 }
 
-export default React.memo(ToggleTypeSelect);
+export default React.memo(CritterTypeControl);

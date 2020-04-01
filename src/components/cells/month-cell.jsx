@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import { MONTHS } from '../utility';
+import { MONTHS } from 'Utility/constants';
 
-function MonthsCell({ activeMonths, previewMonthIndex }) {
+function MonthCell({ activeMonths, previewMonthIndex }) {
   return (
     <div className="month_container">
       {MONTHS.map((month, i) => (
@@ -20,4 +20,4 @@ function MonthsCell({ activeMonths, previewMonthIndex }) {
   );
 }
 
-export default React.memo(MonthsCell);
+export default React.memo(MonthCell);

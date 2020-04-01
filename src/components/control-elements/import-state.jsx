@@ -3,8 +3,8 @@ import LZString from 'lz-string';
 
 import { Label, Input } from '@rebass/forms';
 import { Flex, Box, Button } from 'rebass';
-import { DispatchContext } from '../../reducer';
-import { IMPORT_STATE } from '../../reducer/actionTypes';
+import { DispatchContext } from 'Reducer';
+import { IMPORT_STATE } from 'Reducer/actionTypes';
 
 function ImportState() {
   const dispatch = useContext(DispatchContext);

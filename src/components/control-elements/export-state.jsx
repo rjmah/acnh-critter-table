@@ -1,7 +1,7 @@
 import React, { useRef, useContext } from 'react';
 
 import { Input, Label } from '@rebass/forms';
-import { StateContext } from '../../reducer';
+import { StateContext } from 'Reducer';
 
 function ExportState() {
   const inputRef = useRef();

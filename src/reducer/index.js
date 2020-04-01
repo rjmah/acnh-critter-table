@@ -18,7 +18,7 @@ import {
   BOOT_CURRENT_MONTH_INDEX,
   HEMISPHERE_FILTER_NORTHERN,
   TIME_FORMAT_12,
-} from '../components/constants';
+} from 'Utility/constants';
 
 export const StateContext = React.createContext();
 export const DispatchContext = React.createContext();

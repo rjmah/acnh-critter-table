@@ -1,11 +1,11 @@
 import React from 'react';
 import { Flex, Box } from 'rebass';
-import PreviewMonthSelect from './control-elements/PreviewMonthSelect';
-import ToggleCaughtCheckbox from './control-elements/ToggleCaughtCheckbox';
-import ToggleActiveExpiringSelect from './control-elements/ToggleActiveExpiringSelect';
-import ToggleTypeSelect from './control-elements/ToggleTypeSelect';
-import SearchInput from './control-elements/SearchInput';
-import MoreControlsModalButton from './control-elements/MoreControlsModalButton';
+import MoreControlsTrigger from './control-elements/more-controls-trigger';
+import SearchInput from './control-elements/search-input';
+import ActiveMonthControl from './control-elements/active-month-control';
+import HideCaughtControl from './control-elements/hide-caught-control';
+import AvailibilityControl from './control-elements/availibility-control';
+import CritterTypeControl from './control-elements/critter-type-control';
 
 function Controls() {
   return (
@@ -13,7 +13,7 @@ function Controls() {
       <Box paddingBottom={0} width={[1]}>
         <Flex>
           <Box>
-            <MoreControlsModalButton />
+            <MoreControlsTrigger />
           </Box>
           <Box flex="1 1 auto">
             <SearchInput />
@@ -21,16 +21,16 @@ function Controls() {
         </Flex>
       </Box>
       <Box paddingRight={1} width={[1 / 4]}>
-        <PreviewMonthSelect />
+        <ActiveMonthControl />
       </Box>
       <Box paddingRight={1} width={[1 / 4]}>
-        <ToggleCaughtCheckbox />
+        <HideCaughtControl />
       </Box>
       <Box paddingRight={2} width={[1 / 4]}>
-        <ToggleActiveExpiringSelect />
+        <AvailibilityControl />
       </Box>
       <Box width={[1 / 4]}>
-        <ToggleTypeSelect />
+        <CritterTypeControl />
       </Box>
     </Flex>
   );

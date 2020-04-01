@@ -1,10 +1,10 @@
 import React, { useMemo, useCallback } from 'react';
 import { Button, Flex, Box } from 'rebass';
 
-import ToggleHemisphere from './control-elements/ToggleHemisphere';
-import ToggleTimeFormat from './control-elements/ToggleTimeFormat';
-import ExportState from './control-elements/ExportState';
-import ImportState from './control-elements/ImportState';
+import ToggleHemisphere from './control-elements/hemisphere-control';
+import ToggleTimeFormat from './control-elements/hour-format-control';
+import ExportState from './control-elements/export-state';
+import ImportState from './control-elements/import-state';
 
 function MoreControlsModal({ closeModal }) {
   const getLegendCell = useCallback(

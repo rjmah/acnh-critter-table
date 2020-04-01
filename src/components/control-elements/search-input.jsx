@@ -1,6 +1,6 @@
 import React, { useContext, useCallback } from 'react';
-import { DispatchContext, StateContext } from '../../reducer';
-import { SEARCH } from '../../reducer/actionTypes';
+import { DispatchContext, StateContext } from 'Reducer';
+import { SEARCH } from 'Reducer/actionTypes';
 import { Input } from '@rebass/forms';
 
 function SearchInput() {

@@ -1,11 +1,10 @@
 import React, { useMemo, useContext, useCallback } from 'react';
-import { MONTHS } from '../utility';
-import { DispatchContext, StateContext } from '../../reducer';
-import { CHANGE_PREVIEW_MONTH } from '../../reducer/actionTypes';
+import { DispatchContext, StateContext } from 'Reducer';
+import { CHANGE_PREVIEW_MONTH } from 'Reducer/actionTypes';
 import { Label, Select } from '@rebass/forms';
-import { BOOT_CURRENT_MONTH_INDEX } from '../constants';
+import { BOOT_CURRENT_MONTH_INDEX, MONTHS } from 'Utility/constants';
 
-function PreviewMonthSelect() {
+function ActiveMonthControl() {
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);
 
@@ -47,4 +46,4 @@ function PreviewMonthSelect() {
   );
 }
 
-export default React.memo(PreviewMonthSelect);
+export default React.memo(ActiveMonthControl);

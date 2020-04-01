@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { FULL_DAY_ARRAY } from '../constants';
+import { FULL_DAY_ARRAY } from 'Utility/constants';
 
 function TimeCell({
   activeHours,

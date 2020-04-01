@@ -1,7 +1,7 @@
 import React, { useCallback, useContext } from 'react';
 import { Flex, Box, Button } from 'rebass';
-import { DispatchContext } from '../reducer';
-import { FILTER_RESET } from '../reducer/actionTypes';
+import { DispatchContext } from 'Reducer';
+import { FILTER_RESET } from 'Reducer/actionTypes';
 
 function StatusBar({ count = 0, hemisphere = 'Northern' }) {
   const dispatch = useContext(DispatchContext);

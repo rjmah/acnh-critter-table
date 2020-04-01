@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import Controls from './components/Controls';
-import CritterTable from './components/CritterTable';
+import Controls from 'Components/controls';
+import CritterTable from 'Components/critter-table';
 import './App.css';
 
 import {
@@ -8,7 +8,7 @@ import {
   initialState,
   DispatchContext,
   StateContext,
-} from './reducer';
+} from './Reducer';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);

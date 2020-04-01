@@ -1,10 +1,10 @@
 import React, { useContext, useCallback } from 'react';
-import { DispatchContext, StateContext } from '../../reducer';
-import { CHANGE_TIME_FORMAT } from '../../reducer/actionTypes';
+import { DispatchContext, StateContext } from 'Reducer';
+import { CHANGE_TIME_FORMAT } from 'Reducer/actionTypes';
 import { Label, Select } from '@rebass/forms';
-import { TIME_FORMAT_12, TIME_FORMAT_24 } from '../constants';
+import { TIME_FORMAT_12, TIME_FORMAT_24 } from 'Utility/constants';
 
-function ToggleTimeFormat() {
+function HourFormatControl() {
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);
 
@@ -42,4 +42,4 @@ function ToggleTimeFormat() {
   );
 }
 
-export default React.memo(ToggleTimeFormat);
+export default React.memo(HourFormatControl);

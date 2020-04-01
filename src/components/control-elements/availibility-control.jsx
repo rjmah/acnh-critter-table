@@ -1,11 +1,11 @@
 import React, { useContext, useCallback } from 'react';
 import classNames from 'classnames';
-import { DispatchContext, StateContext } from '../../reducer';
-import { CHANGE_MONTH_FILTER } from '../../reducer/actionTypes';
+import { DispatchContext, StateContext } from 'Reducer';
+import { CHANGE_MONTH_FILTER } from 'Reducer/actionTypes';
 import { Label, Select } from '@rebass/forms';
-import { MONTH_FILTER_ACTIVE, MONTH_FILTER_EXPIRING } from '../constants';
+import { MONTH_FILTER_ACTIVE, MONTH_FILTER_EXPIRING } from 'Utility/constants';
 
-function ToggleActiveExpiringSelect() {
+function AvailibilityControl() {
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);
 
@@ -50,4 +50,4 @@ function ToggleActiveExpiringSelect() {
   );
 }
 
-export default React.memo(ToggleActiveExpiringSelect);
+export default React.memo(AvailibilityControl);

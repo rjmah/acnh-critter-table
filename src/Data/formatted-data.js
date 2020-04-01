@@ -1,7 +1,7 @@
 const getNLengthArray = (n) => [...Array(n).keys()];
 
-const fishData = require('../fish_data.json');
-const bugData = require('../bug_data.json');
+const fishData = require('./fish_data.json');
+const bugData = require('./bug_data.json');
 const FULL_YEAR_SET = new Set(getNLengthArray(12));
 const FULL_DAY_ARRAY = getNLengthArray(24);
 const FULL_DAY_SET = new Set(FULL_DAY_ARRAY);

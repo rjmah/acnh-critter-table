@@ -1,10 +1,10 @@
 import React, { useMemo, useContext, useCallback } from 'react';
-import { DispatchContext, StateContext } from '../../reducer';
+import { DispatchContext, StateContext } from 'Reducer';
 import { Label, Switch } from '@rebass/forms';
-import { TOGGLE_HIDE_CAUGHT } from '../../reducer/actionTypes';
+import { TOGGLE_HIDE_CAUGHT } from 'Reducer/actionTypes';
 import { Flex } from 'rebass';
 
-function ToggleCaughtCheckbox() {
+function HideCaughtControl() {
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);
 
@@ -28,4 +28,4 @@ function ToggleCaughtCheckbox() {
   );
 }
 
-export default React.memo(ToggleCaughtCheckbox);
+export default React.memo(HideCaughtControl);

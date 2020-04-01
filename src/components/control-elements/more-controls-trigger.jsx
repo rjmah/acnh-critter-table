@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 
 import { Button } from 'rebass';
-import MoreControlsModal from '../MoreControlsModal';
+import MoreControlsModal from '../more-controls-modal';
 
-function MoreControlsModalButton() {
+function MoreControlsTrigger() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = useCallback(() => {
     setIsModalOpen(true);
@@ -34,4 +34,4 @@ function MoreControlsModalButton() {
   );
 }
 
-export default MoreControlsModalButton;
+export default MoreControlsTrigger;

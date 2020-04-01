@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useMemo } from 'react';
 import classNames from 'classnames';
-import { DispatchContext, StateContext } from '../../reducer';
-import { SORT_COLUMN } from '../../reducer/actionTypes';
+import { DispatchContext, StateContext } from 'Reducer';
+import { SORT_COLUMN } from 'Reducer/actionTypes';
 
 function HeaderCell({ className, style, label, sortKey }) {
   const dispatch = useContext(DispatchContext);

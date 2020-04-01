@@ -1,5 +1,19 @@
-const getNLengthArray = (n) => [...Array(n).keys()];
+export const MONTHS = [
+  'Jan.',
+  'Feb.',
+  'Mar.',
+  'Apr.',
+  'May',
+  'June',
+  'July',
+  'Aug.',
+  'Sept.',
+  'Oct.',
+  'Nov.',
+  'Dec.',
+];
 
+const getNLengthArray = (n) => [...Array(n).keys()];
 export const FULL_DAY_ARRAY = getNLengthArray(24);
 
 var d = new Date();

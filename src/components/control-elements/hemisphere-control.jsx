@@ -1,13 +1,13 @@
 import React, { useContext, useCallback } from 'react';
-import { DispatchContext, StateContext } from '../../reducer';
-import { CHANGE_HEMISPHERE } from '../../reducer/actionTypes';
+import { DispatchContext, StateContext } from 'Reducer';
+import { CHANGE_HEMISPHERE } from 'Reducer/actionTypes';
 import { Label, Select } from '@rebass/forms';
 import {
   HEMISPHERE_FILTER_NORTHERN,
   HEMISPHERE_FILTER_SOUTHERN,
-} from '../constants';
+} from 'Utility/constants';
 
-function ToggleHemisphere() {
+function HemisphereControl() {
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);
 
@@ -45,4 +45,4 @@ function ToggleHemisphere() {
   );
 }
 
-export default React.memo(ToggleHemisphere);
+export default React.memo(HemisphereControl);
