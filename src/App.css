@@ -203,3 +203,23 @@ html * {
     width: 100%;
   }
 }
+
+.search {
+  position: relative;
+}
+
+.search__clear_button {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 30px;
+}
+
+.search__clear_button span {
+  padding-left: 4px;
+  text-align: center;
+  /* line-height: 1; */
+}

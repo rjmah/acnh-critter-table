@@ -1,6 +1,7 @@
-import React, { useContext, useCallback } from 'react';
+import React, { useContext, useCallback, useMemo } from 'react';
 import { DispatchContext, StateContext } from 'Reducer';
 import { SEARCH } from 'Reducer/actionTypes';
+import { Button } from 'rebass';
 import { Input } from '@rebass/forms';
 
 function SearchInput() {
@@ -14,8 +15,18 @@ function SearchInput() {
     [dispatch]
   );
 
+  const handleClick = useCallback(
+    (e) => {
+      dispatch({ type: SEARCH, payload: '' });
+    },
+    [dispatch]
+  );
+  const isClearButtonShown = useMemo(() => !!state.searchValue, [
+    state.searchValue,
+  ]);
+
   return (
-    <div>
+    <div className="search">
       <Input
         m={1 / 2}
         id="search"
@@ -25,6 +36,13 @@ function SearchInput() {
         onChange={handleChange}
         placeholder="Search name or location"
       />
+      {isClearButtonShown && (
+        <Button className="search__clear_button" p={0} onClick={handleClick}>
+          <span role="img" aria-label="clear search">
+            ✖️
+          </span>
+        </Button>
+      )}
     </div>
   );
 }
