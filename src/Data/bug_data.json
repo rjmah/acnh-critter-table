@@ -369,7 +369,7 @@
   {
     "number": 45,
     "name": "Jewel Beetle",
-    "location": "On trees",
+    "location": "On tree stumps",
     "value": 2400,
     "time": [[0, 0]],
     "month": [[4, 8]]
