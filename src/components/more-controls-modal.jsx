@@ -40,72 +40,80 @@ function MoreControlsModal({ closeModal }) {
     [getLegendCell]
   );
   return (
-    <div className="more_controls_modal">
-      <Flex padding={3} flexDirection="column" marginTop={20} marginBottom={40}>
-        <Box>
-          <Button
-            padding={0}
-            onClick={closeModal}
-            color="black"
-            bg="lightgray"
-            fontSize={25}
-            width={30}
-            marginTop={-30}
-            style={{ cursor: 'pointer', position: 'fixed' }}
-          >
-            <span role="img" aria-label="close">
-              ✖️
-            </span>
-          </Button>
-        </Box>
-        <Box>
-          <ToggleHemisphere />
-        </Box>
-        <Box>
-          <ToggleTimeFormat />
-        </Box>
-        <Box marginTop={20}>
-          <Flex flexDirection="column" textAlign="center">
-            <Box p={2} fontSize={20}>
-              Row Color Legend
-            </Box>
-            <Box p={2} bg="#9ce482">
-              <Flex flexDirection="column">
-                {activeHourText}
-                {activeMonthText}
-              </Flex>
-            </Box>
-            <Box p={2} bg="#d9ead3">
-              <Flex flexDirection="column">
-                {notActiveHourText}
-                {activeMonthText}
-              </Flex>
-            </Box>
-            <Box p={2} bg="#f8e19d">
-              <Flex flexDirection="column">
-                {activeHourText}
-                {expiringMonthText}
-              </Flex>
-            </Box>
-            <Box p={2} bg="#fff2cc">
-              <Flex flexDirection="column">
-                {notActiveHourText}
-                {expiringMonthText}
-              </Flex>
-            </Box>
-            <Box p={2} bg="#f4cccc">
-              {notActiveMonthText}
-            </Box>
-          </Flex>
-        </Box>
-        <Box marginTop={20}>
-          <ExportState />
-        </Box>
-        <Box>
-          <ImportState />
-        </Box>
-      </Flex>
-    </div>
+    <React.Fragment>
+      <div className="more_controls_modal_overlay" onClick={closeModal} />
+      <div className="more_controls_modal">
+        <Flex
+          padding={3}
+          flexDirection="column"
+          marginTop={20}
+          marginBottom={40}
+        >
+          <Box>
+            <Button
+              padding={0}
+              onClick={closeModal}
+              color="black"
+              bg="lightgray"
+              fontSize={25}
+              width={30}
+              marginTop={-30}
+              style={{ cursor: 'pointer', position: 'fixed' }}
+            >
+              <span role="img" aria-label="close">
+                ✖️
+              </span>
+            </Button>
+          </Box>
+          <Box>
+            <ToggleHemisphere />
+          </Box>
+          <Box>
+            <ToggleTimeFormat />
+          </Box>
+          <Box marginTop={20}>
+            <Flex flexDirection="column" textAlign="center">
+              <Box p={2} fontSize={20}>
+                Row Color Legend
+              </Box>
+              <Box p={2} bg="#9ce482">
+                <Flex flexDirection="column">
+                  {activeHourText}
+                  {activeMonthText}
+                </Flex>
+              </Box>
+              <Box p={2} bg="#d9ead3">
+                <Flex flexDirection="column">
+                  {notActiveHourText}
+                  {activeMonthText}
+                </Flex>
+              </Box>
+              <Box p={2} bg="#f8e19d">
+                <Flex flexDirection="column">
+                  {activeHourText}
+                  {expiringMonthText}
+                </Flex>
+              </Box>
+              <Box p={2} bg="#fff2cc">
+                <Flex flexDirection="column">
+                  {notActiveHourText}
+                  {expiringMonthText}
+                </Flex>
+              </Box>
+              <Box p={2} bg="#f4cccc">
+                {notActiveMonthText}
+              </Box>
+            </Flex>
+          </Box>
+          <Box marginTop={20}>
+            <ExportState />
+          </Box>
+          <Box>
+            <ImportState />
+          </Box>
+        </Flex>
+      </div>
+    </React.Fragment>
   );
 }
 
