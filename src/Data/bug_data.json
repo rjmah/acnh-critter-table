@@ -5,7 +5,7 @@
     "location": "Flying",
     "value": 160,
     "time": [[4, 19]],
-    "month": [[9, 6]]
+    "month": [[8, 5]]
   },
   {
     "number": 2,
@@ -14,8 +14,8 @@
     "value": 160,
     "time": [[4, 19]],
     "month": [
-      [3, 6],
-      [9, 10]
+      [2, 5],
+      [8, 9]
     ]
   },
   {
@@ -24,7 +24,7 @@
     "location": "Flying",
     "value": 240,
     "time": [[4, 19]],
-    "month": [[3, 9]]
+    "month": [[2, 8]]
   },
   {
     "number": 4,
@@ -32,7 +32,7 @@
     "location": "Flying",
     "value": 2500,
     "time": [[4, 19]],
-    "month": [[3, 6]]
+    "month": [[2, 5]]
   },
   {
     "number": 5,
@@ -40,7 +40,7 @@
     "location": "Flying",
     "value": 300,
     "time": [[4, 19]],
-    "month": [[4, 8]]
+    "month": [[3, 7]]
   },
   {
     "number": 6,
@@ -48,7 +48,7 @@
     "location": "Flying",
     "value": 1000,
     "time": [[8, 19]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 7,
@@ -56,15 +56,15 @@
     "location": "Flying",
     "value": 3000,
     "time": [[4, 19]],
-    "month": [[5, 8]]
+    "month": [[4, 7]]
   },
   {
     "number": 8,
-    "name": "Monach Butterfly",
+    "name": "Monarch Butterfly",
     "location": "Flying",
     "value": 140,
     "time": [[4, 17]],
-    "month": [[9, 11]]
+    "month": [[8, 10]]
   },
   {
     "number": 9,
@@ -73,8 +73,8 @@
     "value": 4000,
     "time": [[17, 8]],
     "month": [
-      [6, 9],
-      [12, 3]
+      [5, 8],
+      [11, 2]
     ]
   },
   {
@@ -83,17 +83,17 @@
     "location": "Flying",
     "value": 3000,
     "time": [[8, 17]],
-    "month": [[4, 9]]
+    "month": [[3, 8]]
   },
   {
     "number": 11,
-    "name": "Raja Brooke's Birdwing",
+    "name": "Rajah Brooke's Birdwing",
     "location": "Flying",
     "value": 2500,
     "time": [[8, 17]],
     "month": [
-      [4, 9],
-      [12, 2]
+      [3, 8],
+      [11, 1]
     ]
   },
   {
@@ -102,7 +102,7 @@
     "location": "Flying",
     "value": 4000,
     "time": [[8, 16]],
-    "month": [[5, 9]]
+    "month": [[4, 8]]
   },
   {
     "number": 13,
@@ -110,7 +110,7 @@
     "location": "Flying by light",
     "value": 130,
     "time": [[19, 4]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 14,
@@ -118,7 +118,7 @@
     "location": "On trees",
     "value": 3000,
     "time": [[19, 4]],
-    "month": [[4, 9]]
+    "month": [[3, 8]]
   },
   {
     "number": 15,
@@ -126,7 +126,7 @@
     "location": "Flying",
     "value": 2500,
     "time": [[8, 16]],
-    "month": [[4, 9]]
+    "month": [[3, 8]]
   },
   {
     "number": 16,
@@ -134,7 +134,7 @@
     "location": "On ground",
     "value": 200,
     "time": [[8, 19]],
-    "month": [[4, 11]]
+    "month": [[3, 10]]
   },
   {
     "number": 17,
@@ -142,7 +142,7 @@
     "location": "On ground",
     "value": 600,
     "time": [[8, 19]],
-    "month": [[8, 11]]
+    "month": [[7, 10]]
   },
   {
     "number": 18,
@@ -150,7 +150,7 @@
     "location": "On ground",
     "value": 160,
     "time": [[8, 19]],
-    "month": [[8, 11]]
+    "month": [[7, 10]]
   },
   {
     "number": 19,
@@ -158,15 +158,15 @@
     "location": "On ground",
     "value": 160,
     "time": [[8, 17]],
-    "month": [[7, 9]]
+    "month": [[6, 8]]
   },
   {
     "number": 20,
     "name": "Cricket",
-    "location": "Dig at cricket noise",
+    "location": "On ground",
     "value": 130,
     "time": [[17, 8]],
-    "month": [[9, 11]]
+    "month": [[8, 10]]
   },
   {
     "number": 21,
@@ -174,7 +174,7 @@
     "location": "On ground",
     "value": 430,
     "time": [[17, 8]],
-    "month": [[9, 10]]
+    "month": [[8, 9]]
   },
   {
     "number": 22,
@@ -182,7 +182,7 @@
     "location": "On flowers",
     "value": 430,
     "time": [[8, 17]],
-    "month": [[3, 11]]
+    "month": [[2, 10]]
   },
   {
     "number": 23,
@@ -190,7 +190,7 @@
     "location": "On white flowers",
     "value": 2400,
     "time": [[8, 17]],
-    "month": [[3, 11]]
+    "month": [[2, 10]]
   },
   {
     "number": 24,
@@ -198,7 +198,7 @@
     "location": "Flying",
     "value": 200,
     "time": [[8, 17]],
-    "month": [[3, 7]]
+    "month": [[2, 6]]
   },
   {
     "number": 25,
@@ -206,31 +206,31 @@
     "location": "Falls from shaking trees",
     "value": 2500,
     "time": [[0, 0]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 26,
     "name": "Brown Cicada",
     "location": "On trees",
-    "value": "",
+    "value": 250,
     "time": [[8, 17]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 27,
     "name": "Robust Cicada",
     "location": "On trees",
-    "value": "",
+    "value": 300,
     "time": [[8, 17]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 28,
     "name": "Giant Cicada",
     "location": "On trees",
-    "value": "",
+    "value": 500,
     "time": [[8, 17]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 29,
@@ -238,26 +238,26 @@
     "location": "On trees",
     "value": 400,
     "time": [[8, 17]],
-    "month": [[8, 9]]
+    "month": [[7, 8]]
   },
   {
     "number": 30,
     "name": "Evening Cicada",
     "location": "On trees",
-    "value": "",
+    "value": 550,
     "time": [
       [4, 8],
       [16, 19]
     ],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 31,
     "name": "Cicada Shell",
     "location": "On trees",
-    "value": "",
+    "value": 10,
     "time": [[0, 0]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 32,
@@ -265,7 +265,7 @@
     "location": "Flying",
     "value": 180,
     "time": [[8, 19]],
-    "month": [[9, 10]]
+    "month": [[8, 9]]
   },
   {
     "number": 33,
@@ -273,7 +273,7 @@
     "location": "Flying",
     "value": 230,
     "time": [[8, 17]],
-    "month": [[4, 10]]
+    "month": [[3, 9]]
   },
   {
     "number": 34,
@@ -281,31 +281,31 @@
     "location": "Flying",
     "value": 4500,
     "time": [[8, 17]],
-    "month": [[5, 10]]
+    "month": [[4, 9]]
   },
   {
     "number": 35,
     "name": "Damselfly",
     "location": "Flying",
-    "value": "",
+    "value": 500,
     "time": [[0, 0]],
-    "month": [[11, 2]]
+    "month": [[10, 1]]
   },
   {
     "number": 36,
     "name": "Firefly",
     "location": "Flying",
-    "value": "",
+    "value": 300,
     "time": [[19, 4]],
-    "month": [[6, 6]]
+    "month": [[5, 5]]
   },
   {
     "number": 37,
     "name": "Mole Cricket",
-    "location": "Underground",
+    "location": "Underground - Dig at loudest cricket noise",
     "value": 500,
     "time": [[0, 0]],
-    "month": [[11, 5]]
+    "month": [[10, 4]]
   },
   {
     "number": 38,
@@ -313,7 +313,7 @@
     "location": "Ponds",
     "value": 130,
     "time": [[8, 19]],
-    "month": [[5, 9]]
+    "month": [[4, 8]]
   },
   {
     "number": 39,
@@ -321,7 +321,7 @@
     "location": "Ponds and rivers",
     "value": 800,
     "time": [[8, 19]],
-    "month": [[5, 9]]
+    "month": [[4, 8]]
   },
   {
     "number": 40,
@@ -329,7 +329,7 @@
     "location": "Ponds and rivers",
     "value": 2000,
     "time": [[19, 8]],
-    "month": [[4, 9]]
+    "month": [[3, 8]]
   },
   {
     "number": 41,
@@ -337,7 +337,7 @@
     "location": "On flowers",
     "value": 120,
     "time": [[0, 0]],
-    "month": [[3, 11]]
+    "month": [[2, 9]]
   },
   {
     "number": 42,
@@ -345,7 +345,7 @@
     "location": "On flowers",
     "value": 1000,
     "time": [[19, 8]],
-    "month": [[3, 11]]
+    "month": [[2, 9]]
   },
   {
     "number": 43,
@@ -354,8 +354,8 @@
     "value": 200,
     "time": [[8, 17]],
     "month": [
-      [3, 6],
-      [10, 10]
+      [2, 5],
+      [9, 9]
     ]
   },
   {
@@ -364,7 +364,7 @@
     "location": "On ground",
     "value": 1500,
     "time": [[0, 0]],
-    "month": [[2, 11]]
+    "month": [[1, 9]]
   },
   {
     "number": 45,
@@ -372,7 +372,7 @@
     "location": "On tree stumps",
     "value": 2400,
     "time": [[0, 0]],
-    "month": [[4, 8]]
+    "month": [[3, 7]]
   },
   {
     "number": 46,
@@ -381,8 +381,8 @@
     "value": 450,
     "time": [[0, 0]],
     "month": [
-      [5, 6],
-      [9, 11]
+      [4, 5],
+      [8, 10]
     ]
   },
   {
@@ -391,7 +391,7 @@
     "location": "On tree stumps",
     "value": 350,
     "time": [[0, 0]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 48,
@@ -399,23 +399,23 @@
     "location": "On tree stumps",
     "value": 3000,
     "time": [[0, 0]],
-    "month": [[5, 9]]
+    "month": [[4, 8]]
   },
   {
     "number": 49,
     "name": "Blue Weevil Beetle",
-    "location": "",
-    "value": "",
+    "location": "On palm trees",
+    "value": 800,
     "time": [[0, 0]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 50,
     "name": "Dung Beetle",
-    "location": "Pushing snowballs",
-    "value": "",
+    "location": "Near snowballs",
+    "value": 3000,
     "time": [[0, 0]],
-    "month": [[12, 2]]
+    "month": [[11, 1]]
   },
   {
     "number": 51,
@@ -423,23 +423,23 @@
     "location": "On ground",
     "value": 300,
     "time": [[0, 0]],
-    "month": [[7, 9]]
+    "month": [[6, 8]]
   },
   {
     "number": 52,
     "name": "Scarab Beetle",
     "location": "On trees",
-    "value": "",
+    "value": 10000,
     "time": [[23, 8]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 53,
     "name": "Drone Beetle",
     "location": "On trees",
-    "value": "",
+    "value": 200,
     "time": [[0, 0]],
-    "month": [[6, 8]]
+    "month": [[5, 7]]
   },
   {
     "number": 54,
@@ -447,31 +447,31 @@
     "location": "On trees",
     "value": 8000,
     "time": [[17, 8]],
-    "month": [[6, 9]]
+    "month": [[5, 8]]
   },
   {
     "number": 55,
     "name": "Saw Stag",
     "location": "On trees",
-    "value": "",
+    "value": 2000,
     "time": [[0, 0]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 56,
     "name": "Miyama Stag",
     "location": "On trees",
-    "value": "",
+    "value": 1000,
     "time": [[0, 0]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 57,
     "name": "Giant Stag",
     "location": "On trees",
-    "value": "",
+    "value": 10000,
     "time": [[23, 8]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 58,
@@ -479,74 +479,74 @@
     "location": "On trees",
     "value": 6000,
     "time": [[19, 8]],
-    "month": [[6, 9]]
+    "month": [[5, 8]]
   },
   {
     "number": 59,
     "name": "Cyclommatus Stag",
     "location": "On trees",
-    "value": "",
+    "value": 8000,
     "time": [[17, 8]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 60,
     "name": "Golden Stag",
     "location": "On trees",
-    "value": "",
+    "value": 12000,
     "time": [[17, 8]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 61,
     "name": "Giraffe Stag",
     "location": "On trees",
-    "value": "",
+    "value": 12000,
     "time": [[17, 8]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 62,
     "name": "Horned Dynastid",
     "location": "On trees",
-    "value": "",
+    "value": 1350,
     "time": [[17, 8]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 63,
     "name": "Horned Atlas",
     "location": "On trees",
-    "value": "",
+    "value": 8000,
     "time": [[17, 8]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 64,
     "name": "Horned Elephant",
     "location": "On trees",
-    "value": "",
+    "value": 8000,
     "time": [[17, 8]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 65,
-    "name": "Horned Herucles",
+    "name": "Horned Hercules",
     "location": "On trees",
-    "value": "",
+    "value": 12000,
     "time": [[17, 8]],
-    "month": [[7, 8]]
+    "month": [[6, 7]]
   },
   {
     "number": 66,
     "name": "Walking Stick",
     "location": "Falls from shaking trees",
-    "value": "",
+    "value": 600,
     "time": [
       [4, 8],
       [17, 19]
     ],
-    "month": [[7, 11]]
+    "month": [[6, 10]]
   },
   {
     "number": 67,
@@ -554,7 +554,7 @@
     "location": "Near trees, disguised as furniture leaf",
     "value": 600,
     "time": [[0, 0]],
-    "month": [[7, 8]]
+    "month": [[6, 8]]
   },
   {
     "number": 68,
@@ -562,15 +562,15 @@
     "location": "Falls from shaking trees",
     "value": 600,
     "time": [[0, 0]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 69,
     "name": "Ant",
-    "location": "On rotten food",
-    "value": "",
+    "location": "On rotten turnips",
+    "value": 80,
     "time": [[0, 0]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 70,
@@ -578,7 +578,7 @@
     "location": "Beach",
     "value": 1000,
     "time": [[19, 8]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 71,
@@ -586,15 +586,15 @@
     "location": "On rocks at beach",
     "value": 200,
     "time": [[0, 0]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 72,
     "name": "Fly",
-    "location": "On trash items",
-    "value": "",
+    "location": "On fished up trash items",
+    "value": 60,
     "time": [[0, 0]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 73,
@@ -602,15 +602,15 @@
     "location": "Flying",
     "value": 130,
     "time": [[17, 4]],
-    "month": [[6, 9]]
+    "month": [[5, 8]]
   },
   {
     "number": 74,
     "name": "Flea",
     "location": "On villagers",
-    "value": "",
+    "value": 70,
     "time": [[0, 0]],
-    "month": [[4, 11]]
+    "month": [[3, 10]]
   },
   {
     "number": 75,
@@ -618,7 +618,7 @@
     "location": "On rocks (raining)",
     "value": 250,
     "time": [[0, 0]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 76,
@@ -626,7 +626,7 @@
     "location": "Hit rocks",
     "value": 250,
     "time": [[23, 16]],
-    "month": [[9, 6]]
+    "month": [[8, 5]]
   },
   {
     "number": 77,
@@ -634,7 +634,7 @@
     "location": "Hit rocks",
     "value": 300,
     "time": [[16, 23]],
-    "month": [[9, 6]]
+    "month": [[8, 5]]
   },
   {
     "number": 78,
@@ -642,7 +642,7 @@
     "location": "Falls from shaking trees",
     "value": 480,
     "time": [[19, 8]],
-    "month": [[1, 12]]
+    "month": [[0, 11]]
   },
   {
     "number": 79,
@@ -650,7 +650,7 @@
     "location": "On ground",
     "value": 8000,
     "time": [[19, 4]],
-    "month": [[11, 4]]
+    "month": [[10, 3]]
   },
   {
     "number": 80,
@@ -658,6 +658,6 @@
     "location": "On ground",
     "value": 8000,
     "time": [[19, 4]],
-    "month": [[5, 10]]
+    "month": [[4, 9]]
   }
 ]

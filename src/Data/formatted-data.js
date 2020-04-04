@@ -21,27 +21,21 @@ function formatTime24(hourIndex) {
 function calculateActiveMonths(monthTuples, isSouth) {
   let activeMonths = new Set();
   monthTuples.forEach(([start, end]) => {
-    //TODO convert monthTuple to start at 0 so we don't have to do this dumb stuff
-    if (isSouth) {
-      start = (start + 6) % 12;
-      if (start === 0) start = 12;
-      end = (end + 6) % 12;
-      if (end === 0) end = 12;
-    }
-    if (start === 1 && end === 12) {
+    if (start === 0 && end === 11) {
       activeMonths = FULL_YEAR_SET;
       return;
     }
-
-    while (start !== end) {
-      activeMonths.add(start - 1);
-      start++;
-      if (start > 12) {
-        start = 1;
-      }
+    if (isSouth) {
+      start = (start + 6) % 12;
+      end = (end + 6) % 12;
     }
 
-    activeMonths.add(end - 1);
+    while (start !== end) {
+      activeMonths.add(start);
+      start = (start + 1) % 12;
+    }
+
+    activeMonths.add(end);
   });
 
   return activeMonths;
