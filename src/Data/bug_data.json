@@ -1,7 +1,7 @@
 [
   {
     "number": 1,
-    "name": "Common Butterfly",
+    "name": "Common butterfly",
     "location": "Flying",
     "value": 160,
     "time": [[4, 19]],
@@ -9,7 +9,7 @@
   },
   {
     "number": 2,
-    "name": "Yellow Butterfly",
+    "name": "Yellow butterfly",
     "location": "Flying",
     "value": 160,
     "time": [[4, 19]],
@@ -20,7 +20,7 @@
   },
   {
     "number": 3,
-    "name": "Tiger Butterfly",
+    "name": "Tiger butterfly",
     "location": "Flying",
     "value": 240,
     "time": [[4, 19]],
@@ -28,7 +28,7 @@
   },
   {
     "number": 4,
-    "name": "Peacock Butterfly",
+    "name": "Peacock butterfly",
     "location": "Flying",
     "value": 2500,
     "time": [[4, 19]],
@@ -36,7 +36,7 @@
   },
   {
     "number": 5,
-    "name": "Common Bluebottle",
+    "name": "Common bluebottle",
     "location": "Flying",
     "value": 300,
     "time": [[4, 19]],
@@ -44,7 +44,7 @@
   },
   {
     "number": 6,
-    "name": "Paper Kite Butterfly",
+    "name": "Paper kite butterfly",
     "location": "Flying",
     "value": 1000,
     "time": [[8, 19]],
@@ -52,7 +52,7 @@
   },
   {
     "number": 7,
-    "name": "Great Purple Emperor",
+    "name": "Great purple emperor",
     "location": "Flying",
     "value": 3000,
     "time": [[4, 19]],
@@ -60,7 +60,7 @@
   },
   {
     "number": 8,
-    "name": "Monarch Butterfly",
+    "name": "Monarch butterfly",
     "location": "Flying",
     "value": 140,
     "time": [[4, 17]],
@@ -68,7 +68,7 @@
   },
   {
     "number": 9,
-    "name": "Emperor Butterfly",
+    "name": "Emperor butterfly",
     "location": "Flying",
     "value": 4000,
     "time": [[17, 8]],
@@ -79,7 +79,7 @@
   },
   {
     "number": 10,
-    "name": "Agrias Butterfly",
+    "name": "Agrias butterfly",
     "location": "Flying",
     "value": 3000,
     "time": [[8, 17]],
@@ -87,7 +87,7 @@
   },
   {
     "number": 11,
-    "name": "Rajah Brooke's Birdwing",
+    "name": "Rajah Brooke's birdwing",
     "location": "Flying",
     "value": 2500,
     "time": [[8, 17]],
@@ -98,7 +98,7 @@
   },
   {
     "number": 12,
-    "name": "Queen Alexandra's Birdwing",
+    "name": "Queen Alexandra's birdwing",
     "location": "Flying",
     "value": 4000,
     "time": [[8, 16]],
@@ -114,7 +114,7 @@
   },
   {
     "number": 14,
-    "name": "Atlas Moth",
+    "name": "Atlas moth",
     "location": "On trees",
     "value": 3000,
     "time": [[19, 4]],
@@ -122,7 +122,7 @@
   },
   {
     "number": 15,
-    "name": "Madagascan Sunset Moth",
+    "name": "Madagascan sunset moth",
     "location": "Flying",
     "value": 2500,
     "time": [[8, 16]],
@@ -130,7 +130,7 @@
   },
   {
     "number": 16,
-    "name": "Long Locust",
+    "name": "Long locust",
     "location": "On ground",
     "value": 200,
     "time": [[8, 19]],
@@ -138,7 +138,7 @@
   },
   {
     "number": 17,
-    "name": "Migratory Locust",
+    "name": "Migratory locust",
     "location": "On ground",
     "value": 600,
     "time": [[8, 19]],
@@ -146,9 +146,9 @@
   },
   {
     "number": 18,
-    "name": "Rice Grasshopper",
+    "name": "Rice grasshopper",
     "location": "On ground",
-    "value": 160,
+    "value": 400,
     "time": [[8, 19]],
     "month": [[7, 10]]
   },
@@ -170,7 +170,7 @@
   },
   {
     "number": 21,
-    "name": "Bell Cricket",
+    "name": "Bell cricket",
     "location": "On ground",
     "value": 430,
     "time": [[17, 8]],
@@ -186,7 +186,7 @@
   },
   {
     "number": 23,
-    "name": "Orchid Mantis",
+    "name": "Orchid mantis",
     "location": "On white flowers",
     "value": 2400,
     "time": [[8, 17]],
@@ -210,7 +210,7 @@
   },
   {
     "number": 26,
-    "name": "Brown Cicada",
+    "name": "Brown cicada",
     "location": "On trees",
     "value": 250,
     "time": [[8, 17]],
@@ -218,7 +218,7 @@
   },
   {
     "number": 27,
-    "name": "Robust Cicada",
+    "name": "Robust cicada",
     "location": "On trees",
     "value": 300,
     "time": [[8, 17]],
@@ -226,7 +226,7 @@
   },
   {
     "number": 28,
-    "name": "Giant Cicada",
+    "name": "Giant cicada",
     "location": "On trees",
     "value": 500,
     "time": [[8, 17]],
@@ -234,7 +234,7 @@
   },
   {
     "number": 29,
-    "name": "Walker Cicada",
+    "name": "Walker cicada",
     "location": "On trees",
     "value": 400,
     "time": [[8, 17]],
@@ -242,7 +242,7 @@
   },
   {
     "number": 30,
-    "name": "Evening Cicada",
+    "name": "Evening cicada",
     "location": "On trees",
     "value": 550,
     "time": [
@@ -253,7 +253,7 @@
   },
   {
     "number": 31,
-    "name": "Cicada Shell",
+    "name": "Cicada shell",
     "location": "On trees",
     "value": 10,
     "time": [[0, 0]],
@@ -261,7 +261,7 @@
   },
   {
     "number": 32,
-    "name": "Red Dragonfly",
+    "name": "Red dragonfly",
     "location": "Flying",
     "value": 180,
     "time": [[8, 19]],
@@ -269,7 +269,7 @@
   },
   {
     "number": 33,
-    "name": "Darner Dragonfly",
+    "name": "Darner dragonfly",
     "location": "Flying",
     "value": 230,
     "time": [[8, 17]],
@@ -277,7 +277,7 @@
   },
   {
     "number": 34,
-    "name": "Banded Dragonfly",
+    "name": "Banded dragonfly",
     "location": "Flying",
     "value": 4500,
     "time": [[8, 17]],
@@ -301,7 +301,7 @@
   },
   {
     "number": 37,
-    "name": "Mole Cricket",
+    "name": "Mole cricket",
     "location": "Underground - Dig at loudest cricket noise",
     "value": 500,
     "time": [[0, 0]],
@@ -317,7 +317,7 @@
   },
   {
     "number": 39,
-    "name": "Diving Beetle",
+    "name": "Diving beetle",
     "location": "Ponds and rivers",
     "value": 800,
     "time": [[8, 19]],
@@ -325,7 +325,7 @@
   },
   {
     "number": 40,
-    "name": "Giant Water Bug",
+    "name": "Giant water bug",
     "location": "Ponds and rivers",
     "value": 2000,
     "time": [[19, 8]],
@@ -341,7 +341,7 @@
   },
   {
     "number": 42,
-    "name": "Man-faced Stink Bug",
+    "name": "Man-faced stink bug",
     "location": "On flowers",
     "value": 1000,
     "time": [[19, 8]],
@@ -360,7 +360,7 @@
   },
   {
     "number": 44,
-    "name": "Tiger Beetle",
+    "name": "Tiger beetle",
     "location": "On ground",
     "value": 1500,
     "time": [[0, 0]],
@@ -368,7 +368,7 @@
   },
   {
     "number": 45,
-    "name": "Jewel Beetle",
+    "name": "Jewel beetle",
     "location": "On tree stumps",
     "value": 2400,
     "time": [[0, 0]],
@@ -376,7 +376,7 @@
   },
   {
     "number": 46,
-    "name": "Violin Beetle",
+    "name": "Violin beetle",
     "location": "On tree stumps",
     "value": 450,
     "time": [[0, 0]],
@@ -387,7 +387,7 @@
   },
   {
     "number": 47,
-    "name": "Citrus Long-horned Beetle",
+    "name": "Citrus long-horned beetle",
     "location": "On tree stumps",
     "value": 350,
     "time": [[0, 0]],
@@ -395,7 +395,7 @@
   },
   {
     "number": 48,
-    "name": "Rosalia Batesi Beetle",
+    "name": "Rosalia Batesi beetle",
     "location": "On tree stumps",
     "value": 3000,
     "time": [[0, 0]],
@@ -403,7 +403,7 @@
   },
   {
     "number": 49,
-    "name": "Blue Weevil Beetle",
+    "name": "Blue weevil beetle",
     "location": "On palm trees",
     "value": 800,
     "time": [[0, 0]],
@@ -411,7 +411,7 @@
   },
   {
     "number": 50,
-    "name": "Dung Beetle",
+    "name": "Dung beetle",
     "location": "Near snowballs",
     "value": 3000,
     "time": [[0, 0]],
@@ -419,7 +419,7 @@
   },
   {
     "number": 51,
-    "name": "Earth-boring Dung Beetle",
+    "name": "Earth-boring dung beetle",
     "location": "On ground",
     "value": 300,
     "time": [[0, 0]],
@@ -427,7 +427,7 @@
   },
   {
     "number": 52,
-    "name": "Scarab Beetle",
+    "name": "Scarab beetle",
     "location": "On trees",
     "value": 10000,
     "time": [[23, 8]],
@@ -435,7 +435,7 @@
   },
   {
     "number": 53,
-    "name": "Drone Beetle",
+    "name": "Drone beetle",
     "location": "On trees",
     "value": 200,
     "time": [[0, 0]],
@@ -443,15 +443,15 @@
   },
   {
     "number": 54,
-    "name": "Goliath Beetle",
-    "location": "On trees",
+    "name": "Goliath beetle",
+    "location": "On palm trees",
     "value": 8000,
     "time": [[17, 8]],
     "month": [[5, 8]]
   },
   {
     "number": 55,
-    "name": "Saw Stag",
+    "name": "Saw stag",
     "location": "On trees",
     "value": 2000,
     "time": [[0, 0]],
@@ -459,7 +459,7 @@
   },
   {
     "number": 56,
-    "name": "Miyama Stag",
+    "name": "Miyama stag",
     "location": "On trees",
     "value": 1000,
     "time": [[0, 0]],
@@ -467,7 +467,7 @@
   },
   {
     "number": 57,
-    "name": "Giant Stag",
+    "name": "Giant stag",
     "location": "On trees",
     "value": 10000,
     "time": [[23, 8]],
@@ -475,39 +475,39 @@
   },
   {
     "number": 58,
-    "name": "Rainbow Stag",
+    "name": "Rainbow stag",
     "location": "On trees",
     "value": 6000,
-    "time": [[19, 8]],
+    "time": [[17, 8]],
     "month": [[5, 8]]
   },
   {
     "number": 59,
-    "name": "Cyclommatus Stag",
-    "location": "On trees",
+    "name": "Cyclommatus stag",
+    "location": "On palm trees",
     "value": 8000,
     "time": [[17, 8]],
     "month": [[6, 7]]
   },
   {
     "number": 60,
-    "name": "Golden Stag",
-    "location": "On trees",
+    "name": "Golden stag",
+    "location": "On palm trees",
     "value": 12000,
     "time": [[17, 8]],
     "month": [[6, 7]]
   },
   {
     "number": 61,
-    "name": "Giraffe Stag",
-    "location": "On trees",
+    "name": "Giraffe stag",
+    "location": "On palm trees",
     "value": 12000,
     "time": [[17, 8]],
     "month": [[6, 7]]
   },
   {
     "number": 62,
-    "name": "Horned Dynastid",
+    "name": "Horned dynastid",
     "location": "On trees",
     "value": 1350,
     "time": [[17, 8]],
@@ -515,31 +515,31 @@
   },
   {
     "number": 63,
-    "name": "Horned Atlas",
-    "location": "On trees",
+    "name": "Horned atlas",
+    "location": "On palm trees",
     "value": 8000,
     "time": [[17, 8]],
     "month": [[6, 7]]
   },
   {
     "number": 64,
-    "name": "Horned Elephant",
-    "location": "On trees",
+    "name": "Horned elephant",
+    "location": "On palm trees",
     "value": 8000,
     "time": [[17, 8]],
     "month": [[6, 7]]
   },
   {
     "number": 65,
-    "name": "Horned Hercules",
-    "location": "On trees",
+    "name": "Horned hercules",
+    "location": "On palm trees",
     "value": 12000,
     "time": [[17, 8]],
     "month": [[6, 7]]
   },
   {
     "number": 66,
-    "name": "Walking Stick",
+    "name": "Walking stick",
     "location": "Falls from shaking trees",
     "value": 600,
     "time": [
@@ -550,7 +550,7 @@
   },
   {
     "number": 67,
-    "name": "Walking Leaf",
+    "name": "Walking leaf",
     "location": "Near trees, disguised as furniture leaf",
     "value": 600,
     "time": [[0, 0]],
@@ -574,7 +574,7 @@
   },
   {
     "number": 70,
-    "name": "Hermit Crab",
+    "name": "Hermit crab",
     "location": "Beach",
     "value": 1000,
     "time": [[19, 8]],
@@ -582,7 +582,7 @@
   },
   {
     "number": 71,
-    "name": "Wharf Roach",
+    "name": "Wharf roach",
     "location": "On rocks at beach",
     "value": 200,
     "time": [[0, 0]],
@@ -607,7 +607,7 @@
   {
     "number": 74,
     "name": "Flea",
-    "location": "On villagers",
+    "location": "On itchy villagers",
     "value": 70,
     "time": [[0, 0]],
     "month": [[3, 10]]
@@ -622,7 +622,7 @@
   },
   {
     "number": 76,
-    "name": "Pill Bug",
+    "name": "Pill bug",
     "location": "Hit rocks",
     "value": 250,
     "time": [[23, 16]],
@@ -640,7 +640,7 @@
     "number": 78,
     "name": "Spider",
     "location": "Falls from shaking trees",
-    "value": 480,
+    "value": 600,
     "time": [[19, 8]],
     "month": [[0, 11]]
   },
