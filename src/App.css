@@ -1,5 +1,6 @@
 html * {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 #root {
@@ -12,7 +13,9 @@ html * {
   display: flex;
   height: 100%;
   flex-direction: column;
-  padding-left: 12px;
+  margin: 0 auto;
+  padding: 6px;
+  max-width: 795px;
 }
 
 .ReactVirtualized__Grid {
@@ -21,26 +24,17 @@ html * {
 
 .controls_container {
   display: flex;
-  margin-top: 4px;
 }
 
-.controls_container,
 .status_bar {
-  max-width: 810px;
+  margin: 4px 0 !important;
 }
+
 .table_container {
   flex-grow: 1;
-}
-
-@media (max-width: 830px) {
-  .root_container {
-    padding-left: 0;
-  }
-  .controls_container,
-  .status_bar {
-    margin-left: 8px !important;
-    margin-right: 8px !important;
-  }
+  border: 1px solid black;
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 /* On smartphones, move status bar to bottom so users don't accidently fat finger the reset button */
@@ -49,6 +43,7 @@ html * {
     margin-bottom: 8px;
   }
   .status_bar {
+    margin: 6px 0 0 0 !important;
     order: 3;
   }
 }
@@ -61,6 +56,7 @@ html * {
   text-align: center;
   border-bottom: 1px solid rgb(114, 114, 114);
   border-right: 1px solid rgb(114, 114, 114);
+  color: #545454;
 }
 
 .cell_padded {
@@ -69,7 +65,7 @@ html * {
 }
 .header_cell {
   background-color: white;
-  border-top: 1px solid rgb(114, 114, 114);
+  color: black;
 }
 
 .header_cell--sortable {
@@ -77,16 +73,16 @@ html * {
   font-weight: 700;
 }
 
-.cell_first {
-  border-left: 1px solid rgb(114, 114, 114);
+.cell_last {
+  border-right-width: 0;
 }
-
 .cell_month_active,
 .select_is_active {
   background-color: #d9ead3 !important;
 }
 .cell_month_active--time_active {
   background-color: #9ce482 !important;
+  color: black;
 }
 
 .cell_month_expiring,
@@ -95,6 +91,7 @@ html * {
 }
 .cell_month_expiring--time_active {
   background-color: #f8e19d !important;
+  color: black;
 }
 
 .cell_month_inactive {

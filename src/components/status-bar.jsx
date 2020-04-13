@@ -12,8 +12,6 @@ function StatusBar({ count = 0, hemisphere = 'Northern' }) {
 
   return (
     <Flex
-      marginTop={1}
-      marginBottom={1}
       fontSize={13}
       justifyContent="space-between"
       className="status_bar"

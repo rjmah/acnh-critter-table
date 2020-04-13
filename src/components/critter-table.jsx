@@ -4,9 +4,11 @@ import React, {
   useMemo,
   useCallback,
   useEffect,
+  useRef,
 } from 'react';
-import { AutoSizer, MultiGrid } from 'react-virtualized';
+import { AutoSizer, Grid, ScrollSync } from 'react-virtualized';
 import classNames from 'classnames';
+import { Scrollbars } from 'react-custom-scrollbars';
 import formattedData from 'Data/formatted-data';
 
 import { StateContext, DispatchContext } from 'Reducer';
@@ -35,6 +37,9 @@ function getNextMonthIndex(monthIndex) {
   if (nextMonthIndex > 11) nextMonthIndex = 0;
   return nextMonthIndex;
 }
+
+const headerGridStyle = { overflowX: 'hidden', overflowY: 'hidden' };
+const bodyGridStyle = { overflowX: false, overflowY: false };
 
 function CritterTable() {
   const state = useContext(StateContext);
@@ -181,31 +186,38 @@ function CritterTable() {
   }, [sortFn, state.sortDirection, tableData]);
 
   const getRowClassName = useCallback(
-    ({ index }) => {
+    ({ index, columnIndex }) => {
+      let baseClassNames = '';
       if (index < 0) {
         //header;
-        return 'header_cell';
+        baseClassNames = 'header_cell';
+      } else {
+        const currentMonthActive = isCurrentMonthActive(
+          sortedTableData[index]?.activeMonths
+        );
+
+        const currentMonthExpiring = isCurrentMonthExpiring(
+          sortedTableData[index]?.activeMonths
+        );
+        const currentTimeActive =
+          currentMonthActive || currentMonthExpiring
+            ? isCurrentTimeActive(sortedTableData[index]?.activeHours)
+            : false;
+
+        baseClassNames = classNames('cell', {
+          cell_month_active: currentMonthActive,
+          'cell_month_active--time_active':
+            currentMonthActive && currentTimeActive,
+          cell_month_expiring: currentMonthExpiring,
+          'cell_month_expiring--time_active':
+            currentMonthExpiring && currentTimeActive,
+          cell_month_inactive: !currentMonthActive,
+        });
       }
-      const currentMonthActive = isCurrentMonthActive(
-        sortedTableData[index]?.activeMonths
-      );
-
-      const currentMonthExpiring = isCurrentMonthExpiring(
-        sortedTableData[index]?.activeMonths
-      );
-      const currentTimeActive =
-        currentMonthActive || currentMonthExpiring
-          ? isCurrentTimeActive(sortedTableData[index]?.activeHours)
-          : false;
-
-      return classNames('cell', {
-        cell_month_active: currentMonthActive,
-        'cell_month_active--time_active':
-          currentMonthActive && currentTimeActive,
-        cell_month_expiring: currentMonthExpiring,
-        'cell_month_expiring--time_active':
-          currentMonthExpiring && currentTimeActive,
-        cell_month_inactive: !currentMonthActive,
+      return classNames(baseClassNames, {
+        cell_first: columnIndex === 0,
+        cell_last: columnIndex === 8,
+        cell_padded: columnIndex === 3 || columnIndex === 4,
       });
     },
     [
@@ -253,17 +265,17 @@ function CritterTable() {
     () => [
       { label: '🎣', width: 30, renderer: caughtRenderer },
       { label: '#', width: 30, renderer: 'number' },
-      { label: 'Picture', renderer: pictureRenderer },
+      { label: 'Picture', width: 100, renderer: pictureRenderer },
       { label: 'Name', sortKey: 'name', width: 110, renderer: 'name' },
-      { label: 'Where', sortKey: 'location', width: 110, renderer: 'location' },
+      { label: 'Where', sortKey: 'location', width: 104, renderer: 'location' },
       {
         label: 'Size',
         sortKey: 'shadow_size',
-        width: 50,
+        width: 55,
         renderer: 'shadow_size',
       },
       { label: 'Time', renderer: timeRenderer },
-      { label: 'Month', width: 180, renderer: monthRenderer },
+      { label: 'Month', width: 172, renderer: monthRenderer },
       { label: 'Price', sortKey: 'value', width: 60, renderer: priceRenderer },
     ],
     [
@@ -275,26 +287,40 @@ function CritterTable() {
     ]
   );
 
+  const headerRenderer = useCallback(
+    ({ columnIndex, key, rowIndex, style }) => {
+      const { label, sortKey } = columns[columnIndex];
+      const className = classNames(
+        getRowClassName({ index: rowIndex - 1, columnIndex }),
+        {
+          cell_first: columnIndex === 0,
+          cell_last: columnIndex === 8,
+          cell_padded: columnIndex === 3 || columnIndex === 4,
+        }
+      );
+      return (
+        <HeaderCell
+          key={key}
+          sortKey={sortKey}
+          label={label}
+          className={className}
+          style={style}
+        />
+      );
+    },
+    [columns, getRowClassName]
+  );
   const cellRenderer = useCallback(
     ({ columnIndex, key, rowIndex, style }) => {
-      const { label, renderer, sortKey } = columns[columnIndex];
-      const rowData = sortedTableData[rowIndex - 1];
+      const { renderer } = columns[columnIndex];
+      const rowData = sortedTableData[rowIndex];
       let contents = `${columnIndex}, ${rowIndex}`;
-      const className = classNames(getRowClassName({ index: rowIndex - 1 }), {
+      const className = classNames(getRowClassName({ index: rowIndex }), {
         cell_first: columnIndex === 0,
+        cell_last: columnIndex === 8,
         cell_padded: columnIndex === 3 || columnIndex === 4,
       });
-      if (rowIndex === 0) {
-        return (
-          <HeaderCell
-            key={key}
-            sortKey={sortKey}
-            label={label}
-            className={className}
-            style={style}
-          />
-        );
-      } else if (typeof renderer === 'string') {
+      if (typeof renderer === 'string') {
         contents = rowData[renderer];
       } else if (typeof renderer === 'function') {
         contents = renderer(rowData);
@@ -316,11 +342,16 @@ function CritterTable() {
   );
 
   const getRowHeight = useCallback(({ columnIndex, key, index, style }) => {
-    // Header
-    if (index === 0) return 30;
     return 95;
   }, []);
 
+  const headerGridRef = useRef();
+  const bodyGridRef = useRef();
+  const handleScroll = useCallback((e) => {
+    const { scrollTop, scrollLeft } = e.target;
+    headerGridRef.current.handleScrollEvent({ scrollLeft });
+    bodyGridRef.current.handleScrollEvent({ scrollTop, scrollLeft });
+  }, []);
   return (
     <React.Fragment>
       <StatusBar
@@ -334,26 +365,60 @@ function CritterTable() {
       <div className="table_container">
         <AutoSizer>
           {({ width, height }) => {
+            const borderAdjustedWidth = width - 2;
             return (
-              <MultiGrid
-                enableFixedRowScroll
-                fixedRowCount={1}
-                cellRenderer={cellRenderer}
-                columnWidth={getColumnWidth}
-                columnCount={columns.length}
-                height={height}
-                rowHeight={getRowHeight}
-                rowCount={sortedTableData.length + 1}
-                width={width}
-                hideTopRightGridScrollbar
-                hideBottomLeftGridScrollbar
-                // Prevents flickering on horizontal scan on mobile
-                overscanColumnCount={5}
-                // Rerender, for some reason, only happens if row count changes. This is needed
-                // to force a rerender when switching from fish to bugs with the same count
-                // https://github.com/bvaughn/react-virtualized/issues/1262#issuecomment-561966273
-                onRowsRendered={() => {}}
-              />
+              <ScrollSync>
+                {({
+                  clientHeight,
+                  clientWidth,
+                  onScroll,
+                  scrollHeight,
+                  scrollLeft,
+                  scrollTop,
+                  scrollWidth,
+                }) => {
+                  return (
+                    <div>
+                      <Grid
+                        ref={headerGridRef}
+                        scrollLeft={scrollLeft}
+                        columnWidth={getColumnWidth}
+                        columnCount={columns.length}
+                        rowHeight={30}
+                        cellRenderer={headerRenderer}
+                        rowCount={1}
+                        height={30}
+                        width={borderAdjustedWidth}
+                        style={headerGridStyle}
+                      />
+                      <Scrollbars
+                        onScroll={handleScroll}
+                        style={{
+                          height: height - 30 - 2,
+                          width: borderAdjustedWidth,
+                        }}
+                        autoHide
+                      >
+                        <Grid
+                          ref={bodyGridRef}
+                          onScroll={onScroll}
+                          cellRenderer={cellRenderer}
+                          columnWidth={getColumnWidth}
+                          columnCount={columns.length}
+                          height={height - 30 - 2}
+                          width={borderAdjustedWidth}
+                          rowHeight={getRowHeight}
+                          rowCount={sortedTableData.length}
+                          // Prevents flickering on horizontal scan on mobile
+                          overscanColumnCount={5}
+                          overscanRowCount={10}
+                          style={bodyGridStyle}
+                        />
+                      </Scrollbars>
+                    </div>
+                  );
+                }}
+              </ScrollSync>
             );
           }}
         </AutoSizer>

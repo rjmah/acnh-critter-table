@@ -1,16 +1,16 @@
 export const MONTHS = [
-  'Jan.',
-  'Feb.',
-  'Mar.',
-  'Apr.',
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
   'May',
   'June',
   'July',
-  'Aug.',
-  'Sept.',
-  'Oct.',
-  'Nov.',
-  'Dec.',
+  'Aug',
+  'Sept',
+  'Oct',
+  'Nov',
+  'Dec',
 ];
 
 const getNLengthArray = (n) => [...Array(n).keys()];
