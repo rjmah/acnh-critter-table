@@ -2,6 +2,7 @@ const getNLengthArray = (n) => [...Array(n).keys()];
 
 const fishData = require('./fish_data.json');
 const bugData = require('./bug_data.json');
+const fossilData = require('./fossil_data.json');
 const FULL_YEAR_SET = new Set(getNLengthArray(12));
 const FULL_DAY_ARRAY = getNLengthArray(24);
 const FULL_DAY_SET = new Set(FULL_DAY_ARRAY);
@@ -79,6 +80,7 @@ const formattedData = fishData
       activeHoursText24,
       ...rest,
     };
-  });
+  })
+  .concat(fossilData.map((rowData) => ({ ...rowData, type: 'fossil' })));
 
 export default formattedData;

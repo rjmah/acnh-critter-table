@@ -1,0 +1,367 @@
+[
+  {
+    "name": "Acanthostega",
+    "value": 2000,
+    "number": 1
+  },
+  {
+    "name": "Amber",
+    "value": 1200,
+    "number": 2
+  },
+  {
+    "name": "Ammonite",
+    "value": 1100,
+    "number": 3
+  },
+  {
+    "name": "Ankylo skull",
+    "value": 3500,
+    "number": 4
+  },
+  {
+    "name": "Ankylo tail",
+    "value": 2500,
+    "number": 5
+  },
+  {
+    "name": "Ankylo torso",
+    "value": 3000,
+    "number": 6
+  },
+  {
+    "name": "Anomalocaris",
+    "value": 2000,
+    "number": 7
+  },
+  {
+    "name": "Archaeopteryx",
+    "value": 1300,
+    "number": 8
+  },
+  {
+    "name": "Archelon skull",
+    "value": 4000,
+    "number": 9
+  },
+  {
+    "name": "Archelon tail",
+    "value": 3500,
+    "number": 10
+  },
+  {
+    "name": "Australopith",
+    "value": 1100,
+    "number": 11
+  },
+  {
+    "name": "Brachio chest",
+    "value": 5500,
+    "number": 12
+  },
+  {
+    "name": "Brachio pelvis",
+    "value": 5000,
+    "number": 13
+  },
+  {
+    "name": "Brachio skull",
+    "value": 6000,
+    "number": 14
+  },
+  {
+    "name": "Brachio tail",
+    "value": 5500,
+    "number": 15
+  },
+  {
+    "name": "Coprolite",
+    "value": 1100,
+    "number": 16
+  },
+  {
+    "name": "Deinony tail",
+    "value": 2500,
+    "number": 17
+  },
+  {
+    "name": "Deinony torso",
+    "value": 3000,
+    "number": 18
+  },
+  {
+    "name": "Dimetrodon skull",
+    "value": 5500,
+    "number": 19
+  },
+  {
+    "name": "Dimetrodon torso",
+    "value": 5000,
+    "number": 20
+  },
+  {
+    "name": "Dinosaur track",
+    "value": 1000,
+    "number": 21
+  },
+  {
+    "name": "Diplo chest",
+    "value": 4000,
+    "number": 22
+  },
+  {
+    "name": "Diplo neck",
+    "value": 4500,
+    "number": 23
+  },
+  {
+    "name": "Diplo pelvis",
+    "value": 4500,
+    "number": 24
+  },
+  {
+    "name": "Diplo skull",
+    "value": 5000,
+    "number": 25
+  },
+  {
+    "name": "Diplo tail",
+    "value": 5000,
+    "number": 26
+  },
+  {
+    "name": "Diplo tail tip",
+    "value": 4000,
+    "number": 27
+  },
+  {
+    "name": "Dunkleosteus",
+    "value": 3500,
+    "number": 28
+  },
+  {
+    "name": "Eusthenopteron",
+    "value": 2000,
+    "number": 29
+  },
+  {
+    "name": "Iguanodon skull",
+    "value": 4000,
+    "number": 30
+  },
+  {
+    "name": "Iguanodon tail",
+    "value": 3000,
+    "number": 31
+  },
+  {
+    "name": "Iguanodon torso",
+    "value": 3500,
+    "number": 32
+  },
+  {
+    "name": "Juramaia",
+    "value": 1500,
+    "number": 33
+  },
+  {
+    "name": "Left megalo side",
+    "value": 4000,
+    "number": 34
+  },
+  {
+    "name": "Left ptera wing",
+    "value": 4500,
+    "number": 35
+  },
+  {
+    "name": "Left quetzal wing",
+    "value": 5000,
+    "number": 36
+  },
+  {
+    "name": "Mammoth skull",
+    "value": 3000,
+    "number": 37
+  },
+  {
+    "name": "Mammoth torso",
+    "value": 2500,
+    "number": 38
+  },
+  {
+    "name": "Megacero skull",
+    "value": 4500,
+    "number": 39
+  },
+  {
+    "name": "Megacero tail",
+    "value": 3000,
+    "number": 40
+  },
+  {
+    "name": "Megacero torso",
+    "value": 3500,
+    "number": 41
+  },
+  {
+    "name": "Myllokunmingia",
+    "value": 1500,
+    "number": 42
+  },
+  {
+    "name": "Ophthalmo skull",
+    "value": 2500,
+    "number": 43
+  },
+  {
+    "name": "Ophthalmo torso",
+    "value": 2000,
+    "number": 44
+  },
+  {
+    "name": "Pachy skull",
+    "value": 4000,
+    "number": 45
+  },
+  {
+    "name": "Pachy tail",
+    "value": 3500,
+    "number": 46
+  },
+  {
+    "name": "Parasaur skull",
+    "value": 3500,
+    "number": 47
+  },
+  {
+    "name": "Parasaur tail",
+    "value": 2500,
+    "number": 48
+  },
+  {
+    "name": "Parasaur torso",
+    "value": 3000,
+    "number": 49
+  },
+  {
+    "name": "Plesio body",
+    "value": 4500,
+    "number": 50
+  },
+  {
+    "name": "Plesio skull",
+    "value": 4000,
+    "number": 51
+  },
+  {
+    "name": "Plesio tail",
+    "value": 4500,
+    "number": 52
+  },
+  {
+    "name": "Ptera body",
+    "value": 4000,
+    "number": 53
+  },
+  {
+    "name": "Quetzal torso",
+    "value": 4500,
+    "number": 54
+  },
+  {
+    "name": "Right megalo side",
+    "value": 5500,
+    "number": 55
+  },
+  {
+    "name": "Right ptera wing",
+    "value": 4500,
+    "number": 56
+  },
+  {
+    "name": "Right quetzal wing",
+    "value": 5000,
+    "number": 57
+  },
+  {
+    "name": "Sabertooth skull",
+    "value": 2500,
+    "number": 58
+  },
+  {
+    "name": "Sabertooth tail",
+    "value": 2000,
+    "number": 59
+  },
+  {
+    "name": "Shark-tooth pattern",
+    "value": 1000,
+    "number": 60
+  },
+  {
+    "name": "Spino skull",
+    "value": 4000,
+    "number": 61
+  },
+  {
+    "name": "Spino tail",
+    "value": 2500,
+    "number": 62
+  },
+  {
+    "name": "Spino torso",
+    "value": 3000,
+    "number": 63
+  },
+  {
+    "name": "Stego skull",
+    "value": 5000,
+    "number": 64
+  },
+  {
+    "name": "Stego tail",
+    "value": 4000,
+    "number": 65
+  },
+  {
+    "name": "Stego torso",
+    "value": 4500,
+    "number": 66
+  },
+  {
+    "name": "T. rex skull",
+    "value": 6000,
+    "number": 67
+  },
+  {
+    "name": "T. rex tail",
+    "value": 5000,
+    "number": 68
+  },
+  {
+    "name": "T. rex torso",
+    "value": 5500,
+    "number": 69
+  },
+  {
+    "name": "Tricera skull",
+    "value": 5500,
+    "number": 70
+  },
+  {
+    "name": "Tricera tail",
+    "value": 4500,
+    "number": 71
+  },
+  {
+    "name": "Tricera torso",
+    "value": 5000,
+    "number": 72
+  },
+  {
+    "name": "Trilobite",
+    "value": 1300,
+    "number": 73
+  }
+]

@@ -2,7 +2,11 @@ import React, { useContext, useCallback } from 'react';
 import { DispatchContext, StateContext } from 'Reducer';
 import { CHANGE_TYPE_FILTER } from 'Reducer/actionTypes';
 import { Label, Select } from '@rebass/forms';
-import { TYPE_FILTER_FISH, TYPE_FILTER_BUGS } from 'Utility/constants';
+import {
+  TYPE_FILTER_FISH,
+  TYPE_FILTER_BUGS,
+  TYPE_FILTER_FOSSILS,
+} from 'Utility/constants';
 
 function CritterTypeControl() {
   const dispatch = useContext(DispatchContext);
@@ -34,11 +38,14 @@ function CritterTypeControl() {
         <option key="all" value="">
           All
         </option>
-        <option key="active" value={TYPE_FILTER_FISH}>
+        <option key="fish" value={TYPE_FILTER_FISH}>
           Fish
         </option>
-        <option key="expiring" value={TYPE_FILTER_BUGS}>
+        <option key="bugs" value={TYPE_FILTER_BUGS}>
           Bugs
+        </option>
+        <option key="fossils" value={TYPE_FILTER_FOSSILS}>
+          Fossils
         </option>
       </Select>
     </div>

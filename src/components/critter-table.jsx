@@ -20,6 +20,7 @@ import {
   MONTH_FILTER_EXPIRING,
   TYPE_FILTER_FISH,
   TYPE_FILTER_BUGS,
+  TYPE_FILTER_FOSSILS,
   HEMISPHERE_FILTER_NORTHERN,
   TIME_FORMAT_12,
 } from 'Utility/constants';
@@ -120,14 +121,16 @@ function CritterTable() {
         let displayed = true;
         if (displayed && state.searchValue) {
           displayed =
-            name.toLowerCase().includes(state.searchValue.toLowerCase()) ||
-            location.toLowerCase().includes(state.searchValue.toLowerCase());
+            name?.toLowerCase().includes(state.searchValue.toLowerCase()) ||
+            location?.toLowerCase().includes(state.searchValue.toLowerCase());
         }
         if (displayed && state.typeFilter) {
           if (state.typeFilter === TYPE_FILTER_FISH) {
             displayed = type === 'fish';
           } else if (state.typeFilter === TYPE_FILTER_BUGS) {
             displayed = type === 'bug';
+          } else if (state.typeFilter === TYPE_FILTER_FOSSILS) {
+            displayed = type === 'fossil';
           }
         }
 
@@ -192,27 +195,31 @@ function CritterTable() {
         //header;
         baseClassNames = 'header_cell';
       } else {
-        const currentMonthActive = isCurrentMonthActive(
-          sortedTableData[index]?.activeMonths
-        );
+        if (sortedTableData[index]?.type === 'fossil') {
+          baseClassNames = 'cell';
+        } else {
+          const currentMonthActive = isCurrentMonthActive(
+            sortedTableData[index]?.activeMonths
+          );
 
-        const currentMonthExpiring = isCurrentMonthExpiring(
-          sortedTableData[index]?.activeMonths
-        );
-        const currentTimeActive =
-          currentMonthActive || currentMonthExpiring
-            ? isCurrentTimeActive(sortedTableData[index]?.activeHours)
-            : false;
+          const currentMonthExpiring = isCurrentMonthExpiring(
+            sortedTableData[index]?.activeMonths
+          );
+          const currentTimeActive =
+            currentMonthActive || currentMonthExpiring
+              ? isCurrentTimeActive(sortedTableData[index]?.activeHours)
+              : false;
 
-        baseClassNames = classNames('cell', {
-          cell_month_active: currentMonthActive,
-          'cell_month_active--time_active':
-            currentMonthActive && currentTimeActive,
-          cell_month_expiring: currentMonthExpiring,
-          'cell_month_expiring--time_active':
-            currentMonthExpiring && currentTimeActive,
-          cell_month_inactive: !currentMonthActive,
-        });
+          baseClassNames = classNames('cell', {
+            cell_month_active: currentMonthActive,
+            'cell_month_active--time_active':
+              currentMonthActive && currentTimeActive,
+            cell_month_expiring: currentMonthExpiring,
+            'cell_month_expiring--time_active':
+              currentMonthExpiring && currentTimeActive,
+            cell_month_inactive: !currentMonthActive,
+          });
+        }
       }
       return classNames(baseClassNames, {
         cell_first: columnIndex === 0,
@@ -238,24 +245,26 @@ function CritterTable() {
   );
 
   const timeRenderer = useCallback(
-    ({ activeHours, activeHoursText }) => (
-      <TimeCell
-        activeHours={activeHours}
-        activeHoursText={activeHoursText}
-        currentHour={currentHour}
-        currentMinute={currentMinute}
-      />
-    ),
+    ({ activeHours, activeHoursText }) =>
+      !activeHours ? null : (
+        <TimeCell
+          activeHours={activeHours}
+          activeHoursText={activeHoursText}
+          currentHour={currentHour}
+          currentMinute={currentMinute}
+        />
+      ),
     [currentHour, currentMinute]
   );
 
   const monthRenderer = useCallback(
-    ({ activeMonths }) => (
-      <MonthCell
-        activeMonths={activeMonths}
-        previewMonthIndex={state.previewMonthIndex}
-      />
-    ),
+    ({ activeMonths }) =>
+      !activeMonths ? null : (
+        <MonthCell
+          activeMonths={activeMonths}
+          previewMonthIndex={state.previewMonthIndex}
+        />
+      ),
     [state.previewMonthIndex]
   );
 
