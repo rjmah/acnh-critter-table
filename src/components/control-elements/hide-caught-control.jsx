@@ -18,7 +18,7 @@ function HideCaughtControl() {
       <Label padding={1} htmlFor="hide_caught">
         Hide{' '}
         <span role="img" aria-label="checked">
-          ☑️
+          🎣
         </span>
       </Label>
       <Flex justifyContent="center" flexDirection="column" flexGrow={1}>
