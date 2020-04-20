@@ -1,3 +1,8 @@
+:root {
+  --main-border-color: rgb(109, 108, 108);
+  --main-bg-color: rgb(252, 250, 250);
+}
+
 html * {
   box-sizing: border-box;
   font-family: sans-serif;
@@ -8,6 +13,9 @@ html * {
   width: 100%;
   position: absolute;
   font-weight: 500;
+  background-color: var(--main-bg-color);
+  /* background: url('./nhbg.jpg'); */
+  /* background-repeat: repeat; */
 }
 .root_container {
   display: flex;
@@ -32,9 +40,9 @@ html * {
 
 .table_container {
   flex-grow: 1;
-  border: 1px solid black;
   border-radius: 3px;
   overflow: hidden;
+  background-color: var(--main-bg-color);
 }
 
 /* On smartphones, move status bar to bottom so users don't accidently fat finger the reset button */
@@ -64,17 +72,22 @@ html * {
   word-break: break-word;
 }
 .header_cell {
-  background-color: white;
+  background-color: var(--main-bg-color);
   color: black;
+  border-top: 1px solid var(--main-border-color);
 }
-
+.header_cell.cell_first {
+  border-top-left-radius: 3px;
+}
+.header_cell.cell_last {
+  border-top-right-radius: 3px;
+}
 .header_cell--sortable {
   cursor: pointer;
   font-weight: 700;
 }
 
 .cell_last {
-  border-right-width: 0;
 }
 .cell_month_active,
 .select_is_active {
@@ -121,34 +134,98 @@ html * {
 .month_square--current {
   border: 2px solid red;
 }
+
+.hour_labels {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  font-size: 12px;
+  align-items: flex-end;
+}
+
+.hour_label {
+  position: absolute;
+  text-align: left;
+}
+
+.hour_labels--12 .hour_label:nth-child(1) {
+  left: 6px;
+}
+.hour_labels--12 .hour_label:nth-child(2) {
+  left: 33px;
+}
+.hour_labels--12 .hour_label:nth-child(3) {
+  left: 52px;
+}
+.hour_labels--12 .hour_label:nth-child(4) {
+  left: 82px;
+}
+
+.hour_labels--24 .hour_label:nth-child(1) {
+  left: 9px;
+}
+.hour_labels--24 .hour_label:nth-child(2) {
+  left: 33px;
+}
+.hour_labels--24 .hour_label:nth-child(3) {
+  left: 52px;
+}
+.hour_labels--24 .hour_label:nth-child(4) {
+  left: 78px;
+}
+
 .hour_container {
   display: flex;
   position: relative;
-  height: 30px;
-  align-items: center;
+  height: 18px;
+  align-items: flex-end;
+  padding-bottom: 4px;
 }
 
 .hour_container__current_time_marker {
+  top: 2px;
   width: 1px;
-  height: 100%;
+  height: 16px;
   background-color: red;
   position: absolute;
 }
 
+.hour_container__end_marker {
+  width: 1px;
+  height: 100%;
+  border-left: 1px solid var(--main-border-color);
+}
 .hour_square {
-  height: 60%;
+  height: 8px;
   width: 4px;
-  border-left: 1px solid black;
+  border-left: 1px solid var(--main-border-color);
+  display: flex;
 }
 
-.hour_square:first-child {
-  border-left-color: transparent;
+.hour_square:nth-child(6n + 1) {
+  height: 100%;
 }
 
-.hour_square--active {
+.hour_square:last-child {
+  border-right: 1px solid black;
+}
+
+.hour_square__active {
   background-color: rgb(194, 186, 49);
+  height: 8px;
+  width: 100%;
+  align-self: flex-end;
 }
 
+.hour_square__active--start {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.hour_square__active--end {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
 .hour_text {
   display: flex;
   flex-direction: column;
@@ -171,6 +248,10 @@ html * {
 
 #hide_caught > * {
   background-color: rgb(51, 152, 247);
+}
+
+.cell_first {
+  border-left: 1px solid var(--main-border-color);
 }
 
 .cell_first svg {
