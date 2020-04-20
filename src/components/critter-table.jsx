@@ -78,21 +78,21 @@ function CritterTable() {
 
   const isCurrentMonthActive = useCallback(
     (activeMonths) =>
-      !activeMonths ? false : activeMonths.has(state.previewMonthIndex),
+      !activeMonths ? true : activeMonths.has(state.previewMonthIndex),
     [state.previewMonthIndex]
   );
 
   const isCurrentMonthExpiring = useCallback(
     (activeMonths) =>
       !activeMonths
-        ? false
+        ? true
         : activeMonths.has(state.previewMonthIndex) &&
           !activeMonths.has(getNextMonthIndex(state.previewMonthIndex)),
     [state.previewMonthIndex]
   );
 
   const isCurrentTimeActive = useCallback(
-    (activeHours) => activeHours.has(currentHour),
+    (activeHours) => (!activeHours ? true : activeHours.has(currentHour)),
     [currentHour]
   );
   const localeAwareData = useMemo(
