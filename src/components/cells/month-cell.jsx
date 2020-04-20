@@ -9,7 +9,7 @@ function MonthCell({ activeMonths, previewMonthIndex }) {
         <div
           key={i}
           className={classNames('month_square', {
-            'month_square--active': activeMonths.has(i),
+            'month_square--active': activeMonths && activeMonths.has(i),
             'month_square--current': i === previewMonthIndex,
           })}
         >

@@ -51,11 +51,13 @@ function TimeCell({
       <div className="hour_container">
         {FULL_DAY_ARRAY.map((hour, i) => (
           <div key={i} className="hour_square">
-            {activeHours.has(i) && (
+            {activeHours && activeHours.has(i) && (
               <div
                 className={classNames('hour_square__active', {
-                  'hour_square__active--start': !activeHours.has((i + 23) % 24),
-                  'hour_square__active--end': !activeHours.has((i + 1) % 24),
+                  'hour_square__active--start':
+                    activeHours && !activeHours.has((i + 23) % 24),
+                  'hour_square__active--end':
+                    activeHours && !activeHours.has((i + 1) % 24),
                 })}
               />
             )}

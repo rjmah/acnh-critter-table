@@ -77,14 +77,17 @@ function CritterTable() {
   }, [updateCurrentTime]);
 
   const isCurrentMonthActive = useCallback(
-    (activeMonths) => activeMonths.has(state.previewMonthIndex),
+    (activeMonths) =>
+      !activeMonths ? false : activeMonths.has(state.previewMonthIndex),
     [state.previewMonthIndex]
   );
 
   const isCurrentMonthExpiring = useCallback(
     (activeMonths) =>
-      activeMonths.has(state.previewMonthIndex) &&
-      !activeMonths.has(getNextMonthIndex(state.previewMonthIndex)),
+      !activeMonths
+        ? false
+        : activeMonths.has(state.previewMonthIndex) &&
+          !activeMonths.has(getNextMonthIndex(state.previewMonthIndex)),
     [state.previewMonthIndex]
   );
 
