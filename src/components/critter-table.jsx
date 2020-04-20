@@ -25,6 +25,7 @@ import {
   TIME_FORMAT_12,
 } from 'Utility/constants';
 import CaughtCell from './cells/caught-cell';
+import StorageCell from './cells/storage-cell';
 import HeaderCell from './cells/header-cell';
 import PictureCell from './cells/picture-cell';
 import MonthCell from './cells/month-cell';
@@ -196,7 +197,7 @@ function CritterTable() {
         baseClassNames = 'header_cell';
       } else {
         if (sortedTableData[index]?.type === 'fossil') {
-          baseClassNames = 'cell';
+          baseClassNames = 'cell fossil_cell';
         } else {
           const currentMonthActive = isCurrentMonthActive(
             sortedTableData[index]?.activeMonths
@@ -223,8 +224,8 @@ function CritterTable() {
       }
       return classNames(baseClassNames, {
         cell_first: columnIndex === 0,
-        cell_last: columnIndex === 8,
-        cell_padded: columnIndex === 3 || columnIndex === 4,
+        cell_last: columnIndex === 9,
+        cell_padded: columnIndex === 4 || columnIndex === 5,
       });
     },
     [
@@ -237,6 +238,10 @@ function CritterTable() {
 
   const caughtRenderer = useCallback(
     ({ number, type }) => <CaughtCell number={number} type={type} />,
+    []
+  );
+  const storageRenderer = useCallback(
+    ({ number, type }) => <StorageCell number={number} type={type} />,
     []
   );
   const pictureRenderer = useCallback(
@@ -273,9 +278,10 @@ function CritterTable() {
   const columns = useMemo(
     () => [
       { label: '🎣', width: 30, renderer: caughtRenderer },
+      { label: '📦', width: 30, renderer: storageRenderer },
       { label: '#', width: 30, renderer: 'number' },
       { label: 'Picture', width: 100, renderer: pictureRenderer },
-      { label: 'Name', sortKey: 'name', width: 110, renderer: 'name' },
+      { label: 'Name', sortKey: 'name', width: 125, renderer: 'name' },
       { label: 'Where', sortKey: 'location', width: 104, renderer: 'location' },
       {
         label: 'Size',
@@ -292,6 +298,7 @@ function CritterTable() {
       monthRenderer,
       pictureRenderer,
       priceRenderer,
+      storageRenderer,
       timeRenderer,
     ]
   );
@@ -300,12 +307,7 @@ function CritterTable() {
     ({ columnIndex, key, rowIndex, style }) => {
       const { label, sortKey } = columns[columnIndex];
       const className = classNames(
-        getRowClassName({ index: rowIndex - 1, columnIndex }),
-        {
-          cell_first: columnIndex === 0,
-          cell_last: columnIndex === 8,
-          cell_padded: columnIndex === 3 || columnIndex === 4,
-        }
+        getRowClassName({ index: rowIndex - 1, columnIndex })
       );
       return (
         <HeaderCell
@@ -324,11 +326,12 @@ function CritterTable() {
       const { renderer } = columns[columnIndex];
       const rowData = sortedTableData[rowIndex];
       let contents = `${columnIndex}, ${rowIndex}`;
-      const className = classNames(getRowClassName({ index: rowIndex }), {
-        cell_first: columnIndex === 0,
-        cell_last: columnIndex === 8,
-        cell_padded: columnIndex === 3 || columnIndex === 4,
-      });
+      const className = classNames(
+        getRowClassName({ index: rowIndex, columnIndex }),
+        {
+          cell_checkbox: columnIndex === 0 || columnIndex === 1,
+        }
+      );
       if (typeof renderer === 'string') {
         contents = rowData[renderer];
       } else if (typeof renderer === 'function') {

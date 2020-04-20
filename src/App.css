@@ -23,7 +23,7 @@ html * {
   flex-direction: column;
   margin: 0 auto;
   padding: 6px;
-  max-width: 795px;
+  max-width: 840px;
 }
 
 .ReactVirtualized__Grid {
@@ -87,6 +87,10 @@ html * {
   font-weight: 700;
 }
 
+.fossil_cell {
+  color: black;
+  hyphens: auto;
+}
 .cell_last {
 }
 .cell_month_active,
@@ -254,9 +258,10 @@ html * {
   border-left: 1px solid var(--main-border-color);
 }
 
-.cell_first svg {
+.cell_checkbox svg {
   color: rgb(51, 152, 247);
   cursor: pointer;
+  margin: 0;
 }
 
 .controls_container label {

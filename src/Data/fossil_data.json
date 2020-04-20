@@ -16,16 +16,19 @@
   },
   {
     "name": "Ankylo skull",
+    "location": "Ankylosaurus set",
     "value": 3500,
     "number": 4
   },
   {
     "name": "Ankylo tail",
+    "location": "Ankylosaurus set",
     "value": 2500,
     "number": 5
   },
   {
     "name": "Ankylo torso",
+    "location": "Ankylosaurus set",
     "value": 3000,
     "number": 6
   },
@@ -41,11 +44,13 @@
   },
   {
     "name": "Archelon skull",
+    "location": "Archelon set",
     "value": 4000,
     "number": 9
   },
   {
     "name": "Archelon tail",
+    "location": "Archelon set",
     "value": 3500,
     "number": 10
   },
@@ -56,21 +61,25 @@
   },
   {
     "name": "Brachio chest",
+    "location": "Brachiosaurus set",
     "value": 5500,
     "number": 12
   },
   {
     "name": "Brachio pelvis",
+    "location": "Brachiosaurus set",
     "value": 5000,
     "number": 13
   },
   {
     "name": "Brachio skull",
+    "location": "Brachiosaurus set",
     "value": 6000,
     "number": 14
   },
   {
     "name": "Brachio tail",
+    "location": "Brachiosaurus set",
     "value": 5500,
     "number": 15
   },
@@ -81,21 +90,25 @@
   },
   {
     "name": "Deinony tail",
+    "location": "Deinonychus set",
     "value": 2500,
     "number": 17
   },
   {
     "name": "Deinony torso",
+    "location": "Deinonychus set",
     "value": 3000,
     "number": 18
   },
   {
     "name": "Dimetrodon skull",
+    "location": "Dimetrodon set",
     "value": 5500,
     "number": 19
   },
   {
     "name": "Dimetrodon torso",
+    "location": "Dimetrodon set",
     "value": 5000,
     "number": 20
   },
@@ -106,31 +119,37 @@
   },
   {
     "name": "Diplo chest",
+    "location": "Diplodocus set",
     "value": 4000,
     "number": 22
   },
   {
     "name": "Diplo neck",
+    "location": "Diplodocus set",
     "value": 4500,
     "number": 23
   },
   {
     "name": "Diplo pelvis",
+    "location": "Diplodocus set",
     "value": 4500,
     "number": 24
   },
   {
     "name": "Diplo skull",
+    "location": "Diplodocus set",
     "value": 5000,
     "number": 25
   },
   {
     "name": "Diplo tail",
+    "location": "Diplodocus set",
     "value": 5000,
     "number": 26
   },
   {
     "name": "Diplo tail tip",
+    "location": "Diplodocus set",
     "value": 4000,
     "number": 27
   },
@@ -146,16 +165,19 @@
   },
   {
     "name": "Iguanodon skull",
+    "location": "Iguanodon set",
     "value": 4000,
     "number": 30
   },
   {
     "name": "Iguanodon tail",
+    "location": "Iguanodon set",
     "value": 3000,
     "number": 31
   },
   {
     "name": "Iguanodon torso",
+    "location": "Iguanodon set",
     "value": 3500,
     "number": 32
   },
@@ -166,41 +188,49 @@
   },
   {
     "name": "Left megalo side",
+    "location": "Megaloceros set",
     "value": 4000,
     "number": 34
   },
   {
     "name": "Left ptera wing",
+    "location": "Pteranodon set",
     "value": 4500,
     "number": 35
   },
   {
     "name": "Left quetzal wing",
+    "location": "Quetzalcoatlus set",
     "value": 5000,
     "number": 36
   },
   {
     "name": "Mammoth skull",
+    "location": "Mammoth set",
     "value": 3000,
     "number": 37
   },
   {
     "name": "Mammoth torso",
+    "location": "Mammoth set",
     "value": 2500,
     "number": 38
   },
   {
     "name": "Megacero skull",
+    "location": "Megacerops set",
     "value": 4500,
     "number": 39
   },
   {
     "name": "Megacero tail",
+    "location": "Megacerops set",
     "value": 3000,
     "number": 40
   },
   {
     "name": "Megacero torso",
+    "location": "Megacerops set",
     "value": 3500,
     "number": 41
   },
@@ -211,86 +241,103 @@
   },
   {
     "name": "Ophthalmo skull",
+    "location": "Ophthalmosaurus set",
     "value": 2500,
     "number": 43
   },
   {
     "name": "Ophthalmo torso",
+    "location": "Ophthalmosaurus set",
     "value": 2000,
     "number": 44
   },
   {
     "name": "Pachy skull",
+    "location": "Pachycephalosaurus set",
     "value": 4000,
     "number": 45
   },
   {
     "name": "Pachy tail",
+    "location": "Pachycephalosaurus set",
     "value": 3500,
     "number": 46
   },
   {
     "name": "Parasaur skull",
+    "location": "Parasaurolophus set",
     "value": 3500,
     "number": 47
   },
   {
     "name": "Parasaur tail",
+    "location": "Parasaurolophus set",
     "value": 2500,
     "number": 48
   },
   {
     "name": "Parasaur torso",
+    "location": "Parasaurolophus set",
     "value": 3000,
     "number": 49
   },
   {
     "name": "Plesio body",
+    "location": "Plesiosaur set",
     "value": 4500,
     "number": 50
   },
   {
     "name": "Plesio skull",
+    "location": "Plesiosaur set",
     "value": 4000,
     "number": 51
   },
   {
     "name": "Plesio tail",
+    "location": "Plesiosaur set",
     "value": 4500,
     "number": 52
   },
   {
     "name": "Ptera body",
+    "location": "Pteranodon set",
     "value": 4000,
     "number": 53
   },
   {
     "name": "Quetzal torso",
+    "location": "Quetzalcoatlus set",
     "value": 4500,
     "number": 54
   },
   {
     "name": "Right megalo side",
+    "location": "Megaloceros set",
     "value": 5500,
     "number": 55
   },
   {
     "name": "Right ptera wing",
+    "location": "Pteranodon set",
     "value": 4500,
     "number": 56
   },
   {
     "name": "Right quetzal wing",
+    "location": "Quetzalcoatlus set",
     "value": 5000,
     "number": 57
   },
   {
     "name": "Sabertooth skull",
+    "location": "Sabertooth tiger set",
     "value": 2500,
     "number": 58
   },
   {
     "name": "Sabertooth tail",
+    "location": "Sabertooth tiger set",
     "value": 2000,
     "number": 59
   },
@@ -301,61 +348,73 @@
   },
   {
     "name": "Spino skull",
+    "location": "Spinosaurus set",
     "value": 4000,
     "number": 61
   },
   {
     "name": "Spino tail",
+    "location": "Spinosaurus set",
     "value": 2500,
     "number": 62
   },
   {
     "name": "Spino torso",
+    "location": "Spinosaurus set",
     "value": 3000,
     "number": 63
   },
   {
     "name": "Stego skull",
+    "location": "Stegosaurus set",
     "value": 5000,
     "number": 64
   },
   {
     "name": "Stego tail",
+    "location": "Stegosaurus set",
     "value": 4000,
     "number": 65
   },
   {
     "name": "Stego torso",
+    "location": "Stegosaurus set",
     "value": 4500,
     "number": 66
   },
   {
     "name": "T. rex skull",
+    "location": "Tyrannosaurus Rex set",
     "value": 6000,
     "number": 67
   },
   {
     "name": "T. rex tail",
+    "location": "Tyrannosaurus Rex set",
     "value": 5000,
     "number": 68
   },
   {
     "name": "T. rex torso",
+    "location": "Tyrannosaurus Rex set",
     "value": 5500,
     "number": 69
   },
   {
     "name": "Tricera skull",
+    "location": "Triceratops set",
     "value": 5500,
     "number": 70
   },
   {
     "name": "Tricera tail",
+    "location": "Triceratops set",
     "value": 4500,
     "number": 71
   },
   {
     "name": "Tricera torso",
+    "location": "Triceratops set",
     "value": 5000,
     "number": 72
   },

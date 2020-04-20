@@ -4,6 +4,7 @@ import LZString from 'lz-string';
 import {
   CHANGE_PREVIEW_MONTH,
   TOGGLE_CRITTER_CAUGHT,
+  TOGGLE_CRITTER_IN_STORAGE,
   TOGGLE_HIDE_CAUGHT,
   CHANGE_MONTH_FILTER,
   CHANGE_TYPE_FILTER,
@@ -41,6 +42,7 @@ const initialFilterState = {
 export const initialState = {
   // previewMonthIndex: BOOT_CURRENT_MONTH_INDEX,
   caughtCritter: {},
+  storageCritter: {},
   ...initialFilterState,
   timeFormat: TIME_FORMAT_12,
   hemisphereFilter: HEMISPHERE_FILTER_NORTHERN,
@@ -79,6 +81,18 @@ export function reducer(previousState, { type, payload }) {
       }
       //TODO maybe throttle this with thunks
       state = { ...previousState, caughtCritter };
+      break;
+    }
+    case TOGGLE_CRITTER_IN_STORAGE: {
+      //TODO maybe use thunks. So logic isn't in the reducer
+      const storageCritter = { ...previousState.storageCritter };
+      if (previousState.storageCritter[payload]) {
+        delete storageCritter[payload];
+      } else {
+        storageCritter[payload] = true;
+      }
+      //TODO maybe throttle this with thunks
+      state = { ...previousState, storageCritter };
       break;
     }
     case TOGGLE_HIDE_CAUGHT: {
