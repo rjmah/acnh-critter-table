@@ -657,7 +657,7 @@
     "number": 72,
     "name": "Saw shark",
     "location": "Sea",
-    "shadow_size": 6,
+    "shadow_size": "6 (fin)",
     "value": 12000,
     "time": [[16, 9]],
     "month": [[5, 8]]
@@ -666,7 +666,7 @@
     "number": 73,
     "name": "Hammerhead shark",
     "location": "Sea",
-    "shadow_size": 6,
+    "shadow_size": "6 (fin)",
     "value": 8000,
     "time": [[16, 9]],
     "month": [[5, 8]]
@@ -675,7 +675,7 @@
     "number": 74,
     "name": "Great white shark",
     "location": "Sea",
-    "shadow_size": 6,
+    "shadow_size": "6 (fin)",
     "value": 15000,
     "time": [[16, 9]],
     "month": [[5, 8]]
@@ -684,7 +684,7 @@
     "number": 75,
     "name": "Whale shark",
     "location": "Sea",
-    "shadow_size": 6,
+    "shadow_size": "6 (fin)",
     "value": 13000,
     "time": [[0, 0]],
     "month": [[5, 8]]
@@ -693,7 +693,7 @@
     "number": 76,
     "name": "Suckerfish",
     "location": "Sea",
-    "shadow_size": 6,
+    "shadow_size": "6 (fin)",
     "value": 1500,
     "time": [[0, 0]],
     "month": [[5, 8]]
