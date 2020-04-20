@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "735a3e13f29eb3d1eff76b8b4625be69",
+    "revision": "dc89533fb8a7b31fafef3004e83e78e2",
     "url": "/acnh-critter-table/index.html"
   },
   {
-    "revision": "a2165457089b6c302515",
+    "revision": "39fbfb4f38b9efbbd0de",
     "url": "/acnh-critter-table/static/css/main.1141110a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/acnh-critter-table/static/js/2.0e0b5157.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a2165457089b6c302515",
-    "url": "/acnh-critter-table/static/js/main.7e024180.chunk.js"
+    "revision": "39fbfb4f38b9efbbd0de",
+    "url": "/acnh-critter-table/static/js/main.80a29e94.chunk.js"
   },
   {
     "revision": "8c6382b5aa6f492a21cd",
