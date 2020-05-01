@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/acnh-critter-table/static/css/main.1141110a.chunk.css",
-    "main.js": "/acnh-critter-table/static/js/main.80a29e94.chunk.js",
-    "main.js.map": "/acnh-critter-table/static/js/main.80a29e94.chunk.js.map",
+    "main.js": "/acnh-critter-table/static/js/main.ae23dc49.chunk.js",
+    "main.js.map": "/acnh-critter-table/static/js/main.ae23dc49.chunk.js.map",
     "runtime-main.js": "/acnh-critter-table/static/js/runtime-main.5d1855a3.js",
     "runtime-main.js.map": "/acnh-critter-table/static/js/runtime-main.5d1855a3.js.map",
     "static/js/2.0e0b5157.chunk.js": "/acnh-critter-table/static/js/2.0e0b5157.chunk.js",
     "static/js/2.0e0b5157.chunk.js.map": "/acnh-critter-table/static/js/2.0e0b5157.chunk.js.map",
     "index.html": "/acnh-critter-table/index.html",
-    "precache-manifest.06e49bd5452708ba57542be9e35d5bc6.js": "/acnh-critter-table/precache-manifest.06e49bd5452708ba57542be9e35d5bc6.js",
+    "precache-manifest.83291e5d251ad6d2790617fdef2395f9.js": "/acnh-critter-table/precache-manifest.83291e5d251ad6d2790617fdef2395f9.js",
     "service-worker.js": "/acnh-critter-table/service-worker.js",
     "static/css/main.1141110a.chunk.css.map": "/acnh-critter-table/static/css/main.1141110a.chunk.css.map",
     "static/js/2.0e0b5157.chunk.js.LICENSE.txt": "/acnh-critter-table/static/js/2.0e0b5157.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5d1855a3.js",
     "static/js/2.0e0b5157.chunk.js",
     "static/css/main.1141110a.chunk.css",
-    "static/js/main.80a29e94.chunk.js"
+    "static/js/main.ae23dc49.chunk.js"
   ]
 }
