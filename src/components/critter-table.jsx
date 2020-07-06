@@ -20,6 +20,7 @@ import {
   MONTH_FILTER_EXPIRING,
   TYPE_FILTER_FISH,
   TYPE_FILTER_BUGS,
+  TYPE_FILTER_SEA,
   TYPE_FILTER_FOSSILS,
   HEMISPHERE_FILTER_NORTHERN,
   TIME_FORMAT_12,
@@ -133,6 +134,8 @@ function CritterTable() {
             displayed = type === 'fish';
           } else if (state.typeFilter === TYPE_FILTER_BUGS) {
             displayed = type === 'bug';
+          } else if (state.typeFilter === TYPE_FILTER_SEA) {
+            displayed = type === 'sea';
           } else if (state.typeFilter === TYPE_FILTER_FOSSILS) {
             displayed = type === 'fossil';
           }

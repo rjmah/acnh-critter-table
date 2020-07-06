@@ -5,6 +5,7 @@ import { Label, Select } from '@rebass/forms';
 import {
   TYPE_FILTER_FISH,
   TYPE_FILTER_BUGS,
+  TYPE_FILTER_SEA,
   TYPE_FILTER_FOSSILS,
 } from 'Utility/constants';
 
@@ -43,6 +44,9 @@ function CritterTypeControl() {
         </option>
         <option key="bugs" value={TYPE_FILTER_BUGS}>
           Bugs
+        </option>
+        <option key="sea" value={TYPE_FILTER_SEA}>
+          Sea
         </option>
         <option key="fossils" value={TYPE_FILTER_FOSSILS}>
           Fossils

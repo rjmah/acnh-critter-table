@@ -2,6 +2,7 @@ const getNLengthArray = (n) => [...Array(n).keys()];
 
 const fishData = require('./fish_data.json');
 const bugData = require('./bug_data.json');
+const seaData = require('./sea_data.json');
 const fossilData = require('./fossil_data.json');
 const FULL_YEAR_SET = new Set(getNLengthArray(12));
 const FULL_DAY_ARRAY = getNLengthArray(24);
@@ -45,6 +46,7 @@ function calculateActiveMonths(monthTuples, isSouth) {
 const formattedData = fishData
   .map((rowData) => ({ ...rowData, type: 'fish' }))
   .concat(bugData.map((rowData) => ({ ...rowData, type: 'bug' })))
+  .concat(seaData.map((rowData) => ({ ...rowData, type: 'sea' })))
   .map(({ month: monthTuples, time: timeTuples, ...rest }) => {
     const activeMonthsNorth = calculateActiveMonths(monthTuples, false);
     const activeMonthsSouth = calculateActiveMonths(monthTuples, true);

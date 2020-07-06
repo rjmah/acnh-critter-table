@@ -1,0 +1,334 @@
+[
+  {
+    "number": 1,
+    "name": "Seaweed",
+    "shadow_size": 3,
+    "value": 600,
+    "time": [[0, 0]],
+    "month": [[9, 6]]
+  },
+  {
+    "number": 2,
+    "name": "Sea grapes",
+    "shadow_size": 2,
+    "value": 900,
+    "time": [[0, 0]],
+    "month": [[5, 8]]
+  },
+  {
+    "number": 3,
+    "name": "Sea cucumber",
+    "shadow_size": 3,
+    "value": 500,
+    "time": [[0, 0]],
+    "month": [[10, 3]]
+  },
+  {
+    "number": 4,
+    "name": "Sea pig",
+    "shadow_size": 2,
+    "value": 10000,
+    "time": [[16, 9]],
+    "month": [[10, 1]]
+  },
+  {
+    "number": 5,
+    "name": "Sea star",
+    "shadow_size": 2,
+    "value": 500,
+    "time": [[0, 0]],
+    "month": [[0, 11]]
+  },
+  {
+    "number": 6,
+    "name": "Sea urchin",
+    "shadow_size": 2,
+    "value": 1700,
+    "time": [[0, 0]],
+    "month": [[4, 8]]
+  },
+  {
+    "number": 7,
+    "name": "Slate pencil urchin",
+    "shadow_size": 3,
+    "value": 2000,
+    "time": [[16, 9]],
+    "month": [[4, 8]]
+  },
+  {
+    "number": 8,
+    "name": "Sea anemone",
+    "shadow_size": 3,
+    "value": 500,
+    "time": [[0, 0]],
+    "month": [[0, 11]]
+  },
+  {
+    "number": 9,
+    "name": "Moon jellyfish",
+    "shadow_size": 2,
+    "value": 600,
+    "time": [[0, 0]],
+    "month": [[6, 8]]
+  },
+  {
+    "number": 10,
+    "name": "Sea slug",
+    "shadow_size": 1,
+    "value": 600,
+    "time": [[0, 0]],
+    "month": [[0, 11]]
+  },
+  {
+    "number": 11,
+    "name": "Pearl oyster",
+    "shadow_size": 2,
+    "value": 2800,
+    "time": [[0, 0]],
+    "month": [[0, 11]]
+  },
+  {
+    "number": 12,
+    "name": "Mussel",
+    "shadow_size": 2,
+    "value": 1500,
+    "time": [[0, 0]],
+    "month": [[5, 11]]
+  },
+  {
+    "number": 13,
+    "name": "Oyster",
+    "shadow_size": 2,
+    "value": 1100,
+    "time": [[0, 0]],
+    "month": [[8, 1]]
+  },
+  {
+    "number": 14,
+    "name": "Scallop",
+    "shadow_size": 3,
+    "value": 1200,
+    "time": [[0, 0]],
+    "month": [[0, 11]]
+  },
+  {
+    "number": 15,
+    "name": "Whelk",
+    "shadow_size": 2,
+    "value": 1000,
+    "time": [[0, 0]],
+    "month": [[0, 11]]
+  },
+  {
+    "number": 16,
+    "name": "Turban shell",
+    "shadow_size": 2,
+    "value": 1000,
+    "time": [[0, 0]],
+    "month": [
+      [2, 4],
+      [8, 11]
+    ]
+  },
+  {
+    "number": 17,
+    "name": "Abalone",
+    "shadow_size": 2,
+    "value": 2000,
+    "time": [[16, 9]],
+    "month": [[5, 0]]
+  },
+  {
+    "number": 18,
+    "name": "Gigas giant clam",
+    "shadow_size": 3,
+    "value": 15000,
+    "time": [[0, 0]],
+    "month": [[4, 8]]
+  },
+  {
+    "number": 19,
+    "name": "Chambered nautilus",
+    "shadow_size": 3,
+    "value": 1800,
+    "time": [[16, 9]],
+    "month": [[2, 5]]
+  },
+  {
+    "number": 20,
+    "name": "Octopus",
+    "shadow_size": 3,
+    "value": 1200,
+    "time": [[0, 0]],
+    "month": [[0, 11]]
+  },
+  {
+    "number": 21,
+    "name": "Umbrella octopus",
+    "shadow_size": 2,
+    "value": 6000,
+    "time": [[0, 0]],
+    "month": [
+      [2, 4],
+      [8, 10]
+    ]
+  },
+  {
+    "number": 22,
+    "name": "Vampire squid",
+    "shadow_size": 3,
+    "value": 10000,
+    "time": [[16, 9]],
+    "month": [[4, 7]]
+  },
+  {
+    "number": 23,
+    "name": "Firefly squid",
+    "shadow_size": 1,
+    "value": 1400,
+    "time": [[21, 4]],
+    "month": [[2, 5]]
+  },
+  {
+    "number": 24,
+    "name": "Gazami crab",
+    "shadow_size": 3,
+    "value": 2200,
+    "time": [[0, 0]],
+    "month": [[5, 10]]
+  },
+  {
+    "number": 25,
+    "name": "Dungeness crab",
+    "shadow_size": 3,
+    "value": 1900,
+    "time": [[0, 0]],
+    "month": [[10, 4]]
+  },
+  {
+    "number": 26,
+    "name": "Snow crab",
+    "shadow_size": 3,
+    "value": 6000,
+    "time": [[0, 0]],
+    "month": [[10, 3]]
+  },
+  {
+    "number": 27,
+    "name": "Red king crab",
+    "shadow_size": 3,
+    "value": 8000,
+    "time": [[0, 0]],
+    "month": [[10, 2]]
+  },
+  {
+    "number": 28,
+    "name": "Acorn barnacle",
+    "shadow_size": 1,
+    "value": 600,
+    "time": [[0, 0]],
+    "month": [[0, 11]]
+  },
+  {
+    "number": 29,
+    "name": "Spider crab",
+    "shadow_size": 3,
+    "value": 10000,
+    "time": [[0, 0]],
+    "month": [[2, 3]]
+  },
+  {
+    "number": 30,
+    "name": "Tiger prawn",
+    "shadow_size": 2,
+    "value": 3000,
+    "time": [[16, 9]],
+    "month": [[5, 8]]
+  },
+  {
+    "number": 31,
+    "name": "Sweet shrimp",
+    "shadow_size": 2,
+    "value": 1400,
+    "time": [[16, 9]],
+    "month": [[8, 1]]
+  },
+  {
+    "number": 32,
+    "name": "Mantis shrimp",
+    "shadow_size": 2,
+    "value": 2500,
+    "time": [[16, 9]],
+    "month": [[0, 11]]
+  },
+  {
+    "number": 33,
+    "name": "Spiny lobster",
+    "shadow_size": 3,
+    "value": 3000,
+    "time": [[21, 4]],
+    "month": [[9, 11]]
+  },
+  {
+    "number": 34,
+    "name": "lobster",
+    "shadow_size": 3,
+    "value": 4500,
+    "time": [[0, 0]],
+    "month": [
+      [3, 5],
+      [11, 0]
+    ]
+  },
+  {
+    "number": 35,
+    "name": "Giant isopod",
+    "shadow_size": 3,
+    "value": 9000,
+    "time": [
+      [9, 16],
+      [21, 4]
+    ],
+    "month": [[6, 9]]
+  },
+  {
+    "number": 36,
+    "name": "Horseshoe crab",
+    "shadow_size": 2,
+    "value": 1500,
+    "time": [[0, 0]],
+    "month": [[3, 7]]
+  },
+  {
+    "number": 37,
+    "name": "Sea pineapple",
+    "shadow_size": 3,
+    "value": 1500,
+    "time": [[21, 4]],
+    "month": [[6, 8]]
+  },
+  {
+    "number": 38,
+    "name": "Spotted garden eel",
+    "shadow_size": 2,
+    "value": 1100,
+    "time": [[4, 21]],
+    "month": [[4, 9]]
+  },
+  {
+    "number": 39,
+    "name": "Flatworm",
+    "shadow_size": 1,
+    "value": 200,
+    "time": [[16, 9]],
+    "month": [[7, 8]]
+  },
+  {
+    "number": 40,
+    "name": "Venus' flower basket",
+    "shadow_size": 3,
+    "value": 5000,
+    "time": [[0, 0]],
+    "month": [[9, 1]]
+  }
+]
