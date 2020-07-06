@@ -35,6 +35,9 @@ function CritterTypeControl() {
         name="Type Filter"
         value={state.typeFilter}
         onChange={handleChange}
+        sx={{
+          borderRadius: 5,
+        }}
       >
         <option key="all" value="">
           All

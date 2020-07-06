@@ -35,6 +35,9 @@ function AvailibilityControl() {
         name="Month Filter"
         value={state.monthFilter}
         onChange={handleChange}
+        sx={{
+          borderRadius: 5,
+        }}
       >
         <option key="all" value="">
           All

@@ -33,6 +33,9 @@ function HemisphereControl() {
         name="Hemisphere Filter"
         value={state.hemisphereFilter}
         onChange={handleChange}
+        sx={{
+          borderRadius: 5,
+        }}
       >
         <option key="active" value={HEMISPHERE_FILTER_NORTHERN}>
           Northern

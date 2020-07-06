@@ -34,6 +34,9 @@ function ActiveMonthControl() {
         name="Active Month"
         value={value}
         onChange={handleChange}
+        sx={{
+          borderRadius: 5,
+        }}
       >
         {MONTHS.map((month, i) => (
           <option key={i} value={i}>

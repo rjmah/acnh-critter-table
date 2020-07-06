@@ -30,6 +30,9 @@ function HourFormatControl() {
         name="Time Format"
         value={state.timeFormat}
         onChange={handleChange}
+        sx={{
+          borderRadius: 5,
+        }}
       >
         <option key="12 hour" value={TIME_FORMAT_12}>
           AM / PM
