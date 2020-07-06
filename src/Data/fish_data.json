@@ -582,7 +582,7 @@
     "number": 64,
     "name": "Moray eel",
     "location": "Sea",
-    "shadow_size": 5,
+    "shadow_size": "long and thin",
     "value": 2000,
     "time": [[0, 0]],
     "month": [[7, 9]]
@@ -591,7 +591,7 @@
     "number": 65,
     "name": "Ribbon eel",
     "location": "Sea",
-    "shadow_size": 6,
+    "shadow_size": "long and thin",
     "value": 600,
     "time": [[0, 0]],
     "month": [[5, 9]]
@@ -639,7 +639,7 @@
     "number": 70,
     "name": "Ocean sunfish",
     "location": "Sea",
-    "shadow_size": 6,
+    "shadow_size": "6 (fin)",
     "value": 4000,
     "time": [[4, 21]],
     "month": [[6, 8]]
