@@ -315,3 +315,28 @@ html * {
   text-align: center;
   /* line-height: 1; */
 }
+
+.toggle_button_group {
+  cursor: pointer;
+  height: 100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.toggle_button_group > * {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+}
+
+.toggle_button_group.toggle_button_group--on > div:nth-child(2),
+.toggle_button_group:not(.toggle_button_group--on) > div:nth-child(1) {
+  background: rgb(51, 152, 247);
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}

@@ -3,15 +3,14 @@ import React, { useCallback, useState } from 'react';
 import { Button } from 'rebass';
 import MoreControlsModal from '../more-controls-modal';
 
-function MoreControlsTrigger() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+function MoreControlsTrigger({ setIsModalOpen, isModalOpen }) {
   const openModal = useCallback(() => {
     setIsModalOpen(true);
-  }, []);
+  }, [setIsModalOpen]);
 
   const closeModal = useCallback(() => {
     setIsModalOpen(false);
-  }, []);
+  }, [setIsModalOpen]);
 
   return (
     <React.Fragment>

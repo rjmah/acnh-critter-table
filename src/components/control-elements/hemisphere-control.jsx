@@ -1,7 +1,8 @@
 import React, { useContext, useCallback } from 'react';
+import classNames from 'classnames';
 import { DispatchContext, StateContext } from 'Reducer';
 import { CHANGE_HEMISPHERE } from 'Reducer/actionTypes';
-import { Label, Select } from '@rebass/forms';
+import { Label } from '@rebass/forms';
 import {
   HEMISPHERE_FILTER_NORTHERN,
   HEMISPHERE_FILTER_SOUTHERN,
@@ -11,12 +12,19 @@ function HemisphereControl() {
   const dispatch = useContext(DispatchContext);
   const state = useContext(StateContext);
 
-  const handleChange = useCallback(
-    (e) => {
-      dispatch({ type: CHANGE_HEMISPHERE, payload: e.target.value });
-    },
-    [dispatch]
-  );
+  const toggleHemisphere = useCallback(() => {
+    if (state.hemisphereFilter === HEMISPHERE_FILTER_NORTHERN) {
+      dispatch({
+        type: CHANGE_HEMISPHERE,
+        payload: HEMISPHERE_FILTER_SOUTHERN,
+      });
+    } else {
+      dispatch({
+        type: CHANGE_HEMISPHERE,
+        payload: HEMISPHERE_FILTER_NORTHERN,
+      });
+    }
+  }, [state.hemisphereFilter, dispatch]);
 
   return (
     <div
@@ -25,25 +33,19 @@ function HemisphereControl() {
         flexDirection: 'column',
       }}
     >
-      <Label p={1} htmlFor="hemisphere_filter" style={{ hyphens: 'auto' }}>
+      <Label p={1} style={{ hyphens: 'auto', fontWeight: 600 }}>
         Hemisphere
       </Label>
-      <Select
-        id="hemisphere_filter"
-        name="Hemisphere Filter"
-        value={state.hemisphereFilter}
-        onChange={handleChange}
-        sx={{
-          borderRadius: 5,
-        }}
+      <div
+        className={classNames('toggle_button_group', {
+          'toggle_button_group--on':
+            state.hemisphereFilter === HEMISPHERE_FILTER_SOUTHERN,
+        })}
+        onClick={toggleHemisphere}
       >
-        <option key="active" value={HEMISPHERE_FILTER_NORTHERN}>
-          Northern
-        </option>
-        <option key="expiring" value={HEMISPHERE_FILTER_SOUTHERN}>
-          Southern
-        </option>
-      </Select>
+        <div>Northern</div>
+        <div>Southern</div>
+      </div>
     </div>
   );
 }

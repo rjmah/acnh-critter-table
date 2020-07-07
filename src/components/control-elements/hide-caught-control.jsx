@@ -17,7 +17,7 @@ function HideCaughtControl() {
     <Flex className="toggle_caught_container">
       <Label padding={1} htmlFor="hide_caught">
         Hide{' '}
-        <span role="img" aria-label="checked">
+        <span role="img" aria-label="checked" style={{ lineHeight: '18px' }}>
           🎣
         </span>
       </Label>

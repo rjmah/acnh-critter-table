@@ -23,8 +23,8 @@ function ActiveMonthControl() {
 
   return (
     <div>
-      <Label p={1} htmlFor="active_month">
-        Month
+      <Label p={1} style={{ fontWeight: 600 }} htmlFor="active_month">
+        Active Month
       </Label>
       <Select
         fontWeight={

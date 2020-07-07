@@ -5,6 +5,8 @@ import ToggleHemisphere from './control-elements/hemisphere-control';
 import ToggleTimeFormat from './control-elements/hour-format-control';
 import ExportState from './control-elements/export-state';
 import ImportState from './control-elements/import-state';
+import ActiveMonthControl from './control-elements/active-month-control';
+import ActiveTimeControl from './control-elements/active-time-control';
 
 function MoreControlsModal({ closeModal }) {
   const getLegendCell = useCallback(
@@ -19,11 +21,11 @@ function MoreControlsModal({ closeModal }) {
     []
   );
   const activeHourText = useMemo(
-    () => getLegendCell('✅⏱', 'Available at this hour'),
+    () => getLegendCell('✅⏱', 'Available at active time'),
     [getLegendCell]
   );
   const notActiveHourText = useMemo(
-    () => getLegendCell('❌⏱', 'Not available at this hour'),
+    () => getLegendCell('❌⏱', 'Not available at active time'),
     [getLegendCell]
   );
 
@@ -66,9 +68,15 @@ function MoreControlsModal({ closeModal }) {
             </Button>
           </Box>
           <Box>
+            <ActiveMonthControl />
+          </Box>
+          <Box marginTop={3}>
+            <ActiveTimeControl />
+          </Box>
+          <Box marginTop={3}>
             <ToggleHemisphere />
           </Box>
-          <Box>
+          <Box marginTop={3}>
             <ToggleTimeFormat />
           </Box>
           <Box marginTop={20}>

@@ -11,9 +11,8 @@ import classNames from 'classnames';
 import { Scrollbars } from 'react-custom-scrollbars';
 import formattedData from 'Data/formatted-data';
 
-import { StateContext, DispatchContext } from 'Reducer';
+import { StateContext } from 'Reducer';
 import {
-  BOOT_CURRENT_MONTH_INDEX,
   BOOT_CURRENT_HOUR_INDEX,
   BOOT_CURRENT_MINUTE_INDEX,
   MONTH_FILTER_ACTIVE,
@@ -32,7 +31,6 @@ import PictureCell from './cells/picture-cell';
 import MonthCell from './cells/month-cell';
 import TimeCell from './cells/time-cell';
 import useInterval from 'useInterval';
-import { CHANGE_PREVIEW_MONTH } from 'Reducer/actionTypes';
 import StatusBar from './status-bar';
 
 function getNextMonthIndex(monthIndex) {
@@ -46,27 +44,16 @@ const bodyGridStyle = { overflowX: false, overflowY: false };
 
 function CritterTable() {
   const state = useContext(StateContext);
-  const dispatch = useContext(DispatchContext);
-  const [currentMonth, setCurrentMonth] = useState(BOOT_CURRENT_MONTH_INDEX);
   const [currentHour, setCurrentHour] = useState(BOOT_CURRENT_HOUR_INDEX);
   const [currentMinute, setCurrentMinute] = useState(BOOT_CURRENT_MINUTE_INDEX);
 
   const updateCurrentTime = useCallback(() => {
+    const offset = state.minuteOffset || 0;
     var d = new Date();
-    setCurrentMonth(d.getMonth());
+    d = new Date(d.getTime() + offset * 60 * 1000);
     setCurrentHour(d.getHours());
     setCurrentMinute(d.getMinutes());
-  }, []);
-
-  // Update active month if month changes when app is open
-  useEffect(() => {
-    if (
-      state.previewMonthIndex === BOOT_CURRENT_MONTH_INDEX &&
-      currentMonth !== BOOT_CURRENT_MONTH_INDEX
-    ) {
-      dispatch({ type: CHANGE_PREVIEW_MONTH, payload: currentMonth });
-    }
-  }, [currentMonth, dispatch, state.previewMonthIndex]);
+  }, [state.minuteOffset]);
 
   // Every minute, check current time to update the time graph
   useInterval(updateCurrentTime, 60000);
@@ -76,6 +63,12 @@ function CritterTable() {
     window.addEventListener('focus', updateCurrentTime);
     return () => window.removeEventListener('focus', updateCurrentTime);
   }, [updateCurrentTime]);
+
+  // Update time when offset is modified
+
+  useEffect(() => {
+    updateCurrentTime();
+  }, [state.minuteOffset, updateCurrentTime]);
 
   const isCurrentMonthActive = useCallback(
     (activeMonths) =>

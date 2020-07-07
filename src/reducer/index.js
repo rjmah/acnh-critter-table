@@ -9,6 +9,7 @@ import {
   CHANGE_MONTH_FILTER,
   CHANGE_TYPE_FILTER,
   CHANGE_HEMISPHERE,
+  CHANGE_OFFSET,
   SEARCH,
   CHANGE_TIME_FORMAT,
   IMPORT_STATE,
@@ -38,6 +39,7 @@ const initialFilterState = {
   searchValue: '',
   sortColumn: '',
   sortDirection: 0,
+  minuteOffset: 0,
 };
 export const initialState = {
   // previewMonthIndex: BOOT_CURRENT_MONTH_INDEX,
@@ -109,6 +111,10 @@ export function reducer(previousState, { type, payload }) {
     }
     case CHANGE_HEMISPHERE: {
       state = { ...previousState, hemisphereFilter: payload };
+      break;
+    }
+    case CHANGE_OFFSET: {
+      state = { ...previousState, minuteOffset: payload };
       break;
     }
     case SEARCH: {
